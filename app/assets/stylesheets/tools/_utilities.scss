@@ -1,0 +1,75 @@
+@import 'variables';
+%grid{
+    display:grid;
+    grid-column-gap: $column-separator;
+    grid-row-gap: $column-separator;
+    padding: $column-separator;
+    padding: 0px;
+}
+
+.nopadding{
+    padding: 0px;
+}
+
+.padding-top{
+    padding-top: 20px ;
+}
+
+.padding-top-10{
+    padding-top: 10px;
+}
+
+.padding-top-5{
+    padding-top: 5px;
+}
+.padding-r{
+    padding-right: 20px;
+}
+
+
+.padding-l-10{
+    padding-left: 10px;
+}
+
+.margin-t-10{
+    margin-top: 10px;
+}
+
+.margin-r-10{
+    margin-right: 10px;
+}
+
+.margin-r-20{
+    margin-right: 20px;
+}
+.margin-r-15{
+    margin-right: 15px;
+}
+.margin-t-12{
+    margin-top: 12px;
+}
+/* Colors */
+.orange{
+	background-color: $color-yellow1;
+	background-color: $color-yellow1;
+  border-color: $color-yellow1;
+}
+.notoverflow{
+    overflow: hidden;
+}
+
+.relative{
+    position: relative;
+}
+
+.nolink
+{
+    text-decoration:none;
+    color: $color-white;
+}
+
+.nolink:hover
+{
+    text-decoration:none;
+    color: $color-white;
+}

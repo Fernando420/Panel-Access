@@ -1,0 +1,52 @@
+<div class="row">
+    <div class="card">
+        <h1><%= t('client.subtitle') %></h1>
+        <%= form_for :clients, :url => { :action => "create"}, :html => {:class => "form row"} do |f| %>
+            <div class="form-group col-4">
+                <strong class="error-msg" id="error-username">
+                    <%= f.text_field :name, class: 'form-input', required: true,id:"name" %>
+                    <label class="form-label" for="name"><%= t('client.inputs.name') %></label>
+                    <p id='text-name' class="hide"><%= t('errors.name') %></p>
+                </strong>
+            </div>
+            <div class="form-group col-4">
+                <strong class="error-msg" id="error-last_name">
+                    <%= f.text_field :last_name, class: 'form-input', required: true,id:"last_name" %>
+                    <label class="form-label" for="last_name"><%= t('client.inputs.last_name') %></label>
+                    <p id='text-last_name' class="hide"><%= t('errors.last_name') %></p>
+                </strong>
+            </div>
+            <div class="form-group col-4">
+                <strong class="error-msg" id="error-phone">
+                    <%= f.text_field :phone, class: 'form-input', required: true,id:"phone" %>
+                    <label class="form-label" for="phone"><%= t('client.inputs.phone') %></label>
+                    <p id='text-phone' class="hide"><%= t('errors.phone') %></p>
+                </strong>
+            </div>
+            <div class="form-group col-4">
+                <strong class="error-msg" id="error-email">
+                    <%= f.text_field :email, class: 'form-input', required: true,id:"email" %>
+                    <label class="form-label" for="email"><%= t('client.inputs.email') %></label>
+                    <p id='text-email' class="hide"><%= t('errors.email') %></p>
+                </strong>
+            </div>
+            <div class="form-group col-4">
+                <strong class="error-msg" id="error-age">
+                    <%= f.text_field :age, class: 'form-input', required: true,id:"age" %>
+                    <label class="form-label" for="age"><%= t('client.inputs.age') %></label>
+                    <p id='text-age' class="hide"><%= t('errors.age') %></p>
+                </strong>
+            </div>
+            <div class="form-group col-4">
+                <strong class="error-msg" id="error-birthday">
+                    <%= f.date_field :birthday, class: 'form-input', required: true,id:"birthday" %>
+                    <label class="form-label" for="birthday"><%= t('client.inputs.birthday') %></label>
+                    <p id='text-birthday' class="hide"><%= t('errors.birthday') %></p>
+                </strong>
+            </div>
+            <div class="button col-6 pt-4">
+                <button class="btn btn-login"><%= t('client.inputs.button') %></button>
+            </div>
+        <% end %>
+    </div>
+</div>

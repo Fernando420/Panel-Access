@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PanelAccess</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <% if @current_user %>
+      <div class="main-container mx-auto">
+        <div class="main-grid">
+      
+          <nav class="container-nav">
+              <%= render 'layouts/sidebar' %>
+          </nav>
+
+          <div class="container">
+            <%= render 'layouts/topbar' %>
+            <div id="notifications" class='mt-4'>
+              <%= render 'notifications/flash' %>
+            </div>
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+    <% else %>
+      <div class="container">
+        <div class="authentication">
+          <div id="notifications" class='mt-4'>
+            <%= render 'notifications/flash' %>
+          </div>
+          <%= yield %>
+        </div>
+      </div>
+    <% end %>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<div class="show-user">
+    <div class="row">
+        <div class="col-4">
+            <h1>User Name: <%= @user['username'] %></h1>
+        </div> 
+        <div class="col-4">
+            <h1>Email: <%= @user['email'] %></h1>
+        </div>
+        <div class="col-4">
+            <h1>Phone: <%= @user['phone'] %></h1>
+        </div>
+        <div class="col-4">
+            <h1>Role: <%= @user['role_id'] %></h1>
+        </div>
+        <div class="col-4">
+            <h1>Last Sign In Count: <%= @user['sign_in_count'].to_i %></h1>
+        </div>
+        <div class="col-4">
+            <h1>Last Sign In: <%= DateTime.parse(@user['last_sign_in_at']).strftime('%Y-%m-%d') %></h1>
+        </div>
+    </div>
+</div>

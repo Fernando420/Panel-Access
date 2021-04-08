@@ -1,0 +1,43 @@
+
+<div class="header">
+    <div class="header-left">
+        <a href="#"><%= t('login.privacy') %></a>
+    </div>
+    <div class="header-right">
+        
+    </div>
+</div>
+<div class="content">
+    <div class="title">
+        <div class="title-right">
+            <h1><%= t('login.title') %></h1>
+        </div>
+        <div class="title-left">
+            <img src="https://www.logaster.com.es/blog/wp-content/uploads/sites/4/2019/03/0031_p_hard-core-gym-logo_18.png" alt="">
+        </div>
+    </div>
+    <%= form_for :sessions, :url => { :action => "create"}, :html => {:class => "form"} do |f| %>
+        <div class="form-group">
+            <strong class="error-msg" id="error-username">
+                <%= f.text_field :username, class: 'form-input', required: true,id:"username" %>
+                <label class="form-label" for="username"><%= t('login.input.username') %></label>
+                <p id='text-username' class="hide"><%= t('errors.username') %></p>
+            </strong>
+        </div>
+        <div class="form-group">
+            <strong class="error-msg" id="error-password">
+                <%= f.password_field :password, class: 'form-input', required: true,id:"password" %>
+                <label class="form-label" for="password"><%= t('register.inputs.password') %></label>
+                <p id='text-password' class="hide"><%= t('errors.password') %></p>
+            </strong>
+        </div>
+        <div class="row">
+            <div class="forgot-password">
+                <a href="#"><%= t('login.forgot-password') %></a>
+            </div>
+            <div class="button">
+                <button class="btn btn-login"><%= t('login.button') %></button>
+            </div>
+        </div>
+    <% end %>
+</div>

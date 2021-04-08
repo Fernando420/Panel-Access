@@ -1,0 +1,39 @@
+<div class="row">
+    <div class="card">
+        <h1><%= t('client.subtitle') %></h1>
+        <%= form_for :payments, :url => { :action => "create"}, :html => {:class => "form row"} do |f| %>
+            <div class="form-group col-4">
+                <strong class="error-msg" id="error-member_id">
+                    <%= f.text_field :member_id, class: 'form-input', required: true,id:"member_id" %>
+                    <label class="form-label" for="member_id"><%= t('client.inputs.member_id') %></label>
+                    <p id='text-member_id' class="hide"><%= t('errors.member_id') %></p>
+                </strong>
+            </div>
+            <div class="form-group col-4">
+                <strong class="error-msg" id="error-amount">
+                    <%= f.text_field :amount, class: 'form-input', required: true,id:"amount" %>
+                    <label class="form-label" for="amount"><%= t('client.inputs.amount') %></label>
+                    <p id='text-amount' class="hide"><%= t('errors.amount') %></p>
+                </strong>
+            </div>
+            <div class="form-group col-4">
+                <strong class="error-msg" id="error-extra_charge">
+                    <%= f.text_field :extra_charge, class: 'form-input', required: true,id:"extra_charge" %>
+                    <label class="form-label" for="extra_charge"><%= t('client.inputs.extra_charge') %></label>
+                    <p id='text-extra_charge' class="hide"><%= t('errors.extra_charge') %></p>
+                </strong>
+            </div>
+            <div class="form-group col-12">
+                <strong class="error-msg" id="error-date_payment">
+                    <%= f.date_field :date_payment, class: 'form-input', required: true,id:"date_payment" %>
+                    <label class="form-label" for="date_payment"><%= t('client.inputs.date_payment') %></label>
+                    <p id='text-date_payment' class="hide"><%= t('errors.date_payment') %></p>
+                </strong>
+            </div>
+            
+            <div class="button col-6 pt-4">
+                <button class="btn btn-login"><%= t('client.inputs.button') %></button>
+            </div>
+        <% end %>
+    </div>
+</div>

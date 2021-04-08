@@ -1,0 +1,199 @@
+// Place all the styles related to the sessions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+// Place all the styles related to the sessions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600&display=swap');
+
+$monserrat: 'Montserrat', sans-serif;
+
+.authentication{
+    width: 670px;
+    padding-top: 80PX;
+    margin: 0 auto;
+}
+
+.header{
+    display: flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    .header-left{
+        width: 50%;
+        a{
+            color: #353535;
+            padding: 10px;
+        }
+    }
+    .header-right{
+        width: 50%;
+        text-align: right;
+        select{
+            width: 50px;
+            height: 22px;
+            font-family: $monserrat bold;
+            font-weight: 200;
+        }
+    }
+}
+
+.content{
+    border: 1px solid black;
+    padding: 35px;
+    .title{
+        display: flex;
+        div{
+            width: 50%;
+        }
+        .title-right{
+            h1{
+                width: 30%;
+                font-size: 40px;
+                font-family: $monserrat;
+                font-weight: bold;
+            }
+    
+            h2{
+                width: 50%;
+                font-size: 18px;
+                font-family: $monserrat;
+                font-weight: 100;
+                span{
+                    font-size: 18px;
+                    font-family: $monserrat;
+                    font-weight: bold;
+                }
+            }
+        }
+    
+        .title-left{
+            align-items: center;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+}
+
+.form{
+    .error-msg{
+        font-size: 9px;
+        font-family: $monserrat;
+        font-weight: 100;
+        p{
+            margin: 0;
+            color: red;
+        }
+    }
+    .border-red {
+        border-color: red !important;
+    }
+    .hide{
+        display: none;
+    }
+    
+    position: relative;
+    h1{
+        font-size: 16px;
+        font-family: $monserrat;
+        font-weight: 100;
+        color: #979797;
+        margin: 0;
+    }
+    .form-group{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        label{
+            position: absolute;
+            color: #979797;
+            font-family: $monserrat;
+            font-weight: 200;
+            transition: transform 150ms ease-out, font-size 150ms ease-out;
+            z-index: 10;
+            margin-top: 15px;
+            margin-top: -38px;
+        }
+        input{
+            border: 1px solid #979797;
+            height: 50px;
+            width: 100%;
+            display: block;
+        }
+    }
+
+    .form-group-select{
+        label{
+            position: absolute;
+            color: #979797;
+            font-family: $monserrat;
+            font-weight: 200;
+            transition: transform 150ms ease-out, font-size 150ms ease-out;
+            z-index: 10;
+            margin-top: 15px;
+            margin-top: -38px;
+        }
+        input{
+            border: 1px solid #979797;
+            height: 50px;
+            width: 100%;
+            display: block;
+        }
+        .form-select{
+            width: 100%;
+            height: 100%;
+            display: block;
+            color: #979797;
+            font-family:  $monserrat;
+            font-weight: 200;
+            padding-top: 15px;
+            padding-bottom: 10px;
+        }
+    }
+}
+
+.form-group .form-select:valid + .form-label {
+    font-size: 10px; 
+    margin-top: -50px;
+    margin-left: 5px;
+}
+
+.form-group .form-select:focus + .form-label {
+    font-size: 10px; 
+    margin-top: -50px;
+    margin-left: 5px;
+}
+
+.form-group .form-input:focus + .form-label {
+    font-size: 10px; 
+    margin-top: -50px;
+    margin-left: 5px;
+}
+
+.form-group .form-input:valid + .form-label {
+    font-size: 10px; 
+    margin-top: -50px;
+    margin-left: 5px;
+}
+
+.form-group .form-input:invalid + .form-label {
+    padding-left: 10px;
+    font-size: 15px; 
+}
+
+.forgot-password{
+    width: 50%;
+    a{
+        color: #000000;
+    }
+}
+
+.button{
+    text-align: right;
+    width: 50%;
+}

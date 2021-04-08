@@ -1,0 +1,72 @@
+/*---------------------------------------------------*\
+        $COLORS
+\*---------------------------------------------------*/
+
+/**
+* General colors
+*/
+
+$color-white: #FFFFFF;
+
+$color-gray: #E0E2EF;
+$color-higth-dark-purple: #62657C;
+$color-ligth-purple: #A0A3C1;
+$color-purple:#5867DB;
+$color-medium-purpl: #4A56B4;
+$color-dark-purple: #37458B;
+$color-dark-purple2: #707498;
+$color-dark-purple3: #707070;
+$color-dark-purple4: #4553C4;
+$color-purple2: #4F5ED5;
+$color-blue:#C3C8EC;
+$color-red: red;
+$color-ligth-gray: #EDF1F7;
+$color-ligth-gray-50: rgba(237,241,247,0.5);
+$color-ligth-gray-75: rgba(237,241,247,0.5);
+$color-ligth-gray2: #F4F6F9;
+$color-ligth-gray3: rgb(214,218,223);
+$color-ligth-gray4: #F4F6F9;
+$color-ligth-gray5: #DCE2F2;
+$color-ligth-gray6: #979797;
+$color-ligth-gray7: #F0F1F7;
+$color-ligth-gray-l1: rgba(214,218,223,0.4);
+$color-ligth-gray-l2: rgba(214,218,223,1);
+$color-yellow1: #EBA64B;
+$color-yellow2: #FFB81B;
+
+
+$test-marker-div-color: black;
+
+
+/**
+* Home colors
+*/
+$background-page: $color-ligth-gray;
+$font-color-title: $color-higth-dark-purple;
+$font-color-small-title: $color-purple;
+$font-color-nav-text: $color-ligth-purple;
+$background-menubar: $color-ligth-gray;
+$background-content: $color-gray;
+
+/**
+* Loggin colors
+*/
+
+$btn-loggin: $color-purple2;
+$loggin-principal-panel: $color-white;
+$under-line: $color-purple;
+$font-loggin-title: $color-purple;
+$border-text-color: $color-ligth-purple;
+/**
+* Constants
+*/
+$column-separator:20px;
+$loggin-container-size: 620px;
+$border-combo: $color-gray;
+$font-combo: $color-ligth-purple;
+
+/**
+* Fonts
+*/
+$general-font: 'Montserrat', sans-serif;
+$font-size: 10px;

@@ -1,0 +1,70 @@
+<div class="row">
+    <div class="card">
+        <h1><%= t('client.access.subtitle') %></h1>
+        <%= form_for :clients, :url => { :action => "access"}, :html => {:class => "form row"} do |f| %>
+            <div class="form-group col-12">
+                <h5><%= t('client.access.text_content') %></h5>
+                <strong class="error-msg" id="error-member_id">
+                    <%= f.text_field :member_id, class: 'form-input', required: true,id:"member_id" %>
+                    <label class="form-label" for="name"><%= t('client.inputs.qr') %></label>
+                    <p id='text-member_id' class="hide"><%= t('errors.member_id') %></p>
+                </strong>
+            </div>
+            <div class="button col-12 pt-4">
+                <button class="btn btn-login"><%= t('client.access.button') %></button>
+            </div>
+        <% end %>
+    </div>
+
+    <% if @access %>
+        <div class="card">
+            <div class="access row">
+                <div class="col-6 pt-2 mb-2">
+                    <h5><%= t('client.access.name') %>:</h5>
+                    <h5><%= @access['client']['name'] %></h5>
+                </div>
+                <div class="col-6 pt-2 mb-2">
+                    <h5><%= t('client.access.status.name') %>:</h5>
+                    <h5><%= t("client.access.status.#{@access['client']['status']}") %></h5>
+                </div>
+                <div class="col-6 pt-2 mb-2">
+                    <h5><%= t('client.access.last_date_payment') %>:</h5>
+                    <h5><%= @access['last_date_payment'] ||= t("client.access.without_payment") %></h5>
+                </div>
+                <div class="col-6 pt-2 mb-2">
+                    <h5><%= t('client.access.days_restant') %>:</h5>
+                    <h5><%= @access['days_restant'] %></h5>
+                </div>
+                <div class="col-6 pt-2 mb-4">
+                    <h5><%= t('client.access.date_activation') %>:</h5>
+                    <h5><%= DateTime.parse(@access['client']['created_at']).strftime('%Y-%m-%d') %></h5>
+                </div>
+                
+                <div align='left' class="col-12">
+                    <h5><%= t('client.access.last_access') %>:</h5>
+                    <table class="table">
+                        <thead>
+                            <th>Date</th>
+                            <th>User</th>
+                            <th>Hour</th>
+                        </thead>
+                        <tbody>
+                            <%  @access['last_access'].each do |last_access| %>
+                                <tr>
+                                    <td><%= last_access['client_id'] %></td>
+                                    <td><%= last_access['user_id'] %></td>
+                                    <td><%= last_access['created_at'] %></td>
+                                </tr>
+                            <% end %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-12 pt-4">
+                <% if @access['client']['status'] == 'actived' %>
+                    <button class="btn btn-login"><%= t('client.access.button_2') %></button>
+                <% end %>
+            </div>
+        </div>
+    <% end %>
+</div>

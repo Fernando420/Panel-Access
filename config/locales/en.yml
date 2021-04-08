@@ -1,0 +1,90 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   'true': 'foo'
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+en:
+  sidebar:
+    menu_1: 'Home'
+    menu_2: 'Clients'
+    submenu_1: 'Register'
+    submenu_2: 'Lists'
+    menu_3: 'Payments'
+    submenu_1: 'Create'
+    submenu_2: 'Lists'
+    menu_4: 'Users'
+    submenu_1: 'Create'
+    submenu_2: 'Lists'
+    menu_5: "Access"
+  client:
+    access:
+      subtitle: "Valid Access"
+      text_content: "Scan the member id of the customer's QR code"
+      button: "Valid?"
+      name: "Name Client"
+      button_2: "Access"
+      without_payment: "Without Payment"
+      status:
+        name: "Status"
+        user_new: "User new"
+        actived: "User Actived"
+        inactived: "User Inactived"
+      last_date_payment: "Last Date Payment"
+      days_restant: "Days Restant"
+      date_activation: "Date Activation"
+      last_access: "Last_Access"
+    not_found: "Client not found"
+    subtitle: 'Information Personal'
+    save:
+      error: 'Error create client'
+      success: 'Create client successfully'
+    inputs:
+      name: 'Name'
+      last_name: 'Last Name'
+      email: 'email'
+      phone: 'Phone'
+      button: 'Save'
+  users:
+    subtitle: 'Information Personal'
+  login:
+    privacy: 'Privacy policy and legal terms'
+    faq: 'FAQ`s'
+    title: 'Access Gym'
+    inputs:
+      username: 'UserName'
+      password: 'Password'
+    forgot-password: 'Forgot Password?'
+    button: 'Continue'
+  errors:
+    username: 'Enter a valid username'
+    password: 'Minimum six characters, at least one uppercase letter, one lowercase letter, one number and one special character'
+    email: 'Enter a valid email'
+    phone: 'Enter a valid phone, phone must have only numbers'
+    age: 'Enter a valid age, age must have only numbers'
+    confirmPassword: "The password and password of confirmation must be equal"

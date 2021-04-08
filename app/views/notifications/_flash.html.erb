@@ -1,0 +1,30 @@
+<% if flash[:alert] %>
+    <div class="alert alert-success alert-position">
+        <strong><%= flash[:alert].delete('.') %> !</strong>
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    </div>
+<% end %>
+<% if flash[:danger] %>
+    <div class="alert alert-danger  alert-position">
+        <strong><%= flash[:danger].delete('.') %> !</strong>
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    </div>
+<% end %>
+<% if flash[:notice] %>
+    <div class="alert alert-success  alert-position">
+        <strong><%= flash[:notice].delete('.') %> !</strong>
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    </div>
+<% end %>
+<% if flash[:successfully] %>
+    <div class="alert alert-success  alert-position">
+        <strong><%= flash[:successfully].delete('.') %> !</strong>
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    </div>
+<% end %>
+<% if flash[:warning] %>
+    <div class="alert alert-warning  alert-position">
+        <strong><%= flash[:warning].delete('.') %> !</strong>
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    </div>
+<% end %>

@@ -1,0 +1,62 @@
+
+
+es:
+  sidebar:
+    menu_1: 'Inicio'
+    menu_2: 'Clientes'
+    submenu_1: 'Registrar'
+    submenu_2: 'Listar'
+    menu_3: 'Pagos'
+    submenu_1: 'Crear'
+    submenu_2: 'Listar'
+    menu_4: 'Usuarios'
+    submenu_1: 'Crear'
+    submenu_2: 'Listar'
+    menu_5: 'Acceso'
+  client:
+    access:
+      subtitle: "Validando Acceso"
+      text_content: "Escanee el código QR del cliente"
+      button: "Validar?"
+      name: "Nombre del cliente"
+      without_payment: "Sin Pago"
+      button_2: "Dar Acceso"
+      status: 
+        name: "Estatus de membresia"
+        user_new: "Usuario Nuevo"
+        actived: "Usuario Activado"
+        inactived: "Usuario Inactivo"
+      last_date_payment: "Ultimo dia de pago"
+      last_date_payment: "Ultimo Pago"
+      days_restant: "Dias Restantes"
+      date_activation: "Fecha de activacion"
+      last_access: "Ultimos Accesos"
+    not_found: 'Cliente no encontrado'
+    subtitle: 'Information Personal'
+    inputs:
+      name: 'Name'
+      last_name: 'Last Name'
+      email: 'email'
+      phone: 'Phone'
+      button: 'Guardar'
+    save:
+      error: 'Error al crear el cliente'
+      success: 'Cliente creado correctamente'
+  users: 
+    subtitle: 'Information Personal'
+  login:
+    privacy: 'Política de privacidad y términos legales'
+    faq: 'FAQ`s'
+    title: 'Accesso Gimnasio'
+    inputs:
+      username: 'UserName'
+      password: 'Contraseña'
+    forgot-password: 'Olvide contraseña?'
+    button: 'Continuar'
+  errors:
+    username: 'Ingrese un username valido'
+    password: 'Mínimo seis caracteres, al menos una letra mayúscula, una letra minúscula, un número y un carácter especial'
+    email: 'Ingrese un email valido'
+    phone: 'Ingrese una telefono valida, la telefono debe de contener solo numeros'
+    age: 'Ingrese una edad valida, la edad debe de contener solo numeros'
+    confirmPassword: "La contraseña y la contraseña de confirmación deben ser iguales"
