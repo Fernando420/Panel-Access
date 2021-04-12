@@ -1,22 +1,55 @@
 <div class="show-user">
     <div class="row">
-        <div class="col-4">
-            <h1>User Name: <%= @user['username'] %></h1>
+        <div class="col-6 row">
+            <div align='right' class="col">
+                <h1>User Name:</h1> 
+            </div>
+            <div align='left' class="col">
+                <h5><%= @user['username'] %></h5>
+            </div>
         </div> 
-        <div class="col-4">
-            <h1>Email: <%= @user['email'] %></h1>
+        <div class="col-6 row">
+            <div align='right' class="col">
+                <h1>Email:</h1> 
+            </div>
+            <div align='left' class="col">
+                <h5><%= @user['email'] %></h5>
+            </div>
         </div>
-        <div class="col-4">
-            <h1>Phone: <%= @user['phone'] %></h1>
+        <div class="col-6 row">
+            <div align='right' class="col">
+                <h1>Phone:</h1> 
+            </div>
+            <div align='left' class="col">
+                <h5><%= @user['phone'] %></h5>
+            </div>
         </div>
-        <div class="col-4">
-            <h1>Role: <%= @user['role_id'] %></h1>
+        <div class="col-6 row">
+            <div align='right' class="col">
+                <h1>Role:</h1> 
+            </div>
+            <div align='left' class="col">
+                <h5><%= @user['role']['name'] %></h5>
+            </div>
         </div>
-        <div class="col-4">
-            <h1>Last Sign In Count: <%= @user['sign_in_count'].to_i %></h1>
+        <div class="col-6 row">
+            <div align='right' class="col">
+                <h1>Last Sign In Count:</h1> 
+            </div>
+            <div align='left' class="col">
+                <h5><%= @user['sign_in_count'].to_i %></h5>
+            </div>
         </div>
-        <div class="col-4">
-            <h1>Last Sign In: <%= DateTime.parse(@user['last_sign_in_at']).strftime('%Y-%m-%d') %></h1>
+        <div class="col-6 row">
+            <div align='right' class="col">
+                <h1>Last Sign In:</h1> 
+            </div>
+            <div align='left' class="col">
+                <h5><%= DateTime.parse(@user['last_sign_in_at']).strftime('%Y-%m-%d %H:%M') %></h5>
+            </div>
+        </div>
+        <div class="links col-6 pt-4">
+            <a href="/users" class="btn btn-link"><%= t('sales.inputs.back') %></a>
         </div>
     </div>
 </div>

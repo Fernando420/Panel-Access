@@ -6,6 +6,8 @@
             <th>Member Id</th>
             <th>Email</th>
             <th>Created</th>
+            <th>Edit</th>
+            <th>Show</th>
         </thead>
         <tbody>
             <% @clients.each do |client| %>
@@ -15,6 +17,8 @@
                     <td><%= client['member_id'] %></td>
                     <td><%= client['email'] %></td>
                     <td><%= DateTime.parse(client['created_at']).strftime("%Y-%m-%d") %></td>
+                    <td><a href="/clients/<%= client['id'] %>/edit">Edit</a></td>
+                    <td><a href="/clients/<%= client['id'] %>">Show</a></td>
                 </tr>
             <%end%>
         </tbody>

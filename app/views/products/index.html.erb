@@ -6,8 +6,8 @@
             <th>Description</th>
             <th>Sell</th>
             <th>BarCode</th>
-            <th>Edit</th>
             <th>Show</th>
+            <th>Edit</th>
             <th>Delete</th>
         </thead>
         <tbody>
@@ -18,11 +18,12 @@
                     <td><%= product['description'] %></td>
                     <td><%= product['sell'] %></td>
                     <td><%= product['bar_code'] %></td>
-                    <td><a class="link" href="/products/<%= product['id'] %>/edit">Editar</a></td>
                     <td><a class="link" href="/products/<%= product['id'] %>">Show</a></td>
                     <% if !product['sell'] %>
+                        <td><a class="link" href="/products/<%= product['id'] %>/edit">Editar</a></td>
                         <td><%= link_to 'Eliminar',"/products/#{product['id']}", method: "delete", data: { confirm: "Are you sure?", disable_with: "Processing..." } %></td>
                     <%else%>
+                        <td></td>
                         <td></td>
                     <%end%>
                 </tr>

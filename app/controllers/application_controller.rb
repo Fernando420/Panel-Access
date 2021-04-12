@@ -11,6 +11,7 @@ class ApplicationController < ActionController::Base
     def valid_session
         @current_user = Redis.current.get("login")
         @current_user = JSON.parse(@current_user)  if @current_user
+        return redirect_to login_sessions_path() if !@current_user
     end
 
     def languajes

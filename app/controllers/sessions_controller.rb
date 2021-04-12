@@ -2,6 +2,8 @@ class SessionsController < ApplicationController
 
     before_action :languajes
 
+    skip_before_action :valid_session, except: [:logout]
+
     def new
         
     end

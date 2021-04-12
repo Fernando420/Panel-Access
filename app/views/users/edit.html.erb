@@ -30,8 +30,13 @@
                     <label class="form-label" for="role"><%= t('register.inputs.role') %></label>
                 </div>
             </div>
-            <div class="button col-10 pt-4">
-                <button class="btn btn-login"><%= t('client.inputs.button') %></button>
+            <div class="row col-12">
+                <div class="links col-6 pt-4">
+                    <a href="/users" class="btn btn-link"><%= t('users.inputs.back') %></a>
+                </div>
+                <div class="button col-6 pt-4">
+                    <button class="btn btn-login"><%= t('users.inputs.button') %></button>
+                </div>
             </div>
         <% end %>
     </div>

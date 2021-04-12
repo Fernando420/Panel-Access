@@ -1,22 +1,28 @@
 <div class="show-user">
     <div class="row">
-        <div class="col-4">
+        <div class="col-4 p-4">
             <h1><%= t('type.products.inputs.name') %>: <%= @product['name'] %></h1>
         </div> 
-        <div class="col-4">
+        <div class="col-4 p-4">
             <h1><%= t('type.products.inputs.description') %>: <%= @product['description'] %></h1>
         </div>
-        <div class="col-4">
+        <div class="col-4 p-4">
             <h1><%= t('type.products.inputs.price') %>: <%= @product['price'] %></h1>
         </div>
-        <div class="col-4">
-            <h1><%= t('type.products.inputs.stock') %>: <%= @product['stock'] %></h1>
+        <div class="col-4 p-4">
+            <h1><%= t('type.products.inputs.sell') %>: <%= getSelled?(@product['sell']) %></h1>
         </div>
-        <div class="col-4">
-            <h1><%= t('type.products.inputs.status') %>: <%= @product['status'] %></h1>
+        <div class="col-4 p-4">
+            <h1><%= t('type.products.inputs.sell_date') %>: <%= DateTime.parse(@product['sell_date']).strftime('%Y-%m-%d %H:%M') %></h1>
         </div>
-        <div class="col-4">
+        <div class="col-4 p-4">
+            <h1><%= t('type.products.inputs.status') %>: <%= getStatus(@product['status']) %></h1>
+        </div>
+        <div class="col-4 p-4">
             <h1><%= t('type.products.inputs.type_product') %>: <%= @product['type_product']['name'] %></h1>
+        </div>
+        <div class="links col-6 pt-4">
+            <a href="/products" class="btn btn-link"><%= t('sales.inputs.back') %></a>
         </div>
     </div>
 </div>

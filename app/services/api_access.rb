@@ -27,6 +27,11 @@ class ApiAccess
         JSON.parse(response.body)
     end
     
+    def self.update_client(args)
+        response = HTTParty.put("#{base_url}/api/v1/clients/#{args[:id]}",body: args[:data].to_json ,:headers => headers(args[:token]), :debug_output => $stdout)
+        JSON.parse(response.body)
+    end
+    
     def self.info_gral(token)
         response = HTTParty.get("#{base_url}/api/v1/clients/info/gral" ,:headers => headers(token), :debug_output => $stdout)
         JSON.parse(response.body)
@@ -97,7 +102,6 @@ class ApiAccess
         response = HTTParty.delete("#{base_url}/api/v1/type_products/#{args[:id]}" ,:headers => headers(args[:token]), :debug_output => $stdout)
         JSON.parse(response.body)
     end
-
 
     def self.get_products(token)
         response = HTTParty.get("#{base_url}/api/v1/products" ,:headers => headers(token), :debug_output => $stdout)

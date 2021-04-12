@@ -5,19 +5,24 @@
             <div class="form-group col-6">
                 <strong class="error-msg" id="error-name">
                     <%= f.text_field :name, class: 'form-input', required: true,id:"name" %>
-                    <label class="form-label" for="name"><%= t('type_product.inputs.name') %></label>
+                    <label class="form-label" for="name"><%= t('type_products.inputs.name') %></label>
                     <p id='text-name' class="hide"><%= t('errors.name') %></p>
                 </strong>
             </div>
             <div class="form-group col-6">
                 <strong class="error-msg" id="error-description">
                     <%= f.text_field :description, class: 'form-input', required: true,id:"description" %>
-                    <label class="form-label" for="description"><%= t('type_product.inputs.description') %></label>
+                    <label class="form-label" for="description"><%= t('type_products.inputs.description') %></label>
                     <p id='text-description' class="hide"><%= t('errors.description') %></p>
                 </strong>
             </div>
-            <div class="button col-10 pt-4">
-                <button class="btn btn-login"><%= t('client.inputs.button') %></button>
+            <div class="row col-12">
+                <div class="links col-6 pt-4">
+                    <a href="/type_products" class="btn btn-link"><%= t('type_products.inputs.back') %></a>
+                </div>
+                <div class="button col-6 pt-4">
+                    <button class="btn btn-login"><%= t('type_products.inputs.button') %></button>
+                </div>
             </div>
         <% end %>
     </div>

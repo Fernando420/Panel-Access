@@ -10,8 +10,41 @@ class ClientsController < ApplicationController
         @title = 'New Client'
     end
 
+    def show
+        @title = 'Show Client'
+        client = ApiAccess::get_client({id: params[:id], token: @current_user['token']})
+        if !client['data'].nil?
+            @client = client['data']
+        else
+            flash[:alert] = t('client.search')
+            redirect_to controller: 'clients', action: "index"
+        end
+    end
+
+    def edit
+        @title = 'Edit Client'
+        client = ApiAccess::get_client({id: params[:id], token: @current_user['token']})
+        if !client['data'].nil?
+            @client = client['data']
+        else
+            flash[:alert] = t('client.search')
+            redirect_to controller: 'clients', action: "index"
+        end
+    end
+
     def create
         response = ApiAccess::create_client({data: params[:clients], token: @current_user['token']})
+        if response['status']
+            flash[:alert] = t('client.save.success')
+            redirect_to controller: 'clients', action: "index"
+        else
+            flash[:warning] = t('client.save.error')
+            redirect_to controller: 'clients', action: "new"
+        end
+    end
+
+    def update
+        response = ApiAccess::update_client({id: params[:id], data: params[:clients], token: @current_user['token']})
         if response['status']
             flash[:alert] = t('client.save.success')
             redirect_to controller: 'clients', action: "index"
