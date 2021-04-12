@@ -9,7 +9,7 @@
         <tbody>
             <% @sales.each do |sale| %>
                 <tr>
-                    <td><%= sale['user_id'] %></td>
+                    <td><%= sale['user']['username'] %></td>
                     <td><%= sale['email_buyer'] %></td>
                     <td><%= sale['total'] %></td>
                     <td><a class="link" href="/sales/<%= sale['id'] %>">Show</a></td>

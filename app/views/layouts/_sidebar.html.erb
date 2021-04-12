@@ -44,11 +44,13 @@
                                     <%= image_tag 'sidebar/dots.png', class: 'sidebar-button-bullet' %><strong><%= t('sidebar.menu_3.submenu_1') %></strong>
                                 </a>
                             </li>
-                            <li>
-                                <a id="list" class="sidebar-button link-home" href="/payments">
-                                    <%= image_tag 'sidebar/dots.png', class: 'sidebar-button-bullet' %><strong><%= t('sidebar.menu_3.submenu_2') %></strong>
-                                </a>
-                            </li>
+                            <% if @current_user['user']['role_id'].to_i == 1 %>
+                                <li>
+                                    <a id="list" class="sidebar-button link-home" href="/payments">
+                                        <%= image_tag 'sidebar/dots.png', class: 'sidebar-button-bullet' %><strong><%= t('sidebar.menu_3.submenu_2') %></strong>
+                                    </a>
+                                </li>
+                            <% end %>
                         </ul>
                     </li>
 
@@ -117,26 +119,26 @@
                                 </li>
                             </ul>
                         </li>
-
-                        <li style="margin-top:10px;">
-                            <a href="#Sales" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle sidebar-button link-home">
-                                <%= image_tag 'sidebar/dollar.png', class: 'sidebar-button-img' %> <strong><%= t('sidebar.menu_8.title') %></strong>
-                            </a>
-                            <ul class="collapse list-unstyled" id="Sales">
-                                <li>
-                                    <a id="register" class="sidebar-button link-home" href="/sales/new">
-                                        <%= image_tag 'sidebar/dots.png', class: 'sidebar-button-bullet' %><strong><%= t('sidebar.menu_8.submenu_1') %></strong>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a id="list" class="sidebar-button link-home" href="/sales">
-                                        <%= image_tag 'sidebar/dots.png', class: 'sidebar-button-bullet' %><strong><%= t('sidebar.menu_8.submenu_2') %></strong>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
                         
                     <% end %>
+
+                    <li style="margin-top:10px;">
+                        <a href="#Sales" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle sidebar-button link-home">
+                            <%= image_tag 'sidebar/dollar.png', class: 'sidebar-button-img' %> <strong><%= t('sidebar.menu_8.title') %></strong>
+                        </a>
+                        <ul class="collapse list-unstyled" id="Sales">
+                            <li>
+                                <a id="register" class="sidebar-button link-home" href="/sales/new">
+                                    <%= image_tag 'sidebar/dots.png', class: 'sidebar-button-bullet' %><strong><%= t('sidebar.menu_8.submenu_1') %></strong>
+                                </a>
+                            </li>
+                            <li>
+                                <a id="list" class="sidebar-button link-home" href="/sales">
+                                    <%= image_tag 'sidebar/dots.png', class: 'sidebar-button-bullet' %><strong><%= t('sidebar.menu_8.submenu_2') %></strong>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
 
                     <li class="only" style="margin-top:400px;">
 

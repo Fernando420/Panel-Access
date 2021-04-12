@@ -12,30 +12,36 @@ $(document).on('turbolinks:load', function() {
         sale = localStorage.getItem('sale')
         sale = JSON.parse(sale)
         sale.member_id = $('#member_id').val()
-        sale.items = JSON.stringify(sale.items)
-        console.log(sale);
-        $.ajax({
-            url: url,
-            dataType: "json",
-            method: 'POST',
-            headers: {'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')},
-            data: {sale},
-            success: function (response) {
-                console.log(response);
-                if(parseInt(response.code) == 200) {
-                    $("#modalSuccess #message").text("Sale create successfully");
-                    $("#modalSuccess").modal('show');
-                    localStorage.setItem('sale',JSON.stringify({"amount_total": 0, items: []}))
-                    $("#modalConfirmSale").modal('hide');
-                }else{
-                    $("#modalError #body-title").text("Sale Error");
-                    $("#modalError #message").text(response.message);
-                    $("#modalError").modal('show');
-                    $("#modalConfirmSale").modal('hide');
+        if(sale.items.length != 0) {
+            sale.items = JSON.stringify(sale.items)
+            $.ajax({
+                url: url,
+                dataType: "json",
+                method: 'POST',
+                headers: {'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')},
+                data: {sale},
+                success: function (response) {
+                    console.log(response);
+                    if(parseInt(response.code) == 200) {
+                        $("#modalSuccess #message").text("Sale create successfully");
+                        $("#modalSuccess").modal('show');
+                        localStorage.setItem('sale',JSON.stringify({"amount_total": 0, items: []}))
+                        $("#modalConfirmSale").modal('hide');
+                    }else{
+                        $("#modalError #body-title").text("Sale Error");
+                        $("#modalError #message").text(response.message);
+                        $("#modalError").modal('show');
+                        $("#modalConfirmSale").modal('hide');
+                    }
+                    window.location.reload
                 }
-                window.location.reload
-            }
-        });
+            });
+        }else{
+            $("#modalError #body-title").text("Sale Error");
+            $("#modalError #message").text("Ingrese articulos para cobrar");
+            $("#modalError").modal('show');
+            $("#modalConfirmSale").modal('hide');
+        }
     });
     
     $("#send-sale").on("click", function(){
