@@ -1,0 +1,24 @@
+<div class="modal fade" id="modalConfirmSale" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="customize-modal">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h1 class="body"><%= t('modals.confirm_sale.amount_total') %></h1>
+                    <h1 id="amount_total" class="body-subtitle"></h1>
+                    <h1 class="body"><%= t('modals.confirm_sale.total_items') %></h1>
+                    <h1 id="total_products" class="body-subtitle"></h1>
+                    <h1 class="body"><%= t('modals.confirm_sale.member_id') %></h1>
+                    <h1 id="member_id_modal" class="body-subtitle"></h1>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-login" id='send_sale_modal'><%= t('modals.confirm_sale.send_sale') %></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

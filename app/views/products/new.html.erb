@@ -1,0 +1,50 @@
+<div class="row">
+    <div class="card">
+        <h1><%= t('users.subtitle') %></h1>
+        <%= form_for :product, :url => { :action => "create"}, method: 'POST', :html => {:class => "form row"} do |f| %>
+            <div class="form-group col-4">
+                <strong class="error-msg" id="error-name">
+                    <%= f.text_field :name, class: 'form-input', required: true,id:"name" %>
+                    <label class="form-label" for="name"><%= t('product.inputs.name') %></label>
+                    <p id='text-name' class="hide"><%= t('errors.name') %></p>
+                </strong>
+            </div>
+            <div class="form-group col-4">
+                <strong class="error-msg" id="error-description">
+                    <%= f.text_field :description, class: 'form-input', required: true,id:"description" %>
+                    <label class="form-label" for="description"><%= t('product.inputs.description') %></label>
+                    <p id='text-description' class="hide"><%= t('errors.description') %></p>
+                </strong>
+            </div>
+            <div class="form-group col-4">
+                <strong class="error-msg" id="error-price">
+                    <%= f.number_field :price, class: 'form-input', required: true,id:"price" %>
+                    <label class="form-label" for="price"><%= t('product.inputs.price') %></label>
+                    <p id='text-price' class="hide"><%= t('errors.price') %></p>
+                </strong>
+            </div>
+            <div class="form-group col-4">
+                <strong class="error-msg" id="error-bar_code">
+                    <%= f.text_field :bar_code, class: 'form-input', required: true,id:"bar_code" %>
+                    <label class="form-label" for="bar_code"><%= t('product.inputs.bar_code') %></label>
+                    <p id='text-bar_code' class="hide"><%= t('errors.bar_code') %></p>
+                </strong>
+            </div>
+            <div class="form-group-select col-4">
+                <div class="form-group">
+                    <%= f.select :status, options_for_select(@statuses),{ include_blank: "" },{class: 'form-select', required: true} %>
+                    <label class="form-label" for="role"><%= t('product.inputs.status') %></label>
+                </div>
+            </div>
+            <div class="form-group-select col-4">
+                <div class="form-group">
+                    <%= f.select :type_product_id, options_for_select(@type_products.map {|type_product| [type_product['name'], type_product['id']]}),{ include_blank: "" },{class: 'form-select', required: true} %>
+                    <label class="form-label" for="role"><%= t('product.inputs.type_product') %></label>
+                </div>
+            </div>
+            <div class="button col-10 pt-4">
+                <button class="btn btn-login"><%= t('client.inputs.button') %></button>
+            </div>
+        <% end %>
+    </div>
+</div>

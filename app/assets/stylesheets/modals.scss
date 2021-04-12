@@ -1,0 +1,66 @@
+
+.modal-content{
+    width: 448px;
+    height: 415;
+}
+
+.modal-body .body-subtitle{
+    font-size: 14px;
+    font-family: $monserrat;
+    font-weight: 100;
+    color: #797979;
+}
+
+.modal-body .body{
+    font-size: 14px;
+    font-family: $monserrat;
+    font-weight: 500;
+    color: #464646;
+}
+
+.modal-body .body-title{
+    font-size: 24px;
+    font-family: $monserrat;
+    font-weight: 500;
+    color: #464646;
+}
+
+.modal-header {
+    display: block;
+    border-bottom: 0px;
+    .close{
+        background-color: #4F4F4F;
+        color: white;
+        width: 20px;
+        height: 20px;
+        margin: 0 auto;
+        font-size: 10px;
+        padding: 0;
+    }
+}
+
+.modal-footer {
+    display: grid;
+    border-top: 0px;
+
+    span{
+        font-size: 10px;
+        font-weight: 100;
+        font-family: $monserrat;
+        margin-bottom: 10px;
+    }
+
+    a{
+        text-decoration: underline;
+        font-size: 14px;
+        font-family: $monserrat;
+        font-weight: 400;
+        color: black;
+    }
+
+
+}
+
+.customize-modal{
+    padding: 15px 44px;
+}

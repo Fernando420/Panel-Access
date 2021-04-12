@@ -1,14 +1,31 @@
 <div class="row">
     <div class="card">
         <div class="row">
-            <div class="col-4">
-                <h1><%= t('home.clients') %>: <%= @data['clients'] %></h1>
+            <div class="col-3">
+                <h1 class="text-title"><%= t('home.clients') %>: <%= @data['clients'] %></h1>
             </div>
-            <div class="col-4">
-                <h1><%= t('home.users') %>: <%= @data['users'] %></h1>
+            <div class="col-3">
+                <h1 class="text-title"><%= t('home.users') %>: <%= @data['users'] %></h1>
             </div>
-            <div class="col-4">
-                <h1><%= t('home.payments') %>: <%= @data['payments'] %></h1>
+            <div class="col-3">
+                <h1 class="text-title"><%= t('home.payments') %>: <%= @data['payments'] %></h1>
+            </div>
+            <div class="col-3 pb-5">
+                <h1 class="text-title"><%= t('home.access') %>: <%= @data['access_total'] %></h1>
+            </div>
+
+            <div class="container" align='center'>
+                <div class="row">
+                    <div class="col-4">
+                        <h1 class="text-data"><%= t('home.clients_in_this_month') %>: <span class="text-resp"><%= @data['clients_month'] %></span></h1>
+                    </div>
+                    <div class="col-4">
+                        <h1 class="text-data"><%= t('home.payments_in_this_month') %>: <span class="text-resp"><%= @data['payments_month'] %></span></h1>
+                    </div>
+                    <div class="col-4">
+                        <h1 class="text-data"><%= t('home.access_today') %>: <span class="text-resp"><%= @data['access_today'] %></span></h1>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

@@ -1,0 +1,20 @@
+<div class="row">
+    <table class="table table-striped">
+        <thead>
+            <th>User</th>
+            <th>Email</th>
+            <th>Total</th>
+            <th>Show</th>
+        </thead>
+        <tbody>
+            <% @sales.each do |sale| %>
+                <tr>
+                    <td><%= sale['user_id'] %></td>
+                    <td><%= sale['email_buyer'] %></td>
+                    <td><%= sale['total'] %></td>
+                    <td><a class="link" href="/sales/<%= sale['id'] %>">Show</a></td>
+                </tr>
+            <%end%>
+        </tbody>
+    </table>
+</div>

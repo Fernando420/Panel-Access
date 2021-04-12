@@ -31,17 +31,36 @@
 
 en:
   sidebar:
-    menu_1: 'Home'
-    menu_2: 'Clients'
-    submenu_1: 'Register'
-    submenu_2: 'Lists'
-    menu_3: 'Payments'
-    submenu_1: 'Create'
-    submenu_2: 'Lists'
-    menu_4: 'Users'
-    submenu_1: 'Create'
-    submenu_2: 'Lists'
-    menu_5: "Access"
+    menu_1: 
+      title: 'Home'
+    menu_2: 
+      title: 'Clients'
+      submenu_1: 'Register'
+      submenu_2: 'Lists'
+    menu_3: 
+      title: 'Payments'
+      submenu_1: 'Create'
+      submenu_2: 'Lists'
+    menu_4: 
+      title: 'Users'
+      submenu_1: 'Create'
+      submenu_2: 'Lists'
+    menu_5: 
+      title: "Access"
+      submenu_1: 'Create'
+      submenu_2: 'Lists'
+    menu_6: 
+      title: "Type Prodcut"
+      submenu_1: 'Create'
+      submenu_2: 'Lists'
+    menu_7: 
+      title: "Product"
+      submenu_1: 'Registrar'
+      submenu_2: 'Listar'
+    menu_8: 
+      title: "Sales"
+      submenu_1: 'Create'
+      submenu_2: 'Lists'
   client:
     access:
       subtitle: "Valid Access"
@@ -81,6 +100,11 @@ en:
       password: 'Password'
     forgot-password: 'Forgot Password?'
     button: 'Continue'
+  modals:
+    access:
+      title: "Access"
+    error:
+      title: "Error Gral"
   errors:
     username: 'Enter a valid username'
     password: 'Minimum six characters, at least one uppercase letter, one lowercase letter, one number and one special character'

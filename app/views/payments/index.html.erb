@@ -7,6 +7,7 @@
             <th>Extra Services</th>
             <th>Date Initial</th>
             <th>Date Finished</th>
+            <th>Created</th>
         </thead>
         <tbody>
             <% @payments.each do |payment| %>
@@ -17,6 +18,7 @@
                     <td><%= payment['extra_charge'] %></td>
                     <td><%= DateTime.parse(payment['date_payment']).strftime("%Y-%m-%d") %></td>
                     <td><%= DateTime.parse(payment['date_finished']).strftime("%Y-%m-%d") %></td>
+                    <td><%= DateTime.parse(payment['created_at']).strftime("%Y-%m-%d") %></td>
                 </tr>
             <%end%>
         </tbody>

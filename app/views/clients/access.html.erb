@@ -42,18 +42,20 @@
                 
                 <div align='left' class="col-12">
                     <h5><%= t('client.access.last_access') %>:</h5>
-                    <table class="table">
+                    <table class="table mt-4">
                         <thead>
                             <th>Date</th>
+                            <th>Name</th>
+                            <th>Email</th>
                             <th>User</th>
-                            <th>Hour</th>
                         </thead>
                         <tbody>
                             <%  @access['last_access'].each do |last_access| %>
                                 <tr>
-                                    <td><%= last_access['client_id'] %></td>
-                                    <td><%= last_access['user_id'] %></td>
-                                    <td><%= last_access['created_at'] %></td>
+                                    <td><%= DateTime.parse(last_access['created_at']).strftime("%Y-%m-%d %H:%M") %></td>
+                                    <td><%= last_access['client']['name'] %></td>
+                                    <td><%= last_access['client']['email'] %></td>
+                                    <td><%= last_access['user']['email'] %></td>
                                 </tr>
                             <% end %>
                         </tbody>
@@ -62,9 +64,10 @@
             </div>
             <div class="col-12 pt-4">
                 <% if @access['client']['status'] == 'actived' %>
-                    <button class="btn btn-login"><%= t('client.access.button_2') %></button>
+                    <button id="access-client" data-id="<%= @access['client']['id'] %>" class="btn btn-login"><%= t('client.access.button_2') %></button>
                 <% end %>
             </div>
         </div>
     <% end %>
 </div>
+<%= render '/modals/access' %>

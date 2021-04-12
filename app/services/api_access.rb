@@ -61,11 +61,84 @@ class ApiAccess
         response = HTTParty.post("#{base_url}/api/v1/users",body: args[:data].to_json ,:headers => headers(args[:token]), :debug_output => $stdout)
         JSON.parse(response.body)
     end
+    
+    def self.create_access(args)
+        response = HTTParty.post("#{base_url}/api/v1/accesses",body: args[:data].to_json ,:headers => headers(args[:token]), :debug_output => $stdout)
+        JSON.parse(response.body)
+    end
 
     def self.update_user(args)
         response = HTTParty.put("#{base_url}/api/v1/users/#{args[:id]}",body: args[:data].to_json ,:headers => headers(args[:token]), :debug_output => $stdout)
         JSON.parse(response.body)
     end
+
+
+    def self.get_type_products(token)
+        response = HTTParty.get("#{base_url}/api/v1/type_products" ,:headers => headers(token), :debug_output => $stdout)
+        JSON.parse(response.body)
+    end
+
+    def self.get_type_product(args)
+        response = HTTParty.get("#{base_url}/api/v1/type_products/#{args[:id]}" ,:headers => headers(args[:token]), :debug_output => $stdout)
+        JSON.parse(response.body)
+    end
+
+    def self.create_type_product(args)
+        response = HTTParty.post("#{base_url}/api/v1/type_products",body: args[:data].to_json ,:headers => headers(args[:token]), :debug_output => $stdout)
+        JSON.parse(response.body)
+    end
+
+    def self.update_type_product(args)
+        response = HTTParty.put("#{base_url}/api/v1/type_products/#{args[:id]}",body: args[:data].to_json ,:headers => headers(args[:token]), :debug_output => $stdout)
+        JSON.parse(response.body)
+    end
+
+    def self.delete_type_product(args)
+        response = HTTParty.delete("#{base_url}/api/v1/type_products/#{args[:id]}" ,:headers => headers(args[:token]), :debug_output => $stdout)
+        JSON.parse(response.body)
+    end
+
+
+    def self.get_products(token)
+        response = HTTParty.get("#{base_url}/api/v1/products" ,:headers => headers(token), :debug_output => $stdout)
+        JSON.parse(response.body)
+    end
+
+    def self.get_product(args)
+        response = HTTParty.get("#{base_url}/api/v1/products/#{args[:id]}" ,:headers => headers(args[:token]), :debug_output => $stdout)
+        JSON.parse(response.body)
+    end
+
+    def self.create_product(args)
+        response = HTTParty.post("#{base_url}/api/v1/products",body: args[:data].to_json ,:headers => headers(args[:token]), :debug_output => $stdout)
+        JSON.parse(response.body)
+    end
+
+    def self.update_product(args)
+        response = HTTParty.put("#{base_url}/api/v1/products/#{args[:id]}",body: args[:data].to_json ,:headers => headers(args[:token]), :debug_output => $stdout)
+        JSON.parse(response.body)
+    end
+
+    def self.delete_product(args)
+        response = HTTParty.delete("#{base_url}/api/v1/products/#{args[:id]}" ,:headers => headers(args[:token]), :debug_output => $stdout)
+        JSON.parse(response.body)
+    end
+    
+    def self.get_sales(token)
+        response = HTTParty.get("#{base_url}/api/v1/sales" ,:headers => headers(token), :debug_output => $stdout)
+        JSON.parse(response.body)
+    end
+
+    def self.get_sale(args)
+        response = HTTParty.get("#{base_url}/api/v1/sales/#{args[:id]}" ,:headers => headers(args[:token]), :debug_output => $stdout)
+        JSON.parse(response.body)
+    end
+
+    def self.create_sales(args)
+        response = HTTParty.post("#{base_url}/api/v1/sales",body: args[:data].to_json ,:headers => headers(args[:token]), :debug_output => $stdout)
+        JSON.parse(response.body)
+    end
+    
     
 
     def self.base_url

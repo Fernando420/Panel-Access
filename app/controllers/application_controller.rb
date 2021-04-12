@@ -22,4 +22,9 @@ class ApplicationController < ActionController::Base
         @path = uri.path
     end
 
+    def statuses
+        @statuses = [["Activo",1],["Inactivo",0]]
+    end
+    
+
 end

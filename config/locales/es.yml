@@ -2,17 +2,36 @@
 
 es:
   sidebar:
-    menu_1: 'Inicio'
-    menu_2: 'Clientes'
-    submenu_1: 'Registrar'
-    submenu_2: 'Listar'
-    menu_3: 'Pagos'
-    submenu_1: 'Crear'
-    submenu_2: 'Listar'
-    menu_4: 'Usuarios'
-    submenu_1: 'Crear'
-    submenu_2: 'Listar'
-    menu_5: 'Acceso'
+    menu_1: 
+      title: 'Inicio'
+    menu_2: 
+      title: 'Clientes'
+      submenu_1: 'Registrar'
+      submenu_2: 'Listar'
+    menu_3: 
+      title: 'Pagos'
+      submenu_1: 'Registrar'
+      submenu_2: 'Listar'
+    menu_4: 
+      title: 'Usuarios'
+      submenu_1: 'Registrar'
+      submenu_2: 'Listar'
+    menu_5: 
+      title: "Acceso"
+      submenu_1: 'Registrar'
+      submenu_2: 'Listar'
+    menu_6: 
+      title: "Tipo de Producto"
+      submenu_1: 'Registrar'
+      submenu_2: 'Listar'
+    menu_7: 
+      title: "Producto"
+      submenu_1: 'Registrar'
+      submenu_2: 'Listar'
+    menu_8: 
+      title: "Sales"
+      submenu_1: 'Create'
+      submenu_2: 'Lists'
   client:
     access:
       subtitle: "Validando Acceso"
@@ -53,6 +72,11 @@ es:
       password: 'Contraseña'
     forgot-password: 'Olvide contraseña?'
     button: 'Continuar'
+  modals:
+    access:
+      title: "Accesso"
+    error:
+      title: "Error General"
   errors:
     username: 'Ingrese un username valido'
     password: 'Mínimo seis caracteres, al menos una letra mayúscula, una letra minúscula, un número y un carácter especial'

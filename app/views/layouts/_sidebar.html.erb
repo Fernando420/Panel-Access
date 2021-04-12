@@ -12,23 +12,23 @@
 
                     <li class="only" style="margin-top:10px;">
                         <a id="Home" href="/" class="link-home">
-                            <%= image_tag 'sidebar/home.png', class: 'sidebar-button-img' %> <strong> <%= t('sidebar.menu_1') %> </strong>
+                            <%= image_tag 'sidebar/home.png', class: 'sidebar-button-img' %> <strong> <%= t('sidebar.menu_1.title') %> </strong>
                         </a>
                     </li>
 
                     <li style="margin-top:10px;">
                         <a href="#Clients" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle sidebar-button link-home">
-                            <%= image_tag 'sidebar/movements.png', class: 'sidebar-button-img' %> <strong><%= t('sidebar.menu_2') %></strong>
+                            <%= image_tag 'sidebar/movements.png', class: 'sidebar-button-img' %> <strong><%= t('sidebar.menu_2.title') %></strong>
                         </a>
                         <ul class="collapse list-unstyled" id="Clients">
                             <li>
                                 <a id="register" class="sidebar-button link-home" href="/clients/new">
-                                    <%= image_tag 'sidebar/dots.png', class: 'sidebar-button-bullet' %><strong><%= t('sidebar.submenu_1') %></strong>
+                                    <%= image_tag 'sidebar/dots.png', class: 'sidebar-button-bullet' %><strong><%= t('sidebar.menu_2.submenu_1') %></strong>
                                 </a>
                             </li>
                             <li>
                                 <a id="list" class="sidebar-button link-home" href="/clients">
-                                    <%= image_tag 'sidebar/dots.png', class: 'sidebar-button-bullet' %><strong><%= t('sidebar.submenu_2') %></strong>
+                                    <%= image_tag 'sidebar/dots.png', class: 'sidebar-button-bullet' %><strong><%= t('sidebar.menu_2.submenu_2') %></strong>
                                 </a>
                             </li>
                         </ul>
@@ -36,17 +36,17 @@
 
                     <li style="margin-top:10px;">
                         <a href="#Payments" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle sidebar-button link-home">
-                            <%= image_tag 'sidebar/dollar.png', class: 'sidebar-button-img' %> <strong><%= t('sidebar.menu_3') %></strong>
+                            <%= image_tag 'sidebar/dollar.png', class: 'sidebar-button-img' %> <strong><%= t('sidebar.menu_3.title') %></strong>
                         </a>
                         <ul class="collapse list-unstyled" id="Payments">
                             <li>
                                 <a id="register" class="sidebar-button link-home" href="/payments/new">
-                                    <%= image_tag 'sidebar/dots.png', class: 'sidebar-button-bullet' %><strong><%= t('sidebar.submenu_1') %></strong>
+                                    <%= image_tag 'sidebar/dots.png', class: 'sidebar-button-bullet' %><strong><%= t('sidebar.menu_3.submenu_1') %></strong>
                                 </a>
                             </li>
                             <li>
                                 <a id="list" class="sidebar-button link-home" href="/payments">
-                                    <%= image_tag 'sidebar/dots.png', class: 'sidebar-button-bullet' %><strong><%= t('sidebar.submenu_2') %></strong>
+                                    <%= image_tag 'sidebar/dots.png', class: 'sidebar-button-bullet' %><strong><%= t('sidebar.menu_3.submenu_2') %></strong>
                                 </a>
                             </li>
                         </ul>
@@ -54,7 +54,7 @@
 
                     <li class="only" style="margin-top:10px;">
                         <a id="Access" href="/clients/access" class="link-home">
-                            <%= image_tag 'sidebar/movements.png', class: 'sidebar-button-img' %> <strong> <%= t('sidebar.menu_5') %> </strong>
+                            <%= image_tag 'sidebar/movements.png', class: 'sidebar-button-img' %> <strong> <%= t('sidebar.menu_5.title') %> </strong>
                         </a>
                     </li>
 
@@ -62,21 +62,80 @@
 
                         <li style="margin-top:10px;">
                             <a href="#Users" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle sidebar-button link-home">
-                                <%= image_tag 'sidebar/dollar.png', class: 'sidebar-button-img' %> <strong><%= t('sidebar.menu_4') %></strong>
+                                <%= image_tag 'sidebar/dollar.png', class: 'sidebar-button-img' %> <strong><%= t('sidebar.menu_4.title') %></strong>
                             </a>
                             <ul class="collapse list-unstyled" id="Users">
                                 <li>
                                     <a id="register" class="sidebar-button link-home" href="/users/new">
-                                        <%= image_tag 'sidebar/dots.png', class: 'sidebar-button-bullet' %><strong><%= t('sidebar.submenu_1') %></strong>
+                                        <%= image_tag 'sidebar/dots.png', class: 'sidebar-button-bullet' %><strong><%= t('sidebar.menu_4.submenu_1') %></strong>
                                     </a>
                                 </li>
                                 <li>
                                     <a id="list" class="sidebar-button link-home" href="/users">
-                                        <%= image_tag 'sidebar/dots.png', class: 'sidebar-button-bullet' %><strong><%= t('sidebar.submenu_2') %></strong>
+                                        <%= image_tag 'sidebar/dots.png', class: 'sidebar-button-bullet' %><strong><%= t('sidebar.menu_4.submenu_2') %></strong>
                                     </a>
                                 </li>
                             </ul>
                         </li>
+
+                    <% end %>
+
+                    <% if @current_user['user']['role']['value'].to_i == 1 || @current_user['user']['role']['value'].to_i == 3 %>
+
+                        <li style="margin-top:10px;">
+                            <a href="#TypeProduct" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle sidebar-button link-home">
+                                <%= image_tag 'sidebar/dollar.png', class: 'sidebar-button-img' %> <strong><%= t('sidebar.menu_6.title') %></strong>
+                            </a>
+                            <ul class="collapse list-unstyled" id="TypeProduct">
+                                <li>
+                                    <a id="register" class="sidebar-button link-home" href="/type_products/new">
+                                        <%= image_tag 'sidebar/dots.png', class: 'sidebar-button-bullet' %><strong><%= t('sidebar.menu_6.submenu_1') %></strong>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a id="list" class="sidebar-button link-home" href="/type_products">
+                                        <%= image_tag 'sidebar/dots.png', class: 'sidebar-button-bullet' %><strong><%= t('sidebar.menu_6.submenu_2') %></strong>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li style="margin-top:10px;">
+                            <a href="#Product" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle sidebar-button link-home">
+                                <%= image_tag 'sidebar/dollar.png', class: 'sidebar-button-img' %> <strong><%= t('sidebar.menu_7.title') %></strong>
+                            </a>
+                            <ul class="collapse list-unstyled" id="Product">
+                                <li>
+                                    <a id="register" class="sidebar-button link-home" href="/products/new">
+                                        <%= image_tag 'sidebar/dots.png', class: 'sidebar-button-bullet' %><strong><%= t('sidebar.menu_7.submenu_1') %></strong>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a id="list" class="sidebar-button link-home" href="/products">
+                                        <%= image_tag 'sidebar/dots.png', class: 'sidebar-button-bullet' %><strong><%= t('sidebar.menu_7.submenu_2') %></strong>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li style="margin-top:10px;">
+                            <a href="#Sales" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle sidebar-button link-home">
+                                <%= image_tag 'sidebar/dollar.png', class: 'sidebar-button-img' %> <strong><%= t('sidebar.menu_8.title') %></strong>
+                            </a>
+                            <ul class="collapse list-unstyled" id="Sales">
+                                <li>
+                                    <a id="register" class="sidebar-button link-home" href="/sales/new">
+                                        <%= image_tag 'sidebar/dots.png', class: 'sidebar-button-bullet' %><strong><%= t('sidebar.menu_8.submenu_1') %></strong>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a id="list" class="sidebar-button link-home" href="/sales">
+                                        <%= image_tag 'sidebar/dots.png', class: 'sidebar-button-bullet' %><strong><%= t('sidebar.menu_8.submenu_2') %></strong>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        
                     <% end %>
 
                     <li class="only" style="margin-top:400px;">

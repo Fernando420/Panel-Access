@@ -1,0 +1,44 @@
+// Place all the styles related to the sales controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.ticket-list{
+    .name-product{
+        font-size: 12px;
+        font-family: $monserrat;
+        font-weight: 200;
+        color: black;
+    }
+    .barcode-product{
+        font-size: 8px;
+        font-family: $monserrat;
+        font-weight: 100;
+        color: gray;
+    }
+}
+
+.btn-remove{
+    width: 40px !important;
+    height: 40px !important;
+    color: white;
+    background: black;
+}
+
+.btn-remove-ticket{
+    width: 20px !important;
+    height: 20px !important;
+    color: white;
+    background: black;
+    font-size: 8px;
+    padding: 0 !important
+}
+
+
+.button-remove{
+    .price-product{
+        margin-right: 15px;
+    }
+    display: flex;
+    padding: 13px;
+}

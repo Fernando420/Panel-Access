@@ -1,0 +1,44 @@
+<div class="row">
+    <div class="card">
+        <h1><%= t('sales.subtitle') %></h1>
+        <div id='form-sales' class="form">
+            <div class="form-group col-12 pb-4">
+                <strong class="error-msg" id="error-bar_code">
+                    <%= text_field_tag :bar_code, nil,class: 'form-input',required: true, id: 'bar-code'%>
+                    <label class="form-label" for="bar_code"><%= t('sales.inputs.bar_code') %></label>
+                    <p id='text-bar_code' class="hide"><%= t('errors.bar_code') %></p>
+                </strong>
+            </div>
+            <h1><%= t('sales.ticket') %></h1>
+            <div id="ticket">
+                
+            </div>
+            <div align='right' class="total_amount pt-4">
+                <h1><%= t('sales.amount_total') %></h1>
+                <h5 id='amount_total'>$0.0</h5>
+            </div>
+
+            <div class="col-12">
+                <div class="button col-2 pt-4">
+                    <button id='add-member_id' class="btn btn-login"><%= t('sales.inputs.add_member') %></button>
+                </div>
+                <div class="hide row" id='member_id_sales'>
+                    <div class="form-group col-10 pb-4">
+                        <strong class="error-msg" id="error-member_id">
+                            <%= text_field_tag :member_id, nil,class: 'form-input',required: true, id: 'member_id'%>
+                            <label class="form-label" for="member_id"><%= t('sales.inputs.member_id') %></label>
+                            <p id='text-member_id' class="hide"><%= t('errors.member_id') %></p>
+                        </strong>
+                    </div>
+                    <div class="button-remove col-2">
+                        <button id='remove-member_id' class="btn btn-remove">X</button>
+                    </div>
+                </div>
+            </div>
+            <div align='right' class="col-12 pt-4">
+                <button id='send-sale' class="btn btn-login"><%= t('sales.inputs.button') %></button>
+            </div>
+        </div>
+    </div>
+</div>
+<%= render '/modals/confirm_sale' %>

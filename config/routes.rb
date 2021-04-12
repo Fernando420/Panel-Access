@@ -15,8 +15,16 @@ Rails.application.routes.draw do
     collection do
       get :access
       post :access
+      post 'access/create/:id' => 'clients#create_access'
     end
   end
   resources :payments
   resources :users
+  resources :type_products
+  resources :products do
+    collection do
+      get 'barcode/:id' => 'products#get_by_barcode'
+    end
+  end
+  resources :sales
 end

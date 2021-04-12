@@ -1,0 +1,27 @@
+<div class="modal fade" id="modalAccess" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="customize-modal">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h1 id="body-tittle" class="body-tittle"><%= t('modals.access.title') %></h1>
+                    <h1 class="body-subtitle"><%= t('modals.access.date') %></h1>
+                    <h1 id="date-access" class="body">2021/04/11</h1>
+                    <h1 class="body-subtitle"><%= t('modals.access.hour') %></h1>
+                    <h1 id="hour-access" class="body">15:42</h1>
+                    <h1 class="body-subtitle"><%= t('modals.access.user') %></h1>
+                    <h1 id="user-access" class="body">0.00123BTC = 58.84 USD </h1>
+                    <h1 class="body-subtitle"><%= t('modals.access.client') %></h1>
+                    <h1 id="client-access" class="body">Miguel.J@gmail.com</h1>
+                </div>
+                <div class="modal-footer">
+                    <a href="/clients/access"><%= t('modals.access.new_access') %></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

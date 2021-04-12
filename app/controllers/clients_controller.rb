@@ -27,6 +27,7 @@ class ClientsController < ApplicationController
             @access = ApiAccess::get_client_access({id: params[:clients][:member_id], token: @current_user['token']})
             if @access['data'].nil?
                 flash[:warning] = t('client.not_found')
+                @access = nil
             else
                 @access = @access['data']
             end
@@ -34,6 +35,10 @@ class ClientsController < ApplicationController
             @access = nil
         end
     end
-    
+
+    def create_access
+        response = ApiAccess::create_access({data: {client_id:params[:id], user_id: @current_user['user']['id'] }, token: @current_user['token']})
+        return render json: response
+    end
 
 end
