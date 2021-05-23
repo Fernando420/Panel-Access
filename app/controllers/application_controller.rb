@@ -11,6 +11,7 @@ class ApplicationController < ActionController::Base
     def valid_session
         @current_user = Redis.current.get("login")
         @current_user = JSON.parse(@current_user)  if @current_user
+        valid_token
         return redirect_to login_sessions_path() if !@current_user
     end
 
@@ -26,6 +27,18 @@ class ApplicationController < ActionController::Base
     def statuses
         @statuses = [["Activo",1],["Inactivo",0]]
     end
+
+    private 
+        def valid_token
+            flag = false
+            if !@current_user.nil?
+                response = ApiAccess::info_gral(@current_user['token'])
+                if response['errors']
+                    Redis.current.del("login")
+                end
+            end
+            return flag
+        end
     
 
 end

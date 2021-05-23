@@ -27,4 +27,10 @@ Rails.application.routes.draw do
     end
   end
   resources :sales
+  resources :reports do
+    collection do
+      get 'clients/new' => 'reports#report_client'
+      get 'payments/new' => 'reports#report_payment'
+    end
+  end
 end

@@ -32,6 +32,10 @@ es:
       title: "Sales"
       submenu_1: 'Create'
       submenu_2: 'Lists'
+    menu_9: 
+      title: "Reportes"
+      submenu_1: 'Clientes'
+      submenu_2: 'Pagos'
   client:
     access:
       subtitle: "Validando Acceso"
@@ -66,7 +70,7 @@ es:
   login:
     privacy: 'Política de privacidad y términos legales'
     faq: 'FAQ`s'
-    title: 'Accesso Gimnasio'
+    title: 'Innovación Gym'
     inputs:
       username: 'UserName'
       password: 'Contraseña'
