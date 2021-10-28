@@ -1,13 +1,13 @@
 <div class="show-user">
     <div class="row">
-        <div class="col-6 pt-3">
+        <div class="col-12 pt-3">
             <span><%= t('sales.title') %></span>
         </div> 
         <div class="col-6 pt-3">
             <span><%= t('sales.total_products') %>: <%= @sale['total_products'] %></span>
         </div>
         <div class="col-6 pt-3">
-            <span><%= t('sales.buyer') %>: <%= @sale['buyer'] %></span>
+            <span><%= t('sales.buyer') %>: <%= @sale['client'].nil? ? "Sell external" : @sale['client']['name'] %></span>
         </div>
         <div class="col-6 pt-3">
             <span><%= t('sales.buyer_email') %>: <%= @sale['email_buyer'] %></span>

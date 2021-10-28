@@ -1,7 +1,7 @@
 $(document).on('turbolinks:load', function() {
     $(document).ready(function(){
         localStorage.setItem('sale',JSON.stringify({"amount_total": 0, items: []}))
-    })
+    });
 
     $("#add-member_id").on("click", function(){
         $("#member_id_sales").removeClass('hide')

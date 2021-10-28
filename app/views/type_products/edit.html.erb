@@ -1,8 +1,7 @@
 <div class="row">
     <div class="card">
-        <h1><%= t('users.subtitle') %></h1>
+        <h1><%= t('type_products.title') %></h1>
         <%= form_for :type_product, :url => { :action => "update"}, method: 'PUT', :html => {:class => "form row"} do |f| %>
-            
             <div class="form-group col-6">
                 <strong class="error-msg" id="error-name">
                     <%= f.text_field :name, class: 'form-input', required: true,id:"name", value: @type_product['name'] %>

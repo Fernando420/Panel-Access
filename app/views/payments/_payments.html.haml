@@ -1,0 +1,15 @@
+%table.table.responsive.text-center{id: 'table_desing'}
+  %thead
+    %th Member Id
+    %th Username
+    %th Amount
+    %th Extra Services
+    %th Date Initial
+    %th Date Finished
+    %th Created
+  %tbody
+    - if @payments.any?
+      = render partial: 'payments/payment', collection: @payments 
+    - else
+      %tr
+        %td.text-center Not found payments

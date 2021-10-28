@@ -1,0 +1,4 @@
+-id = SecureRandom.uuid.to_s[0,8]
+=render partial: 'reports/client', locals: {child_index: id, c: @client}
+
+

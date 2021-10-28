@@ -1,0 +1,84 @@
+%div.row
+  %div.card
+    %div.col.pb-4
+      %h1>
+        = t('reports.clients.title')
+
+    %div.col
+      = form_for :report, :url => { :action => "create"}, method: 'POST', :html => {:class => "form row"} do |f|
+        
+        %div.col-3.form-group-select
+          = label_tag 'Report Client'
+          = select_tag 'report', options_for_select(@type_report), {:include_blank => "Select Report", :class => 'form-select', id: 'report'}
+    
+        %div.col-3.form-group{style: "margin-top: 0px;", id: 'client_div'}
+          =label_tag :clients, 'Clients'
+          =text_field_tag :client_search, nil, placeholder: 'Search client to add'
+
+        %div.col-3.form-group{style: "margin-top: 0px;", id: 'start_date'}
+          =label_tag :start_date, 'Start Date'
+          =date_field_tag :start_date, nil, placeholder: ''
+
+        %div.col-3.form-group{style: "margin-top: 0px;", id: 'end_date'}
+          =label_tag :end_date, 'End Date'
+          =date_field_tag :end_date, nil, placeholder: ''
+            
+        %div.col
+          #client
+    
+        %div.col-12
+          = f.submit 'Generate Report'
+      
+    %div.col
+      = render partial: 'reports'
+
+:javascript
+  
+  $('#client_search').autocomplete({
+    source: "#{search_autocomplete_clients_url}",
+    select: function( event,opt ) {
+      var client_id = opt.item.value;
+      var url       = "#{add_client_reports_url}";
+      var default_duration = $("input#client_default_duration").val();
+      var data      = { id: client_id};
+      $.get( url, data );
+      $(this).val('');
+      return false;
+    }
+    
+  });
+
+  $('#report').on('change', function (){
+    console.log('entro')
+    console.log($(this).val())
+    switch($(this).val()){
+      
+      case 'active_memberships':
+        $('#client_div').hide()
+        $('#start_date').hide()
+        $('#end_date').hide()
+        break;
+      case 'expired_memberships':
+        $('#client_div').hide()
+        $('#start_date').hide()
+        $('#end_date').hide()
+        break;
+      case 'suspend_memberships':
+        $('#client_div').hide()
+        $('#start_date').hide()
+        $('#end_date').hide()
+        break;
+      case 'external_sales':
+        $('#client_div').hide()
+        break;
+      default: 
+        $('#client_div').show()
+        $('#start_date').show()
+        $('#end_date').show()
+        
+      
+      
+    }
+  })
+
+

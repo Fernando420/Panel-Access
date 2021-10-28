@@ -1,0 +1,50 @@
+%div.show-user
+  %h1 User Profile
+  %div.row
+   
+    %div.col-2.picture-center
+      = image_tag "#{(@client['picture'] ||= 'clients/missing.png')}", class: 'logo-circle'
+
+    %div.col-10.row
+
+      %div.col-5
+        %div
+          %h1.show_info
+            Name:
+            = @client['name']
+  
+        %div
+          %h1.show_info
+            Email:
+            = @client['email']
+      
+        %div
+          %h1.show_info 
+            Phone:
+            = @client['phone']
+  
+      %div.col-4
+        %div
+          %h1.show_info 
+            Birthday:
+            = @client['birthday']
+        %div
+          %h1.show_info 
+            Age:
+            = @client['age']
+        %div
+          %h1.show_info 
+            Status:
+            = @client['status'].titleize
+  
+      %div.col-12
+        %h1.show_info
+          Address:
+          = @client['address']
+    
+    %div.col-12
+      = render partial: 'clients/membership', collection: @client['memberships'] 
+        
+    %div.col-12{align: 'right'}
+      %div.links.col-6
+        %a.btn.btn-link{href: "/clients"}= t('sales.inputs.back')

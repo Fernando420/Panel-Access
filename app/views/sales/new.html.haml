@@ -1,0 +1,51 @@
+%div.row
+  %div.card
+    %h1
+      = t('sales.subtitle')
+    %div.form{id: 'form-sales'}
+      %div.form-group.col-12.pb-4
+        %strong.error-msg{id: "error-bar_code"}
+          = text_field_tag :bar_code, nil,class: 'form-input',required: true, id: 'bar-code' 
+          %label.form-label{for: "bar_code"}= t('sales.inputs.bar_code')
+          %p.hide{id: 'text-bar_code'}= t('errors.bar_code')
+
+      %h1
+        = t('sales.ticket')
+
+      %div{id: "ticket"}
+
+      %div.total_amount.pt-4{align: 'right'}
+        %h1
+          = t('sales.amount_total')
+        %h5{id: 'amount_total'}
+          $0.0
+        
+
+      %div.col-12
+        %div.button.col-2.pt-4
+          %button.btn.btn-login{id: 'add-member_id'} 
+            = t('sales.inputs.add_member')
+        
+        %div.hide.row{id: 'member_id_sales'}
+          %div.form-group.col-10.pb-4
+            %strong.error-msg{id: "error-member_id"}
+            = text_field_tag :client_search, nil ,class: 'form-input', id:"member_id"
+            %label.form-label{for: "member_id"}= t('client.inputs.member_id')
+            %p.hide{id: 'text-member_id'}=t('errors.member_id')
+              
+
+          %div.button-remove.col-2
+            %button.btn.btn-remove{id: 'remove-member_id'} X
+
+
+      %div.col-12.pt-4{align: 'right'}
+        %button.btn.btn-login{id: 'send-sale'}
+          = t('sales.inputs.button')
+
+= render '/modals/confirm_sale'
+
+:javascript
+
+  $('#member_id').autocomplete({
+    source: "#{search_autocomplete_clients_url({payments: true})}"
+  });

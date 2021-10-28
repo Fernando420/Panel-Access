@@ -1,0 +1,16 @@
+%table.table.responsive.text-center{id: 'table_desing'}
+  %thead
+    %th TypeProduct
+    %th Name
+    %th Description
+    %th Sell
+    %th BarCode
+    %th Show
+    %th Edit
+    %th Delete
+  %tbody
+    - if @products.any?
+      = render partial: 'products/product', collection: @products 
+    - else
+      %tr
+        %td.text-center Not found products

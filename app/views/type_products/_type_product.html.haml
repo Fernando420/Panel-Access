@@ -1,0 +1,9 @@
+%tr
+  %td= type_product['name']
+  %td= type_product['description']
+  %td
+    %a.link{href: "/type_products/#{type_product['id']}/edit"} Editar
+  %td
+    %a.link{href: "/type_products/#{type_product['id']}"} Show
+  %td= link_to 'Eliminar',"/type_products/#{type_product['id']}", method: "delete", data: { confirm: "Are you sure?", disable_with: "Processing..." }
+    

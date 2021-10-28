@@ -1,0 +1,16 @@
+.del_client{id: "client_#{c['id']}"}  
+  .m-1.p-1.border.rounded.box
+    %div
+      =hidden_field_tag "items[]", c['id'].to_i  #client.id
+      %b
+        %a.delete_client{data: {div_id: "client_#{c['id']}"}}
+          =image_tag('icons/delete.png')
+        = c['name']
+
+:javascript
+
+  $('.delete_client').on('click', function(){
+    console.log('entreo')
+    var div_id = $(this).data('div-id');
+    $("#" + div_id).remove();
+  });

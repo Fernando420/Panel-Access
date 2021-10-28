@@ -1,0 +1,11 @@
+%tr
+  %td= report['email']
+  %td= report['type_report'].titlecase
+  %td= report['status'].titlecase
+  %td= report['total_items']
+  %td= report['start_date']
+  %td= report['end_date']
+  %td
+    - if report['status'] == 'finished'
+      %a{href: "#{report['url']}", target: '_blank'} Download
+    

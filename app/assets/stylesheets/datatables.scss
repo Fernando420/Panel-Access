@@ -1,0 +1,62 @@
+@import 'datatables/dataTables.bootstrap4';
+
+// optional remove '//=' to enable
+
+//@import 'datatables/extensions/AutoFill/autoFill.bootstrap4';
+//@import 'datatables/extensions/Buttons/buttons.bootstrap4';
+//@import 'datatables/extensions/ColReorder/colReorder.bootstrap4';
+//@import 'datatables/extensions/FixedColumns/fixedColumns.bootstrap4';
+//@import 'datatables/extensions/FixedHeader/fixedHeader.bootstrap4';
+//@import 'datatables/extensions/KeyTable/keyTable.bootstrap4';
+//@import 'datatables/extensions/Responsive/responsive.bootstrap4';
+//@import 'datatables/extensions/RowGroup/rowGroup.bootstrap4';
+//@import 'datatables/extensions/RowReorder/rowReorder.bootstrap4';
+//@import 'datatables/extensions/Scroller/scroller.bootstrap4';
+//@import 'datatables/extensions/Select/select.bootstrap4';
+
+
+table{
+  font-size: 12px;
+  font-weight: 400;
+  color: black;
+}
+
+#table_desing_wrapper{
+  .row{
+      padding: 5px !important;
+  }
+}
+
+#table_desing_length{
+  font-size: 12px;
+  .custom-select{
+    width: 50%;
+    height: 90%;
+  }
+}
+
+#table_desing_filter{
+  font-size: 12px;
+  .form-control{
+    width: 50%;
+    height: 90%;
+  }
+  label{
+    text-align: right !important;
+  }
+
+}
+
+#table_desing_info{
+  font-size: 12px; 
+}
+
+.paginate_button{
+  font-size: 10px;
+  text-align: center;
+  width: 15%;
+  height: 35%;
+  .page-link{
+    padding: 6px;
+  }
+}

@@ -1,0 +1,11 @@
+%div#modalError.modal.fade{role: "dialog", 'aria-labelledby': "exampleModalCenterTitle", 'aria-hidden': "true"}
+  %div.modal-dialog.modal-dialog-centered{role: "document"}
+    %div.modal-content
+      %div.customize-modal
+        %div.modal-header
+          %button.close{type: "button", 'data-dismiss': "modal", 'aria-label': "Close"}
+            %span{'aria-hidden': "true"} &times;
+
+        %div.modal-body
+          %h1#body-tittle.body-tittle= t('modals.error.title')
+          %h1#message.body

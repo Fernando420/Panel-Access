@@ -1,0 +1,92 @@
+%div.col-3
+  = image_tag "#{@client['picture'].present? ? @client['picture'] : 'clients/missing.png'}", class: 'show-picture', id: 'show-picture'
+  = file_field_tag(:image, class: 'form-picture', accept: "image/*",id: 'picture')
+  = f.hidden_field(:picture,id: 'client-picture')
+  
+%div.col-9.row
+  %div.form-group.col-4
+    %strong#error-username.error-msg
+      = f.text_field :name, class: 'form-input', required: true, id:"name", value: @client['name']
+      %label.form-label{for: "name"}= t('client.inputs.name')
+      %p.hide{id: 'text-name'}= t('errors.name')
+    
+  %div.form-group.col-4
+    %strong#error-last_name.error-msg
+      = f.text_field :last_name, class: 'form-input', required: true,id:"last_name", value: @client['last_name']
+      %label.form-label{for: "last_name"}= t('client.inputs.last_name')
+      %p.hide{id: 'text-last_name'}= t('errors.last_name')
+    
+  %div.form-group.col-4
+    %strong#error-phone.error-msg
+      = f.text_field :phone, class: 'form-input', required: true,id:"phone", value: @client['phone']
+      %label.form-label{for: "phone"}= t('client.inputs.phone')
+      %p.hide{id: 'text-phone'}= t('errors.phone')
+    
+  %div.form-group.col-4
+    %strong#error-email.error-msg
+      = f.text_field :email, class: 'form-input', required: true,id:"email", value: @client['email']
+      %label.form-label{for: "email"}= t('client.inputs.email')
+      %p.hide{id: 'text-email'}= t('errors.email')
+    
+  %div.form-group.col-4
+    %strong#error-age.error-msg
+      = f.text_field :age, class: 'form-input', required: true,id:"age", value: @client['age']
+      %label.form-label{for: "age"}= t('client.inputs.age')
+      %p.hide{id: 'text-age'}= t('errors.age')
+    
+  %div.form-group.col-4
+    %strong#error-birthday.error-msg
+      = f.date_field :birthday, class: 'form-input', required: true,id:"birthday", max: Date.current.strftime("%d/%m/#{Date.current.strftime("%Y").to_i - 10}"), value: @client['birthday']
+      %label.form-label{for: "birthday"}= t('client.inputs.birthday')
+      %p.hide{id: 'text-birthday'}= t('errors.birthday')
+    
+  %div.form-group.col-8
+    %strong#error-address.error-msg
+      = f.text_field :address, class: 'form-input', required: true,id:"address", value: @client['address']
+      %label.form-label{for: "address"}= t('client.inputs.address')
+      %p.hide{id: 'text-address'}= t('errors.address')
+
+
+-if @client['memberships'].any?
+  - @client['memberships'].each do |membership|
+    = render partial: 'form_fields_membership', locals: {f: f, membership: membership}
+-else
+  = render partial: 'form_fields_membership', locals: {f: f, membership: {}}
+
+%div.links.col-6.pt-4
+  %a.btn.btn-link{href: "/clients"}= t('client.inputs.back')
+
+%div.button.col-6.pt-4
+  %button.btn.btn-login= t('client.inputs.button')
+
+
+:javascript
+
+  $('#picture').on('change', function(){
+    if (this.files && this.files[0]){
+      let reader = new FileReader();
+      reader.onload = function (e) {
+        let image = document.createElement('img');
+        let img = new Image();//create a image
+        img.src = e.target.result;//result is base64-encoded Data URI
+        img.name = e.target.name;//set name (optional)
+        img.size = e.target.size;//set size (optional)
+        img.onload = function(el) {
+          let elem = document.createElement('canvas');//create a canvas
+          elem.width = 300;
+          elem.height = 300;
+          //draw in canvas
+          let ctx = elem.getContext('2d');
+          ctx.drawImage(el.target, 0, 0, elem.width, elem.height);
+          //get the base64-encoded Data URI from the resize image
+          let srcEncoded = ctx.canvas.toDataURL(el.target, 'image/jpeg', 0);
+          let valid_image = e.target.result.toString().includes("data:image");
+          if(valid_image){  
+            $('#show-picture').attr('src', srcEncoded);
+            $('#client-picture').val(srcEncoded)
+          }
+        }
+      }
+      reader.readAsDataURL(this.files[0]);
+    }
+  });

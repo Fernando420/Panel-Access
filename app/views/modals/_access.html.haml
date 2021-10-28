@@ -1,0 +1,22 @@
+%div.modal.fade#modalAccess{role:"dialog", "aria-labelledby": "exampleModalCenterTitle", "aria-hidden": "true"}
+  %div.modal-dialog.modal-dialog-centered{role: "document"}
+    %div.modal-content
+      %div.customize-modal
+        %div.modal-header
+          %button.close{type: "button", "data-dismiss": "modal", "aria-label": "Close"}
+            %span{'aria-hidden': "true"} &times;
+
+        %div.modal-body
+          %h1#body-tittle.body-tittle= t('modals.access.title')
+          %h1.body-subtitle= t('modals.access.date')
+          %h1#date-access.body 2021/04/11
+          %h1.body-subtitle= t('modals.access.hour')
+          %h1#hour-access.body 15:42
+          %h1.body-subtitle= t('modals.access.user')
+          %h1#user-access.body 0.00123BTC = 58.84 USD 
+          %h1.body-subtitle= t('modals.access.client')
+          %h1#client-access.body Miguel.J@gmail.com
+
+        %div.modal-footer
+          %a{href: "/clients/access"}
+            = t('modals.access.new_access')

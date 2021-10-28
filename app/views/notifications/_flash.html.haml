@@ -1,0 +1,34 @@
+- if flash[:alert]
+  %div.alert.alert-success.alert-position
+    %strong
+      = flash[:alert].delete('.')
+      !
+    %a.close{href: "#", 'data-dismiss': "alert", 'aria-label': "close"} &times;
+
+- if flash[:danger]
+  %div.alert.alert-danger.alert-position
+    %strong
+      = flash[:danger].delete('.')
+      !
+    %a.close{href: "#", 'data-dismiss': "alert", 'aria-label': "close"} &times;
+
+- if flash[:notice]
+  %div.alert.alert-success.alert-position
+    %strong
+      = flash[:notice].delete('.')
+      !
+    %a.close{href: "#", 'data-dismiss': "alert", 'aria-label': "close"} &times;
+
+- if flash[:successfully]
+  %div.alert.alert-success.alert-position
+    %strong
+      = flash[:successfully].delete('.')
+      !
+    %a.close{href: "#", 'data-dismiss': "alert", 'aria-label': "close"} &times;
+
+- if flash[:warning]
+  %div.alert.alert-warning.alert-position
+    %strong
+      = flash[:warning].delete('.')
+      !
+    %a.close{href: "#", 'data-dismiss': "alert", 'aria-label': "close"} &times;

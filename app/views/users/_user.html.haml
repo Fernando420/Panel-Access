@@ -1,0 +1,10 @@
+%tr
+  %td= user['email']
+  %td= user['phone']
+  %td= user['username']
+  %td= user['role']['name']
+  %td
+    %a{href: "/users/#{user['id']}/edit"} Edit
+  %td
+    %a{href: "/users/#{user['id']}"} Show
+    

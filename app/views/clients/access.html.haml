@@ -1,0 +1,68 @@
+%div.row
+  %div.card
+    %h1= t('client.access.subtitle')
+    = form_for :clients, :url => { :action => "access"}, :html => {:class => "form row"} do |f|
+    
+      %div.form-group.col-12
+        %h5= t('client.access.text_content')
+        %strong#error-member_id.error-msg
+          = f.text_field :member_id, class: 'form-input', required: true,id:"member_id"
+          %label.form-label{for: "name"}= t('client.inputs.qr')
+          %p#text-member_id.hide= t('errors.member_id')
+
+      %div.button.col-12.pt-4
+      %button.btn.btn-login= t('client.access.button')
+            
+
+    - if @access
+
+      %div.card
+        %div.access.row
+          %div.col-6.pt-2.mb-2
+            %h5
+              = t('client.access.name') 
+              
+            %h5= @access['client']['name']
+
+          %div.col-6.pt-2.mb-2
+            %h5
+              = t('client.access.status.name') 
+              
+            %h5= t("client.access.status.#{@access['membership_status']}")
+
+          %div.col-6.pt-2.mb-2
+            %h5
+              = t('client.access.last_date_payment') 
+              
+            %h5= @access['last_date_payment'] ||= t("client.access.without_payment")
+
+          %div.col-6.pt-2.mb-2
+            %h5
+              = t('client.access.days_restant') 
+              
+            %h5= @access['days_restant']
+
+          %div.col-12{align: 'left'}
+            %h5
+              = t('client.access.last_access') 
+              
+
+            %table.table.responsive.mt-4
+              %thead
+                %th Date
+                %th Name
+                %th Email
+                %th User
+              %tbody
+                - @access['last_accesses'].each do |last_access| 
+                  %tr
+                    %td= DateTime.parse(last_access['created_at']).strftime("%Y-%m-%d %H:%M")
+                    %td= last_access['display_name']
+                    %td= last_access['client_email']
+                    %td= last_access['user_email']
+        
+        %div.col-12.pt-4
+          - if @access['membership_status'] == 'active' 
+            %button#access-client.btn.btn-login{'data-id': "#{@access['client']['id']}"}= t('client.access.button_2')
+
+= render '/modals/access'

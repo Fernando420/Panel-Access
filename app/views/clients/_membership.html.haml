@@ -1,0 +1,25 @@
+%div.container
+  %div.row
+    %div.col-12
+      %h3 Memberships
+
+    %div.card.membership-info{id: "#{membership['status']}"}
+      %div.row
+        %div.col-3
+          %h5
+            Type Membership:
+            = membership['type_membership']['name']
+        %div.col-3
+          %h5
+            Last Date Payment:
+            = membership['last_payment']
+
+        %div.col-3
+          %h5
+            Next Date Payment:
+            = membership['next_payment']
+
+        %div.col-3
+          %h5
+            Status:
+            = membership['status'].titlecase

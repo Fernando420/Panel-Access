@@ -14,6 +14,12 @@
 //= require activestorage
 //= require turbolinks
 //= require jquery3
+//= require jquery
+//= require datatables
+//= require jquery_ujs
+//= require jquery-ui
+//= require jquery-ui/widgets/autocomplete
+//= require autocomplete-rails
 //= require bootstrap
 //= require_tree .
 
@@ -21,6 +27,10 @@
 
 $(document).on('turbolinks:load', function() {
 
+    $(document).ready(function() {
+        $('#table_desing').DataTable();
+    } );
+    
     $("#username").on('blur', function(){
         let username = $('#username').val();
         let rgex = /^[a-zA-Z0-9_]*$/
@@ -93,7 +103,7 @@ $(document).on('turbolinks:load', function() {
 
     $("#extra_charge").on('blur', function(){
         let extra_charge = $('#extra_charge').val();
-        let rgex = /^[1-9]\d*(\.\d+)?$/
+        let rgex = /^[0-9]\d*(\.\d+)?$/
         var validate = rgex.test(extra_charge);
         if ( validate ) {
             $("#extra_charge").removeClass('border-red');

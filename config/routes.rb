@@ -14,11 +14,16 @@ Rails.application.routes.draw do
   resources :clients do
     collection do
       get :access
+      get :search_autocomplete
       post :access
       post 'access/create/:id' => 'clients#create_access'
     end
   end
-  resources :payments
+  resources :payments do
+    collection do
+      get :add_client
+    end
+  end
   resources :users
   resources :type_products
   resources :products do
@@ -29,8 +34,7 @@ Rails.application.routes.draw do
   resources :sales
   resources :reports do
     collection do
-      get 'clients/new' => 'reports#report_client'
-      get 'payments/new' => 'reports#report_payment'
+      get :add_client
     end
   end
 end

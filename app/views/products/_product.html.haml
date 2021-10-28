@@ -1,0 +1,12 @@
+%tr
+  %td= product['type_product']['name']
+  %td= product['name']
+  %td= product['description']
+  %td= getSelled?(product['sold'])
+  %td= product['bar_code']
+  %td
+    %a.link{href: "/products/#{product['id']}/edit"} Editar
+  %td
+    %a.link{href: "/products/#{product['id']}"} Show
+  %td= link_to 'Eliminar',"/products/#{product['id']}", method: "delete", data: { confirm: "Are you sure?", disable_with: "Processing..." }
+    

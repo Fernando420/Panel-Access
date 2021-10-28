@@ -2,9 +2,10 @@
 <nav id="sidebar">
     <div class="sidebar-header" align="center">
         <div class="logo">
-            <img src="https://www.logaster.com.es/blog/wp-content/uploads/sites/4/2019/03/0031_p_hard-core-gym-logo_18.png" alt="">
+            <img src="<%= @current_user['user']['gym']['logo'] %>" alt="">
             <h1><%= @current_user['user']['username'] %></h1>
             <h2>ID: <%= @current_user['user']['id'] %></h2>
+            <h2>GYM: <%= @current_user['user']['gym']['name'] %></h2>
         </div>
         <div class="col-12 nopadding">
             <div class="container">
@@ -120,23 +121,12 @@
                             </ul>
                         </li>
 
-                        <li style="margin-top:10px;">
-                            <a href="#Reports" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle sidebar-button link-home">
-                                <%= image_tag 'sidebar/reports.svg', class: 'sidebar-button-img' %> <strong><%= t('sidebar.menu_9.title') %></strong>
+                        <li class="only" style="margin-top:10px;">
+                            <a id="Reports" href="/reports" class="link-home">
+                                <%= image_tag 'sidebar/reports.svg', class: 'sidebar-button-img' %> <strong> <%= t('sidebar.menu_9.title') %> </strong>
                             </a>
-                            <ul class="collapse list-unstyled" id="Reports">
-                                <li>
-                                    <a id="register" class="sidebar-button link-home" href="/reports/clients/new">
-                                        <%= image_tag 'sidebar/dots.png', class: 'sidebar-button-bullet' %><strong><%= t('sidebar.menu_9.submenu_1') %></strong>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a id="list" class="sidebar-button link-home" href="/reports/payments/new">
-                                        <%= image_tag 'sidebar/dots.png', class: 'sidebar-button-bullet' %><strong><%= t('sidebar.menu_9.submenu_2') %></strong>
-                                    </a>
-                                </li>
-                            </ul>
                         </li>
+
                         
                     <% end %>
 

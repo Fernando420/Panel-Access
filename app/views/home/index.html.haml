@@ -1,0 +1,41 @@
+%div.row
+  %div.card
+    %div.row
+      %div.col-3
+        %h1.text-title
+          = t('home.clients')
+          %span.text-response :
+          = @data['clients']
+      %div.col-3
+        %h1.text-title
+          = t('home.users')
+          %span.text-response :
+          = @data['users']
+      %div.col-3
+        %h1.text-title
+          = t('home.payments')
+          %span.text-response :
+          = @data['payments']
+      %div.col-3.pb-5
+        %h1.text-title
+          = t('home.access')
+          %span.text-response :
+          = @data['access_total']
+
+      %div.container{align: 'center'}
+        %div.row
+          %div.col-4
+            %h1.text-data
+              = t('home.clients_in_this_month')
+              %span.text-response :
+              %span.text-resp= @data['clients_month']
+          %div.col-4
+            %h1.text-data
+              = t('home.payments_in_this_month')
+              %span.text-response :
+              %span.text-resp= @data['payments_month']
+          %div.col-4
+            %h1.text-data
+              = t('home.access_today')
+              %span.text-response :
+              %span.text-resp= @data['access_today']

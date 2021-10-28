@@ -8,11 +8,36 @@
 @import 'users';
 @import 'home';
 @import 'sales';
+@import 'clients';
+@import 'datatables';
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600&display=swap');
 
 $monserrat: 'Montserrat', sans-serif;
 
+%btn-extender {
+  @extend .btn-submit;
+  @extend .btn-login;
+}
+
+form {
+  input[type="submit"] {
+    @extend %btn-extender;
+  }
+}
+
+#new_membership{
+  border: 2px green solid
+}
+#active{
+  border: 2px green solid
+}
+#expired{
+  border: 2px orange solid
+}
+#suspend{
+  border: 2px red solid
+}
 
 .card{
     display: block;
@@ -55,6 +80,12 @@ footer{
 .btn{
     width: 150px;
     height: 25px;
+}
+
+.btn-submit{
+    margin: 15px;
+    width: 150px;
+    height: 40px;
 }
 
 .btn-login{

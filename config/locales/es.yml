@@ -70,7 +70,7 @@ es:
   login:
     privacy: 'Política de privacidad y términos legales'
     faq: 'FAQ`s'
-    title: 'Innovación Gym'
+    title: 'Systema de Administracion'
     inputs:
       username: 'UserName'
       password: 'Contraseña'

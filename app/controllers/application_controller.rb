@@ -25,7 +25,7 @@ class ApplicationController < ActionController::Base
     end
 
     def statuses
-        @statuses = [["Activo",1],["Inactivo",0]]
+        @statuses = [["Inventory",'inventory'],["Sold",'sold'],["Decrease",'decrease']]
     end
 
     private 

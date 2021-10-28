@@ -1,0 +1,12 @@
+%table.table.responsive.text-center{id: 'table_desing'}
+  %thead
+    %th User
+    %th Type Report
+    %th Status
+    %th Total Clients
+    %th Start Date
+    %th End Date
+    %th Report Url
+  %tbody
+    - if @reports.any?
+      = render partial: 'reports/report', collection: @reports 

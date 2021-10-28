@@ -1,0 +1,60 @@
+%div.container
+  %div.row
+    %div.col-12
+      %h3 Memberships
+
+    %div.card.membership-info{id: "#{membership['status']}"}
+      %div.row
+        %div.col-4
+          %h5
+            Type Membership:
+            = membership['type_membership']['name']
+
+        %div.col-4
+          %h5
+            Status:
+            = membership['status'].titlecase
+        
+        %div.col-4
+          %h5 
+            Type Payment
+            = membership['type_payment'].to_i
+            months
+        
+        %div.col-4
+          %h5
+            Price:
+            = membership['price'].to_f
+
+        %div.col-4
+          %h5
+            Offert:
+            = membership['offert'].to_f        
+
+        %div.col-4
+          %h5
+            Extra Charge:
+            = membership['extra_charge'].to_f
+
+        %div.col-6
+          %h5 
+            Next Payment
+            - if membership['next_payment'].present? 
+              = membership['next_payment']
+            - else
+              = Date.current + membership['type_payment'].to_i.month
+
+        %div.col-6{align: 'center'}
+          %h5 Total:
+          %h5#total-amount= (membership['price'].to_f + membership['extra_charge'].to_f - membership['offert'].to_f )
+
+:javascript
+
+  $('#price').val("#{membership['price']}");
+  $('#offert').val("#{membership['offert']}");
+  $('#extra_charge_mem').val("#{membership['extra_charge']}");
+  $('#total').val("#{(membership['price'].to_f + membership['extra_charge'].to_f - membership['offert'].to_f )}");
+
+  if(("#{membership['status']}" != 'active') && ("#{membership['status']}" != 'suspend')){
+    $('#btn-payment').removeAttr('disabled');
+  }

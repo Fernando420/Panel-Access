@@ -1,0 +1,15 @@
+%table.table.responsive.text-center{id: 'table_desing'}
+  %thead
+    %th.col-3 Picture
+    %th Name
+    %th Last Name
+    %th Member Id
+    %th Email
+    %th Edit
+    %th Show
+  %tbody
+    - if @clients.any?
+      = render partial: 'clients/client', collection: @clients 
+    - else
+      %tr
+        %td.text-center Not found clients
