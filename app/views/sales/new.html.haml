@@ -6,7 +6,7 @@
       %div.form-group.col-12.pb-4
         %strong.error-msg{id: "error-bar_code"}
           = text_field_tag :bar_code, nil,class: 'form-input',required: true, id: 'bar-code' 
-          %label.form-label{for: "bar_code"}= t('sales.inputs.bar_code')
+          %label.form-label{for: "bar_code"}= t('common_texts.barcode')
           %p.hide{id: 'text-bar_code'}= t('errors.bar_code')
 
       %h1
@@ -24,13 +24,13 @@
       %div.col-12
         %div.button.col-2.pt-4
           %button.btn.btn-login{id: 'add-member_id'} 
-            = t('sales.inputs.add_member')
+            = t('sales.add_member')
         
         %div.hide.row{id: 'member_id_sales'}
           %div.form-group.col-10.pb-4
             %strong.error-msg{id: "error-member_id"}
             = text_field_tag :client_search, nil ,class: 'form-input', id:"member_id"
-            %label.form-label{for: "member_id"}= t('client.inputs.member_id')
+            %label.form-label{for: "member_id"}= t('common_texts.member')
             %p.hide{id: 'text-member_id'}=t('errors.member_id')
               
 
@@ -40,7 +40,7 @@
 
       %div.col-12.pt-4{align: 'right'}
         %button.btn.btn-login{id: 'send-sale'}
-          = t('sales.inputs.button')
+          = t('buttons.save')
 
 = render '/modals/confirm_sale'
 
@@ -48,4 +48,117 @@
 
   $('#member_id').autocomplete({
     source: "#{search_autocomplete_clients_url({payments: true})}"
+  });
+
+  $(document).ready(function(){
+    localStorage.setItem('sale',JSON.stringify({"amount_total": 0, items: []}))
+  });
+
+  $("#add-member_id").on("click", function(){
+    $("#member_id_sales").removeClass('hide')
+  });
+    
+  $("#send_sale_modal").on("click", function(){
+    var url = '/sales'
+    sale = localStorage.getItem('sale')
+    sale = JSON.parse(sale)
+    sale.member_id = $('#member_id').val()
+    if(sale.items.length != 0) {
+      sale.items = JSON.stringify(sale.items)
+      $.ajax({
+        url: url,
+        dataType: "json",
+        method: 'POST',
+        headers: {'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')},
+        data: {sale},
+        success: function (response) {
+          if(parseInt(response.code) == 200) {
+            $("#modalSuccess #message").text("#{t('sales.success')}");
+            $("#modalSuccess").modal('show');
+            localStorage.setItem('sale',JSON.stringify({"amount_total": 0, items: []}))
+            $("#modalConfirmSale").modal('hide');
+          }else{
+            $("#modalError #body-title").text("#{t('sales.error')}");
+            $("#modalError #message").text(response.message);
+            $("#modalError").modal('show');
+            $("#modalConfirmSale").modal('hide');
+          }
+          window.location.reload
+        }
+      });
+    }else{
+      $("#modalError #body-title").text("#{t('sales.error')}");
+      $("#modalError #message").text("Ingrese articulos para cobrar");
+      $("#modalError").modal('show');
+      $("#modalConfirmSale").modal('hide');
+    }
+  });
+    
+  $("#send-sale").on("click", function(){
+    sale = localStorage.getItem('sale')
+    sale = JSON.parse(sale)
+    var member_id = $('#member_id').val()
+    $("#modalConfirmSale #amount_total").text("$"+sale.amount_total);
+    $("#modalConfirmSale #total_products").text(sale.items.length);
+    $("#modalConfirmSale #member_id_modal").text(member_id ||= "Cliente Externo" );
+    $("#modalConfirmSale").modal('show');
+  });
+    
+  $("#remove-member_id").on("click", function(){
+    $("#member_id").val(null)
+    $("#member_id_sales").addClass('hide')
+  });
+
+  $(document).on('click', '.remove-product', function () {
+    var barcode = $(this).data('barcode')
+    var id = $(this).data('id')
+    sale = localStorage.getItem('sale')
+    sale = JSON.parse(sale)
+    for (var i = 0; i < sale.items.length; i++) {
+      if (sale.items[i]["id"] == id) {
+        sale.amount_total = parseFloat(sale.amount_total) - parseFloat(sale.items[i]["amount"])
+        sale.items.splice(i, 1);
+        localStorage.setItem('sale', JSON.stringify(sale));
+        $('#amount_total').text("$"+sale.amount_total)
+      }
+    }
+    $('#'+barcode).remove()
+  });
+
+  $("#bar-code").on("change", function(){
+    var bar_code = $(this).val()
+    var headers = {'authenticity_token': $('meta[name="csrf-token"]').attr('content')}
+    var url = "/products/barcode/"+bar_code
+    $.get(url,headers, function(response){
+      if((parseInt(response.code) == 200) && (!response.data.sold)){
+        sale = localStorage.getItem('sale')
+        sale = JSON.parse(sale)
+        sale.items.push({ id:response.data.id, amount: response.data.price, name: response.data.name, barcode: response.data.bar_code })
+        sale.amount_total = parseFloat(response.data.price) + parseFloat(sale.amount_total)
+        localStorage.setItem('sale', JSON.stringify(sale))
+        $('#amount_total').text("$"+sale.amount_total)
+        $("#ticket").append(
+          '<div class="ticket-list pt-3" id='+ response.data.bar_code +'>' +
+            '<div class="row">'+
+              '<div class="col-2">'+
+                '<div class="button-remove">'+
+                  '<button data-id='+ response.data.id +' data-barcode='+ response.data.bar_code +' class="btn btn-remove-ticket remove-product">X</button>'+
+                '</div>'+
+              '</div>'+
+              '<div class="col-5">'+
+                "<h1 class='name-product'>#{t('common_texts.name')}: "+ response.data.name +'</h1>'+
+                "<h5 class='barcode-product'>#{t('common_texts.barcode')} "+ response.data.bar_code +'</h5>'+
+              "</div>"+
+              '<div class="col-5">'+            
+                "<h1 class='price-product'>#{t('common_texts.price')}: "+ response.data.price +'</h1>'+                    
+              '</div>'+
+            '</div>'+
+          '</div>'
+        )
+      }else{
+        $("#modalError #message").text("#{t('sales.search_product')}");
+        $("#modalError").modal('show');
+      }
+      $("#bar-code").val(null)
+    });
   });

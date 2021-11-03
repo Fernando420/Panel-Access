@@ -1,0 +1,17 @@
+%div.form-group.col-4
+  %strong#error-name.error-msg
+    = f.text_field :name, class: 'form-input', required: true,id:"name",value: @type_product['name']
+    %label.form-label{for: "name"}= t('common_texts.name')
+    %p#text-name.hide= t('errors.name')
+    
+%div.form-group.col-4
+  %strong#error-description.error-msg
+    = f.text_field :description, class: 'form-input', required: true,id:"description",value: @type_product['description']
+    %label.form-label{for: "description"}= t('common_texts.description')
+    %p#text-description.hide= t('errors.description')
+
+%div.links.col-6.pt-4
+  %a.btn.btn-link{href: "/type_products"}= t('buttons.back')
+
+%div.button.col-6.pt-4
+  %button.btn.btn-login= t('buttons.save')

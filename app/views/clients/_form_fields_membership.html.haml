@@ -1,41 +1,41 @@
 
 %div.col-12.pt-4
-  %h4 Membership
+  %h4=t('common_texts.membership')
 
 = f.hidden_field :membership_id, value: membership['id']
 
 %div.form-group-select.col-4
   %strong.error-msg{id: "error-type_membership_id"}
     = f.select :type_membership_id, options_for_select(@type_memberships.map {|tpm| [tpm['name'], tpm['id']] },selected: membership['type_membership_id']),{ include_blank: "" },{class: 'form-select', required: true}
-    %label.form-label{for: "type_membership_id"}= t('client.inputs.membership.type_membership_id')
+    %label.form-label{for: "type_membership_id"}= t('common_texts.type_membership')
     %p.hide{id: 'text-type_membership_id'}= t('errors.type_membership_id')
   
 %div.form-group.col-4
   %strong.error-msg{id: "error-description"}
     = f.text_field :description, class: 'form-input', required: true,id:"description", value: membership['description']
-    %label.form-label{for: "description"}= t('client.inputs.membership.description')
+    %label.form-label{for: "description"}= t('common_texts.description')
     %p.hide{id: 'text-description'}= t('errors.description')
   
 %div.form-group.col-4
   %strong.error-msg{id: "error-price"}
     = f.number_field :price, class: 'form-input', required: true,id:"price", value: membership['price']
-    %label.form-label{for: "price"}= t('client.inputs.membership.price')
+    %label.form-label{for: "price"}= t('common_texts.price')
     %p.hide{id: 'text-price'}= t('errors.price')
   
 %div.form-group.col-4
   %strong.error-msg{id: "error-offert"}
     = f.text_field :offert, class: 'form-input', required: true,id:"offert", value: membership['offert']
-    %label.form-label{for: "offert"}= t('client.inputs.membership.offert')
+    %label.form-label{for: "offert"}= t('common_texts.offert')
     %p.hide{id: 'text-offert'}= t('errors.offert')
   
 %div.form-group.col-4
   %strong.error-msg{id: "error-type_payment"}
     = f.text_field :type_payment, class: 'form-input', required: true,id:"type_payment", value: membership['type_payment']
-    %label.form-label{for: "type_payment"}= t('client.inputs.membership.type_payment')
+    %label.form-label{for: "type_payment"}= t('common_texts.type_payment')
     %p.hide{id: 'text-type_payment'}= t('errors.type_payment')
 
 %div.form-group.col-8
   %strong.error-msg{id: "error-extra_charge"}
     = f.text_field :extra_charge, class: 'form-input', required: true,id:"extra_charge", value: membership['extra_charge']
-    %label.form-label{for: "extra_charge"}= t('client.inputs.membership.extra_charge')
+    %label.form-label{for: "extra_charge"}= t('common_texts.extra_charge')
     %p.hide{id: 'text-extra_charge'}= t('errors.extra_charge')

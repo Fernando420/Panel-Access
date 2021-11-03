@@ -1,7 +1,7 @@
 class ReportsController < ApplicationController
     
   def index
-    @title = 'Reports'
+    @title = t('reports.title')
     reports
     type_report
   end
@@ -45,13 +45,13 @@ class ReportsController < ApplicationController
    
     def type_report
       @type_report = [
-        ["Client Sales", "client_sales"],
-        ["Client Access", "client_access"],
-        ["Client Payments", "client_payments"],
-        ["Memberships Active", "active_memberships"],
-        ["Memberships Expired", "expired_memberships"],
-        ["Memberships Suspend", "suspend_memberships"],
-        ["External Sales","external_sales"]
+        [t('status.client_sales'), "client_sales"],
+        [t('status.client_access'), "client_access"],
+        [t('status.client_payments'), "client_payments"],
+        [t('status.active_memberships'), "active_memberships"],
+        [t('status.expired_memberships'), "expired_memberships"],
+        [t('status.suspend_memberships'), "suspend_memberships"],
+        [t('status.external_sales'),"external_sales"]
       ]
     end
 

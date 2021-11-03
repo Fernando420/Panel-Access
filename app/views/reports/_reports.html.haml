@@ -1,12 +1,15 @@
 %table.table.responsive.text-center{id: 'table_desing'}
   %thead
-    %th User
-    %th Type Report
-    %th Status
-    %th Total Clients
-    %th Start Date
-    %th End Date
-    %th Report Url
+    %th= t('common_texts.user')
+    %th= t('common_texts.type_report')
+    %th= t('common_texts.status')
+    %th= t('common_texts.total_items')
+    %th= t('common_texts.date_initial')
+    %th= t('common_texts.date_finished')
+    %th= t('common_texts.url')
   %tbody
     - if @reports.any?
-      = render partial: 'reports/report', collection: @reports 
+      = render partial: 'reports/report', collection: @reports
+    - else
+      %tr
+        %td.text-center=t('reports.not_found')

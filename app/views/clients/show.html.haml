@@ -10,36 +10,36 @@
       %div.col-5
         %div
           %h1.show_info
-            Name:
+            =t('common_texts.name')
             = @client['name']
   
         %div
           %h1.show_info
-            Email:
+            =t('common_texts.email')
             = @client['email']
       
         %div
           %h1.show_info 
-            Phone:
+            =t('common_texts.phone')
             = @client['phone']
   
       %div.col-4
         %div
           %h1.show_info 
-            Birthday:
+            =t('common_texts.birthday')
             = @client['birthday']
         %div
           %h1.show_info 
-            Age:
+            =t('common_texts.age')
             = @client['age']
         %div
           %h1.show_info 
-            Status:
-            = @client['status'].titleize
+            =t("common_texts.status")
+            =t("status.#{@client['status']}")
   
       %div.col-12
         %h1.show_info
-          Address:
+          =t('common_texts.Address')
           = @client['address']
     
     %div.col-12
@@ -47,4 +47,4 @@
         
     %div.col-12{align: 'right'}
       %div.links.col-6
-        %a.btn.btn-link{href: "/clients"}= t('sales.inputs.back')
+        %a.btn.btn-link{href: "/clients"}= t('buttons.back')

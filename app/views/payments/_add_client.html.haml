@@ -1,6 +1,6 @@
 %div.show-user
   %h1 
-    Payment of 
+    =t('payments.payment_of')
     = @client['name']
   
   %div.row
@@ -13,26 +13,26 @@
       
         %div
           %h1.show_info
-            Email:
+            =t('common_texts.email')
             = @client['email']
         
         %div
           %h1.show_info 
-            Phone:
+            =t('common_texts.phone')
             = @client['phone']
-  
+        
+        %div
+          %h1.show_info 
+            =t('common_texts.birthday')
+            = @client['birthday']
       %div.col-4
         %div
           %h1.show_info 
-            Birthday:
-            = @client['birthday']
-        %div
-          %h1.show_info 
-            Age:
+            =t('common_texts.age')
             = @client['age']
         %div
           %h1.show_info 
-            Status:
+            =t('common_texts.status')
             = @client['status'].titleize
 
     %div.col-12

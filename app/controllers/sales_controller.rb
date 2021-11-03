@@ -1,19 +1,23 @@
 class SalesController < ApplicationController
 
   def index
-    @title = 'List Sales'
+    @title = t('sales.list')
     response = ApiAccess::get_sales(@current_user['token'])
     @sales = response['data']
   end
 
   def show
-    @title = 'Show Sale'
+    @title = t('sales.show')
     response = ApiAccess::get_sale({id: params[:id], token: @current_user['token']})
     if !response['status']
       flash[:alert] = t('sales.search')
       redirect_to controller: 'sales', action: "index"
     end
     @sale = response['data']
+  end
+
+  def new
+    @title = t('sales.new')
   end
 
   def create

@@ -1,0 +1,5 @@
+%div.row
+  %div.card
+    %h1= t('type_products.edit_subtitle')
+    = form_for :type_product, :url => { :action => "update"}, method: 'PUT', :html => {:class => "form row"} do |f|
+      = render partial: 'form_fields', locals: {f: f}

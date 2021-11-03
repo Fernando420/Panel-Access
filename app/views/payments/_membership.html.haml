@@ -1,44 +1,44 @@
 %div.container
   %div.row
     %div.col-12
-      %h3 Memberships
+      %h3=t('common_texts.memberships')
 
     %div.card.membership-info{id: "#{membership['status']}"}
       %div.row
         %div.col-4
           %h5
-            Type Membership:
+            =t("common_texts.type_membership")
             = membership['type_membership']['name']
 
         %div.col-4
           %h5
-            Status:
-            = membership['status'].titlecase
+            =t("common_texts.status")
+            =t("status.#{membership['status']}")
         
         %div.col-4
           %h5 
-            Type Payment
+            =t("common_texts.type_payment")
             = membership['type_payment'].to_i
-            months
+            =t("common_texts.month")
         
         %div.col-4
           %h5
-            Price:
+            =t("common_texts.price")
             = membership['price'].to_f
 
         %div.col-4
           %h5
-            Offert:
+            =t("common_texts.offert")
             = membership['offert'].to_f        
 
         %div.col-4
           %h5
-            Extra Charge:
+            =t("common_texts.extra_charge")
             = membership['extra_charge'].to_f
 
         %div.col-6
           %h5 
-            Next Payment
+            =t("common_texts.next_date_payment")
             - if membership['next_payment'].present? 
               = membership['next_payment']
             - else

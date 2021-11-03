@@ -1,5 +1,3 @@
-
-
 es:
   sidebar:
     menu_1: 
@@ -29,58 +27,157 @@ es:
       submenu_1: 'Registrar'
       submenu_2: 'Listar'
     menu_8: 
-      title: "Sales"
-      submenu_1: 'Create'
-      submenu_2: 'Lists'
+      title: "Ventas"
+      submenu_1: 'Crear'
+      submenu_2: 'Listar'
     menu_9: 
       title: "Reportes"
       submenu_1: 'Clientes'
       submenu_2: 'Pagos'
+  common_texts:
+    name: 'Nombre'
+    last_name: 'Appelidos'
+    email: 'Email'
+    phone: 'Telefono'
+    age: 'Edad'
+    birthday: 'Fecha de Nac.'
+    address: 'Dirección'
+    picture: 'Imagen'
+    type_membership: 'Tipo de membresia'
+    description: 'Descripcion'
+    price: 'Precio'
+    offert: 'Descuento'
+    type_payment: 'Pago por mes'
+    extra_charge: 'Otros cobros'
+    member: 'Member Id'
+    last_date_payment: "Ultimo dia de pago"
+    next_date_payment: "Proximo dia de pago"
+    days_restant: "Dias Restantes"
+    date_activation: "Fecha de activacion"
+    last_access: "Ultimos Accesos"
+    membership: 'Membresia'
+    memberships: 'Membresias'
+    month: 'Mes(es)'
+    date_initial: 'Fecha Inicial'
+    date_finished: 'Fecha Final'
+    date_create: 'Fecha de Creacion'
+    user: 'Usuario'
+    date_access: 'Fecha de acceso'
+    username: 'Nombre de Usuario'
+    password: 'Contraseña'
+    confirmPassword: 'Confirmar Contraseña'
+    role: 'Rol'
+    last_sign_in_count: 'Total de inicio de session'
+    last_sign_in: 'Ultima vez conectado'
+    type_product: 'Tipo de producto'
+    barcode: 'Codigo de barras'
+    search_client: 'Buscar cliente'
+    download: 'Descargar'
+    client_sales: 'Ventas Por Cliente'
+    client_access: 'Accesos por Cliente'
+    client_payments: 'Pagos por Cliente'
+    active_memberships: 'Membresias Activas'
+    expired_memberships: 'Membresias Expiradas'
+    suspend_memberships: 'Membresias Suspendidas'
+    external_sales: 'Ventas Externas'
+    total_items: 'Total'
+    client: 'Cliente'
+  sales:
+    list: 'Listar Ventas'
+    show: 'Ver Venta'
+    new: 'Crear Venta'
+    subtitle: 'Crear Venta'
+    amount_total: 'Monto total'
+    add_member: 'Agregar Cliente'
+    success: 'Venta creada con exito'
+    error: 'Error al crear la venta'
+    search_product: 'Producto no encontrado o esta vendido'
+  reports: 
+    title: 'Reportes'
+    subtitle: 'Crear Reporte'
+    type: 'Tipo de reporte'
+    select: 'Seleccione Reporte'
+  status: 
+    name: "Estatus de membresia"
+    user_new: "Usuario Nuevo"
+    actived: "Usuario Activado"
+    inactived: "Usuario Inactivo"
+    active: 'Activado'
+    process: 'Procesando'
+    finished: 'Finalizado'
+    client_sales: 'Ventas Por Cliente'
+    client_access: 'Accesos por Cliente'
+    client_payments: 'Pagos por Cliente'
+    active_memberships: 'Membresias Activas'
+    expired_memberships: 'Membresias Expiradas'
+    suspend_memberships: 'Membresias Suspendidas'
+    external_sales: 'Ventas Externas'
+  type_products:
+    new_subtitle: 'Crear Nuevo Tipo de Producto'
+    edit_subtitle: 'Editar Tipo de Producto'
+    new: 'Nuevo Tipo de Producto'
+    edit: 'Editar Tipo de Productos'
+    list: 'Listar Tipo de Producto'
+    show: 'Ver Tipo de Producto'
+  products:
+    new_subtitle: 'Crear Nuevo Producto'
+    edit_subtitle: 'Editar Producto'
+    new: 'Nuevo Producto'
+    edit: 'Editar Productos'
+    list: 'Listar Producto'
+    show: 'Ver Producto'
+  payments:
+    new_subtitle: "Crear Pago"
+    edit_subtitle: "Editar Pago"
+    new: 'Nuevo Pago'
+    list: 'Listar Pagos'
+    payment_of: 'Registrar pago para'
+    not_found: 'Pago(s) no encontrado(s)'
   client:
+    new: 'Nuevo Cliente'
+    edit: 'Editar Cliente'
+    list: 'Listar Clientes'
+    show: 'Ver Cliente'
     access:
+      title: 'Accesos de cliente'
       subtitle: "Validando Acceso"
       text_content: "Escanee el código QR del cliente"
-      button: "Validar?"
-      name: "Nombre del cliente"
-      without_payment: "Sin Pago"
-      button_2: "Dar Acceso"
-      status: 
-        name: "Estatus de membresia"
-        user_new: "Usuario Nuevo"
-        actived: "Usuario Activado"
-        inactived: "Usuario Inactivo"
-      last_date_payment: "Ultimo dia de pago"
-      last_date_payment: "Ultimo Pago"
-      days_restant: "Dias Restantes"
-      date_activation: "Fecha de activacion"
-      last_access: "Ultimos Accesos"
-    not_found: 'Cliente no encontrado'
-    subtitle: 'Information Personal'
-    inputs:
-      name: 'Name'
-      last_name: 'Last Name'
-      email: 'email'
-      phone: 'Phone'
-      button: 'Guardar'
+      without_payment: "Sin Pago"   
+    not_found: 'Cliente(s) no encontrado(s)'
+    subtitle: 'Informacion Personal'
     save:
       error: 'Error al crear el cliente'
       success: 'Cliente creado correctamente'
   users: 
-    subtitle: 'Information Personal'
+    title: "Crear Usuario"
+    new_subtitle: 'Crear Usuario'
+    edit_subtitle: 'Editar Usuario'
+    new: 'Nuevo Usuario'
+    edit: 'Editar Usuario'
+    list: 'Listar Usuarios'
+    show: 'Ver Usuario'
   login:
     privacy: 'Política de privacidad y términos legales'
     faq: 'FAQ`s'
     title: 'Systema de Administracion'
-    inputs:
-      username: 'UserName'
-      password: 'Contraseña'
     forgot-password: 'Olvide contraseña?'
-    button: 'Continuar'
+  buttons: 
+    save: 'Guardar'
+    back: 'Atras'
+    continue: 'Continuar'
+    show: 'Ver'
+    edit: 'Editar'
+    valid: "Validar?"
+    access: "Dar Acceso"
+    search: "Buscar"
+    delete: 'Eliminar'
+    generate: 'Generar'
   modals:
-    access:
-      title: "Accesso"
-    error:
-      title: "Error General"
+    success: 'Exitosamente'
+    access: 'Accesso'
+    error: "Error"
+    confirm: "Confirmacion"
+    sale: 'Confirmar Venta'
   errors:
     username: 'Ingrese un username valido'
     password: 'Mínimo seis caracteres, al menos una letra mayúscula, una letra minúscula, un número y un carácter especial'

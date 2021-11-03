@@ -11,7 +11,7 @@
           %p#text-member_id.hide= t('errors.member_id')
 
       %div.button.col-12.pt-4
-      %button.btn.btn-login= t('client.access.button')
+      %button.btn.btn-login= t('buttons.search')
             
 
     - if @access
@@ -20,39 +20,39 @@
         %div.access.row
           %div.col-6.pt-2.mb-2
             %h5
-              = t('client.access.name') 
+              = t('common_texts.name') 
               
-            %h5= @access['client']['name']
+            %h5= @access['client']['display_name']
 
           %div.col-6.pt-2.mb-2
             %h5
-              = t('client.access.status.name') 
+              = t('common_texts.status') 
               
-            %h5= t("client.access.status.#{@access['membership_status']}")
+            %h5= t("status.#{@access['membership_status']}")
 
           %div.col-6.pt-2.mb-2
             %h5
-              = t('client.access.last_date_payment') 
+              = t('common_texts.last_date_payment') 
               
             %h5= @access['last_date_payment'] ||= t("client.access.without_payment")
 
           %div.col-6.pt-2.mb-2
             %h5
-              = t('client.access.days_restant') 
+              = t('common_texts.days_restant') 
               
             %h5= @access['days_restant']
 
           %div.col-12{align: 'left'}
             %h5
-              = t('client.access.last_access') 
+              = t('common_texts.last_access') 
               
 
             %table.table.responsive.mt-4
               %thead
-                %th Date
-                %th Name
-                %th Email
-                %th User
+                %th= t('common_texts.date_access')
+                %th= t('common_texts.name')
+                %th= t('common_texts.email')
+                %th= t('common_texts.user')
               %tbody
                 - @access['last_accesses'].each do |last_access| 
                   %tr
@@ -63,6 +63,6 @@
         
         %div.col-12.pt-4
           - if @access['membership_status'] == 'active' 
-            %button#access-client.btn.btn-login{'data-id': "#{@access['client']['id']}"}= t('client.access.button_2')
+            %button#access-client.btn.btn-login{'data-id': "#{@access['client']['id']}"}= t('buttons.access')
 
 = render '/modals/access'

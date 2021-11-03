@@ -1,19 +1,19 @@
 class ClientsController < ApplicationController
 
   def index
-    @title = 'List Clients'
+    @title = t('client.list')
     response = ApiAccess::get_clients(@current_user['token'])
     @clients = response['data']
   end
 
   def new
-    @title = 'New Client'
+    @title = t('client.new')
     @client = {'memberships' => []}
     type_memberships
   end
 
   def show
-    @title = 'Show Client'
+    @title = t('client.show')
     client = ApiAccess::get_client({id: params[:id], token: @current_user['token']})
     if !client['data'].nil?
       @client = client['data']
@@ -37,7 +37,7 @@ class ClientsController < ApplicationController
 
   def edit
     type_memberships
-    @title = 'Edit Client'
+    @title = t('client.edit')
     client = ApiAccess::get_client({id: params[:id], token: @current_user['token']})
     if !client['data'].nil?
         @client = client['data']
@@ -70,7 +70,7 @@ class ClientsController < ApplicationController
   end
 
   def access
-    @title = 'Access Client'
+    @title = t('client.access.title')
     if params[:clients] && params[:clients][:member_id]
       @access = ApiAccess::get_client_access({id: params[:clients][:member_id], token: @current_user['token']})
       if @access['data'].nil?

@@ -1,0 +1,42 @@
+%div.form-group.col-4
+  %strong#error-username.error-msg
+    = f.text_field :username, class: 'form-input', required: true,id:"username",value: @user['username']
+    %label.form-label{for: "username"}= t('common_texts.username')
+    %p#text-username.hide= t('errors.username')
+    
+%div.form-group.col-4
+  %strong#error-phone.error-msg
+    = f.text_field :phone, class: 'form-input', required: true,id:"phone",value: @user['phone']
+    %label.form-label{for: "phone"}= t('common_texts.phone')
+    %p#text-phone.hide= t('errors.phone')
+    
+%div.form-group.col-4
+  %strong#error-email.error-msg
+    = f.text_field :email, class: 'form-input', required: true,id:"email",value: @user['email']
+    %label.form-label{for: "email"}= t('common_texts.email')
+    %p#text-email.hide= t('errors.email')
+    
+%div.form-group.col-4
+  %strong#error-password.error-msg
+    = f.password_field :password, class: 'form-input', required: true,id:"password"
+    %label.form-label{for: "password"}= t('common_texts.password')
+    %p#text-password.hide= t('errors.password')
+    
+%div.form-group.col-4
+  %strong#error-confirmPassword.error-msg
+    = f.password_field :confirmPassword, class: 'form-input', required: true,id:"confirmPassword"
+    %label.form-label{for: "confirmPassword"}= t('common_texts.confirmPassword')
+    %p#text-confirmPassword.hide= t('errors.confirmPassword')
+    
+
+%div.form-group-select.col-4
+  %div.form-group
+    = f.select :role_id, options_for_select(@roles.map {|role| [role['name'], role['id']] }),{ include_blank: "" },{class: 'form-select', required: true}
+    %label.form-label{for: "role"}= t('common_texts.role')
+
+
+%div.links.col-6.pt-4
+  %a.btn.btn-link{href: "/users"}= t('buttons.back')
+
+%div.button.col-6.pt-4
+  %button.btn.btn-login= t('buttons.save')

@@ -5,7 +5,7 @@
   %td= client['member_id']
   %td= client['email']
   %td
-    %a{href: "/clients/#{client['id']}/edit"} Edit
+    %a{href: "/clients/#{client['id']}/edit"}=t('buttons.edit')
   %td
-    %a{href: "/clients/#{client['id']}"} Show
+    %a{href: "/clients/#{client['id']}"}=t('buttons.show')
     

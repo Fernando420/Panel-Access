@@ -4,7 +4,9 @@
   %td= user['username']
   %td= user['role']['name']
   %td
-    %a{href: "/users/#{user['id']}/edit"} Edit
+    %a{href: "/users/#{user['id']}/edit"}
+      = t('buttons.edit')
   %td
-    %a{href: "/users/#{user['id']}"} Show
+    %a{href: "/users/#{user['id']}"}
+      = t('buttons.show')
     

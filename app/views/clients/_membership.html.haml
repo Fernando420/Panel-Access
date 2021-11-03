@@ -7,19 +7,19 @@
       %div.row
         %div.col-3
           %h5
-            Type Membership:
+            =t('common_texts.type_membership')
             = membership['type_membership']['name']
         %div.col-3
           %h5
-            Last Date Payment:
+            =t('common_texts.last_date_payment')
             = membership['last_payment']
 
         %div.col-3
           %h5
-            Next Date Payment:
+            =t('common_texts.next_date_payment')
             = membership['next_payment']
 
         %div.col-3
           %h5
-            Status:
-            = membership['status'].titlecase
+            =t('common_texts.status')
+            =t("status.#{membership['status']}")

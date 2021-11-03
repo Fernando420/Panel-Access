@@ -1,0 +1,13 @@
+%div.show-user
+  %div.row
+    %div.col
+      %h1
+        = t('type.products.labels.name')
+        = @type_product['name'] 
+    %div.col
+      %h1
+        = t('type.products.labels.description')
+        = @type_product['description']
+
+    %div.links.col-12.pt-4
+      %a.btn.btn-link{href: "/type_products"}= t('sales.inputs.back')

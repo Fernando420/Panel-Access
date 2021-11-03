@@ -1,7 +1,8 @@
 %tr
   %td= sale['user']['username']
-  %td= sale['client'].nil? ? "Sell External" : sale['client']['email']
+  %td= sale['client'].nil? ? t('common_texts.external_sales') : sale['client']['email']
   %td= sale['total']
   %td= sale['created_at']
   %td 
-    %a.link{href: "/sales/#{sale['id']}"} Show
+    %a.link{href: "/sales/#{sale['id']}"}
+      =t('buttons.show')

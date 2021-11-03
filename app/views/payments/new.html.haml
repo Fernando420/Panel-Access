@@ -1,28 +1,28 @@
 %div.row
   %div.card
     %h1
-      = t('client.subtitle')
+      = t('payments.subtitle')
       = form_for :payments, :url => { :action => "create"}, :html => {:class => "form row"} do |f|
 
         %div.form-group.col-4
           %strong.error-msg{id: "error-member_id"}
             = f.text_field :client_search, class: 'form-input', required: true, id:"client_search"
-            %label.form-label{for: "member_id"}= t('client.inputs.member_id')
+            %label.form-label{for: "member_id"}= t('common_texts.member')
             %p.hide{id: 'text-member_id'}=t('errors.member_id')
 
         %div.form-group.col-4
           %strong.error-msg{id: "error-extra_charge"}>
             = f.number_field :extra_charge, class: 'form-input',id:"extra_charge",value: 0
-            %label.form-label{for: "extra_charge"}= t('client.inputs.extra_charge')
+            %label.form-label{for: "extra_charge"}= t('common_texts.extra_charge')
             %p.hide{id: 'text-extra_charge'}=t('errors.extra_charge')
 
         %div.col-12.pt-5#client
                     
         %div.links.col-6.pt-4
-          %a.btn.btn-link{href: "/payments"}= t('client.inputs.back')
+          %a.btn.btn-link{href: "/payments"}= t('buttons.back')
         
         %div.button.col-6.pt-4
-          %button#btn-payment.btn.btn-login{disabled: true}= t('client.inputs.button')
+          %button#btn-payment.btn.btn-login{disabled: true}= t('buttons.save')
 
 :javascript
 

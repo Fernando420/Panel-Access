@@ -1,11 +1,11 @@
 class PaymentsController < ApplicationController
 
   def new
-    @title = 'Create Payment'
+    @title = t('payments.new')
   end
 
   def index
-    @title = 'List Payments'
+    @title = t('payments.list')
     response = ApiAccess::get_payments(@current_user['token'])
     @payments = response['data']
   end

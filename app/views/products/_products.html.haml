@@ -1,16 +1,16 @@
 %table.table.responsive.text-center{id: 'table_desing'}
   %thead
-    %th TypeProduct
-    %th Name
-    %th Description
-    %th Sell
-    %th BarCode
-    %th Show
-    %th Edit
-    %th Delete
+    %th=t('common_texts.type_product')
+    %th=t('common_texts.name')
+    %th=t('common_texts.description')
+    %th=t('common_texts.status')
+    %th=t('common_texts.barcode')
+    %th=t('buttons.edit')
+    %th=t('buttons.show')
+    %th=t('buttons.delete')
   %tbody
     - if @products.any?
       = render partial: 'products/product', collection: @products 
     - else
       %tr
-        %td.text-center Not found products
+        %td.text-center=t('products.not_found')

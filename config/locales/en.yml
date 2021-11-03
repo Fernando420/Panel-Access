@@ -1,34 +1,3 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
   sidebar:
     menu_1: 
@@ -65,50 +34,155 @@ en:
       title: "Reports"
       submenu_1: 'Clients'
       submenu_2: 'Payments'
+  common_texts:
+    name: 'Name'
+    last_name: 'Last Name'
+    email: 'Email'
+    phone: 'Phone'
+    age: 'Age'
+    birthday: 'Birthday'
+    address: 'Address'
+    picture: 'Picture'
+    type_membership: 'Type Membership'
+    description: 'Description'
+    price: 'Price'
+    offert: 'Discount'
+    type_payment: 'Pay per month'
+    extra_charge: 'Other charge'
+    member: 'Member Id'
+    last_date_payment: "Last day for payment"
+    next_date_payment: "Next payday"
+    days_restant: "Remaining days"
+    date_activation: "Activation date"
+    last_access: "Last Access"
+    membership: 'Memberships'
+    memberships: 'Memberships'
+    month: 'Month(s)'
+    date_initial: 'Initial date'
+    date_finished: 'Final date'
+    date_create: 'Creation date'
+    user: 'User'
+    date_access: 'Date access'
+    username: 'User Name'
+    password: 'Password'
+    confirmPassword: 'Confirm Password'
+    role: 'Role'
+    last_sign_in_count: 'Login Total'
+    last_sign_in: 'Last time connected'
+    type_product: 'Type product'
+    barcode: 'Bar Code'
+    search_client: 'Search client to add'
+    download: 'Download'
+    client_sales: 'Client Sales'
+    client_access: 'Client Access'
+    client_payments: 'Client Payments'
+    active_memberships: 'Active Memberships'
+    expired_memberships: 'Expired Memberships'
+    suspend_memberships: 'Suspend Memberships'
+    external_sales: 'External Sales'
+    total_items: 'Total Items'
+    client: 'Client'
+  sales:
+    list: 'List Sales'
+    show: 'Show Sale'
+    new: 'New Sale'
+    subtitle: 'Create Sale'
+    amount_total: 'Amount total'
+    add_member: 'Add Client'
+    success: 'Sale create successfully'
+    error: 'Failed to create sale'
+    search_product: 'Error Product Not Found or Product Selled'
+  reports: 
+    title: 'Report'
+    subtitle: 'New Report'
+    type: 'Type report'
+    select: 'Select Report'
+  status:
+    name: "Status"
+    user_new: "User new"
+    actived: "User Actived"
+    inactived: "User Inactived"
+    active: 'Active'
+    process: 'Process'
+    finished: 'Finished'
+    client_sales: 'Client Sales'
+    client_access: 'Client Access'
+    client_payments: 'Client Payments'
+    active_memberships: 'Active Memberships'
+    expired_memberships: 'Expired Memberships'
+    suspend_memberships: 'Suspend Memberships'
+    external_sales: 'External Sales'
+  type_products:
+    new: 'New Type Product'
+    edit: 'Edit Type Products'
+    list: 'List Type Product'
+    show: 'Show Type Product'
+    new_subtitle: "Create Type Payment"
+    edit_subtitle: "Edit Type Payment"
+  products:
+    new: 'New Product'
+    edit: 'Edit Products'
+    list: 'List Product'
+    show: 'Show Product'
+    new_subtitle: "Create Product"
+    edit_subtitle: "Edit Product"
+  payments:
+    new: 'New Payment'
+    list: 'List Payments'
+    new_subtitle: "Create Payment"
+    edit_subtitle: "Edit Payment"
+    payment_of: 'Pago por'
+    not_found: "Payment(s) not found"
   client:
+    new: 'New Client'
+    edit: 'Edit Client'
+    list: 'List Clients'
+    show: 'Show Client'
     access:
+      title: 'Clients access'
       subtitle: "Valid Access"
       text_content: "Scan the member id of the customer's QR code"
-      button: "Valid?"
-      name: "Name Client"
-      button_2: "Access"
       without_payment: "Without Payment"
-      status:
-        name: "Status"
-        user_new: "User new"
-        actived: "User Actived"
-        inactived: "User Inactived"
-      last_date_payment: "Last Date Payment"
-      days_restant: "Days Restant"
-      date_activation: "Date Activation"
-      last_access: "Last_Access"
-    not_found: "Client not found"
+    not_found: "Client(s) not found"
     subtitle: 'Information Personal'
     save:
       error: 'Error create client'
       success: 'Create client successfully'
-    inputs:
-      name: 'Name'
-      last_name: 'Last Name'
-      email: 'email'
-      phone: 'Phone'
-      button: 'Save'
   users:
-    subtitle: 'Information Personal'
+    title: "Create User"
+    new_subtitle: 'Create User'
+    edit_subtitle: 'Edit User'
+    new: 'New User'
+    edit: 'Edit User'
+    list: 'List Users'
+    show: 'Show User'
   login:
     privacy: 'Privacy policy and legal terms'
     faq: 'FAQ`s'
     title: 'System Administrations'
-    inputs:
-      username: 'UserName'
-      password: 'Password'
     forgot-password: 'Forgot Password?'
-    button: 'Continue'
+  buttons: 
+    save: 'Save'
+    back: 'Back'
+    continue: 'Continue'
+    show: 'Show'
+    edit: 'Edit'
+    valid: "Valid?"
+    access: "Access"
+    search: "Search"
+    delete: 'Delete'
+    generate: 'Generate'
   modals:
     access:
       title: "Access"
     error:
       title: "Error Gral"
+  modals:
+    success: 'Successfully'
+    error: "Error"
+    confirm: "Confirmation"
+    access: 'Accesses'
+    sale: 'Sale Confirm'
   errors:
     username: 'Enter a valid username'
     password: 'Minimum six characters, at least one uppercase letter, one lowercase letter, one number and one special character'

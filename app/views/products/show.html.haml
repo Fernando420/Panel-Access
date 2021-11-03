@@ -1,0 +1,40 @@
+%div.show-user
+  %div.row
+    %div.col-4.p-4
+      %h1
+        = t('type.products.inputs.name')
+        = @product['name']
+     
+    %div.col-4.p-4
+      %h1
+        = t('type.products.inputs.description')
+        = @product['description']
+    
+    %div.col-4.p-4
+      %h1
+        = t('type.products.inputs.price')
+        = @product['price']
+    
+    %div.col-4.p-4
+      %h1
+        = t('type.products.inputs.sell')
+        = getSelled?(@product['sold'])
+    
+    %div.col-4.p-4
+      - if @product['sold']
+        %h1
+          = t('type.products.inputs.sold_date')
+          = DateTime.parse(@product['sold_date']).strftime('%Y-%m-%d %H:%M')
+    
+    %div.col-4.p-4
+      %h1
+        = t('type.products.inputs.status')
+        = @product['status'].titleize
+    
+    %div.col-6.p-4
+      %h1
+        = t('type.products.inputs.type_product')
+        = @product['type_product']['name']
+    
+    %div.links.col-10.pt-4
+      %a.btn.btn-link{href: "/products"}= t('sales.inputs.back')

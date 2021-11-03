@@ -5,8 +5,8 @@
   %td= getSelled?(product['sold'])
   %td= product['bar_code']
   %td
-    %a.link{href: "/products/#{product['id']}/edit"} Editar
+    %a.link{href: "/products/#{product['id']}/edit"}=t('buttons.edit')
   %td
-    %a.link{href: "/products/#{product['id']}"} Show
-  %td= link_to 'Eliminar',"/products/#{product['id']}", method: "delete", data: { confirm: "Are you sure?", disable_with: "Processing..." }
+    %a.link{href: "/products/#{product['id']}"}=t('buttons.show')
+  %td= link_to t('buttons.delete'),"/products/#{product['id']}", method: "delete", data: { confirm: "Are you sure?", disable_with: "Processing..." }
     

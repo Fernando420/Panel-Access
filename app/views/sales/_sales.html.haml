@@ -1,13 +1,13 @@
 %table.table.responsive.text-center{id: 'table_desing'}
   %thead
-    %th User
-    %th Email
-    %th Total
-    %th Created
-    %th Show
+    %th=t('common_texts.user')
+    %th=t('common_texts.email')
+    %th=t('common_texts.total')
+    %th=t('common_texts.date_create')
+    %th=t('buttons.show')
   %tbody
     - if @sales.any?
       = render partial: 'sales/sale', collection: @sales 
     - else
       %tr
-        %td.text-center Not found sales
+        %td.text-=t('sales.not_found')

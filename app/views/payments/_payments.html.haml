@@ -1,15 +1,15 @@
 %table.table.responsive.text-center{id: 'table_desing'}
   %thead
-    %th Member Id
-    %th Username
-    %th Amount
-    %th Extra Services
-    %th Date Initial
-    %th Date Finished
-    %th Created
+    %th=t('common_texts.member')
+    %th=t('common_texts.email')
+    %th=t('common_texts.price')
+    %th=t('common_texts.extra_charge')
+    %th=t('common_texts.date_initial')
+    %th=t('common_texts.date_finished')
+    %th=t('common_texts.date_create')
   %tbody
     - if @payments.any?
       = render partial: 'payments/payment', collection: @payments 
     - else
       %tr
-        %td.text-center Not found payments
+        %td.text-center=t('payments.not_found')

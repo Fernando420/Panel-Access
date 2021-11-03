@@ -1,0 +1,51 @@
+%div.show-user
+  %div.row
+
+    %div.col-6.pt-3
+      %span
+        = t('sales.seller_email')
+        = @sale['user']['email']
+  
+    %div.col-6.pt-3
+      %span
+        = t('sales.total_products')
+        = @sale['total_products']
+
+    - if @sale['client'].present?
+      %div.col-6.pt-3
+        %span
+          = t('sales.buyer_email')
+          = @sale['client']['email']
+    - else
+      %div.col-6.pt-3
+        %span
+          = t('sales.type')
+          = t('common_texts.external_sales')
+  
+    %div.col-12.pt-3
+      %span= t('sales.products')
+      %ul
+        - @sale['products'].each do |product|
+          - product = JSON.parse(product)
+          %li
+            %div.ticket-list.pt-3
+              %div.row
+                %div.col-5
+                  %h1.name-product
+                    = t('common_texts.name')
+                    = product['name']
+                  %h5.barcode-product
+                    = t('common_texts.barcode')
+                    = product['barcode']
+                %div.col-5       
+                  %h1.price-product
+                    = t('common_texts.price')
+                    = product['amount']                   
+
+    %div.col-12
+      %h1
+        = t('sales.amount_total')
+        = @sale['total']
+
+    %div.links.col-6.pt-4
+      %a.btn.btn-link{href: "/sales"}= t('buttons.back') 

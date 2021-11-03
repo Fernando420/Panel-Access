@@ -1,0 +1,39 @@
+%div.form-group.col-4
+  %strong#error-name.error-msg
+    = f.text_field :name, class: 'form-input', required: true,id:"name", value: @product['name']
+    %label.form-label{for: "name"}= t('common_texts.name')
+    %p#text-name.hide= t('errors.name')
+
+%div.form-group.col-4
+  %strong#error-description.error-msg
+    = f.text_field :description, class: 'form-input', required: true,id:"description", value: @product['description']
+    %label.form-label{for: "description"}= t('common_texts.description')
+    %p#text-description.hide= t('errors.description')
+
+%div.form-group.col-4
+  %strong#error-price.error-msg
+    = f.number_field :price, class: 'form-input', required: true,id:"price", value: @product['price']
+    %label.form-label{for: "price"}= t('common_texts.price')
+    %p#text-price.hide= t('errors.price')
+
+%div.form-group.col-4
+  %strong#error-bar_code.error-msg
+    = f.text_field :bar_code, class: 'form-input', required: true,id:"bar_code", value: @product['bar_code']
+    %label.form-label{for: "bar_code"}= t('common_texts.barcode')
+    %p#text-bar_code.hide= t('errors.bar_code')
+
+%div.form-group-select.col-4
+  %div.form-group
+    = select_tag 'status', options_for_select(@statuses.uniq,:selected => @product["status"]), {:include_blank => "", :class => 'form-select'}
+    %label.form-label{for: "role"}= t('common_texts.status')
+
+%div.form-group-select.col-4
+  %div.form-group
+    = select_tag 'type_product_id', options_for_select(@type_products.map {|type_product| [ type_product['name'], type_product['id'] ]}.uniq,:selected => @product["type_product_id"]), {:include_blank => "", :class => 'form-select'}
+    %label.form-label{for: "role"}= t('common_texts.type_product')
+
+%div.links.col-6.pt-4
+  %a.btn.btn-link{href: "/products"}= t('buttons.back')
+
+%div.button.col-6.pt-4
+  %button.btn.btn-login= t('buttons.save')
