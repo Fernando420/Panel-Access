@@ -45,6 +45,23 @@
       = f.text_field :address, class: 'form-input', required: true,id:"address", value: @client['address']
       %label.form-label{for: "address"}= t('common_texts.address')
       %p.hide{id: 'text-address'}= t('errors.address')
+  
+%div.col-12.row
+  
+  %div.form-group.col-12.pt-3
+    %h5= t('common_texts.password')
+  
+  %div.form-group.col-6
+    %strong#error-password.error-msg
+      = f.password_field :password, class: 'form-input',id:"password"
+      %label.form-label{for: "password"}= t('common_texts.password')
+      %p.hide{id: 'text-password'}= t('errors.password')
+
+  %div.form-group.col-6
+    %strong#error-confirmPassword.error-msg
+      = f.password_field :confirmPassword, class: 'form-input',id:"confirmPassword"
+      %label.form-label{for: "confirmPassword"}= t('common_texts.confirmPassword')
+      %p.hide{id: 'text-confirmPassword'}= t('errors.confirmPassword')
 
 
 -if @client['memberships'].any?

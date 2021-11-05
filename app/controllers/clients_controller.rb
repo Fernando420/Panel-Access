@@ -100,6 +100,8 @@ class ClientsController < ApplicationController
         email: params[:clients][:email],
         birthday: params[:clients][:birthday],
         member_id: params[:clients][:member_id],
+        password: params[:clients][:password],
+        password_confirmation: params[:clients][:confirmPassword],
         age: params[:clients][:age],
         address: params[:clients][:address],
         display_name: "#{params[:clients][:name]} #{params[:clients][:last_name]}",
