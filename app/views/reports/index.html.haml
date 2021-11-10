@@ -52,7 +52,11 @@
     console.log('entro')
     console.log($(this).val())
     switch($(this).val()){
-      
+      case 'all_payments':
+        $('#client_div').hide()
+        $('#start_date').show()
+        $('#end_date').show()
+        break;
       case 'active_memberships':
         $('#client_div').hide()
         $('#start_date').hide()
@@ -70,14 +74,13 @@
         break;
       case 'external_sales':
         $('#client_div').hide()
+        $('#start_date').show()
+        $('#end_date').show()
         break;
       default: 
         $('#client_div').show()
         $('#start_date').show()
         $('#end_date').show()
-        
-      
-      
     }
   })
 

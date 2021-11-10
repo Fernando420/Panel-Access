@@ -32,9 +32,8 @@ en:
       submenu_2: 'Lists'
     menu_9: 
       title: "Reports"
-      submenu_1: 'Clients'
-      submenu_2: 'Payments'
   common_texts:
+    home: 'Home'
     name: 'Name'
     last_name: 'Last Name'
     email: 'Email'
@@ -62,6 +61,7 @@ en:
     date_finished: 'Final date'
     date_create: 'Creation date'
     user: 'User'
+    users: 'Users'
     date_access: 'Date access'
     username: 'User Name'
     password: 'Password'
@@ -80,8 +80,17 @@ en:
     expired_memberships: 'Expired Memberships'
     suspend_memberships: 'Suspend Memberships'
     external_sales: 'External Sales'
+    all_payments: 'Total Revenue'
     total_items: 'Total Items'
-    client: 'Client'
+    clients: 'Client'
+    client: 'Clients'
+    payments: 'Payment'
+    payment: 'Payments'
+    sales: 'Sales'
+    sale: 'Sale'
+    accesses: 'Accesses'
+    access: 'Access'
+    last_payments: 'Last Payments'
   sales:
     list: 'List Sales'
     show: 'Show Sale'
@@ -112,6 +121,7 @@ en:
     expired_memberships: 'Expired Memberships'
     suspend_memberships: 'Suspend Memberships'
     external_sales: 'External Sales'
+    all_payments: 'Total Revenue'
   type_products:
     new: 'New Type Product'
     edit: 'Edit Type Products'
@@ -172,11 +182,6 @@ en:
     search: "Search"
     delete: 'Delete'
     generate: 'Generate'
-  modals:
-    access:
-      title: "Access"
-    error:
-      title: "Error Gral"
   modals:
     success: 'Successfully'
     error: "Error"

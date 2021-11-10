@@ -1,41 +1,145 @@
-%div.row
-  %div.card
-    %div.row
-      %div.col-3
-        %h1.text-title
-          = t('home.clients')
-          %span.text-response :
-          = @data['clients']
-      %div.col-3
-        %h1.text-title
-          = t('home.users')
-          %span.text-response :
-          = @data['users']
-      %div.col-3
-        %h1.text-title
-          = t('home.payments')
-          %span.text-response :
-          = @data['payments']
-      %div.col-3.pb-5
-        %h1.text-title
-          = t('home.access')
-          %span.text-response :
-          = @data['access_total']
+%div.container
 
-      %div.container{align: 'center'}
-        %div.row
-          %div.col-4
-            %h1.text-data
-              = t('home.clients_in_this_month')
-              %span.text-response :
-              %span.text-resp= @data['clients_month']
-          %div.col-4
-            %h1.text-data
-              = t('home.payments_in_this_month')
-              %span.text-response :
-              %span.text-resp= @data['payments_month']
-          %div.col-4
-            %h1.text-data
-              = t('home.access_today')
-              %span.text-response :
-              %span.text-resp= @data['access_today']
+  %div.row
+
+    %div.col-3
+      %div.card_one
+        %div.card_home
+          %div.col-3.icon
+            = image_tag 'home/users.svg', class: 'home-user'
+  
+          %div.col-9
+            %h1= @data['clients']
+            %h1= t('common_texts.clients')
+
+    %div.col-3
+      %div.card_two
+        %div.card_home
+          %div.col-3.icon
+            = image_tag 'home/user.png', class: 'home-user'
+  
+          %div.col-9
+            %h1= @data['users']
+            %h1= t('common_texts.users')
+
+
+    %div.col-3
+      %div.card_three
+        %div.card_home
+          %div.col-3.icon
+            %h1 $
+  
+          %div.col-9
+            %h1= @data['payments']
+            %h1= t('common_texts.payments')
+
+
+    %div.col-3
+      %div.card_four
+        %div.card_home
+          %div.col-3.icon
+            = image_tag 'home/shopping.png', class: 'home-shopping'
+  
+          %div.col-9
+            %h1= @data['sales']
+            %h1= t('common_texts.sales')
+    
+    %div.col-6
+      %div.card
+        %h4{align: 'center'}= t('common_texts.accesses')
+        %canvas#accessBar
+
+    %div.col-6
+      %div.card
+        %h4{align: 'center'}
+          = t('common_texts.payments')
+          = t('common_texts.sales')
+        %canvas#paymentsDoughnut
+
+    %div.col-12.pt-3
+      %div.card
+        
+        %h4{align: 'center'}= t('common_texts.last_payments')
+        %div.col
+          = render partial: 'payments/payments'
+        
+      
+:javascript
+
+  $(document).ready(function(){
+    const ctx = document.getElementById('accessBar').getContext('2d');
+    let labels = "#{@data['gAccess']['labels']}"
+    labels = labels.replace(/&quot;/g, '"')
+    let data = "#{@data['gAccess']['data']}"
+    data = data.replace(/&quot;/g, '"')
+    console.log(labels)
+    console.log(data)
+    const accessBar = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: JSON.parse(labels),
+        datasets: [{
+          data: JSON.parse(data),
+          backgroundColor: [
+            'rgba(255, 99, 132)',
+            'rgba(54, 162, 235)',
+            'rgba(255, 206, 86)',
+            'rgba(75, 192, 192)',
+            'rgba(153, 102, 255)',
+            'rgba(255, 159, 64)'
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)'
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        },
+        legend: {
+          display: false
+        },
+        tooltips: {
+          callbacks: {
+            label: function(tooltipItem) {
+             return tooltipItem.yLabel;
+            }
+          }
+        }
+      }
+    });
+
+    const ctx_doughnut = document.getElementById('paymentsDoughnut').getContext('2d');
+    const paymentsDoughnut = new Chart(ctx_doughnut, {
+      type: 'doughnut',
+      data: {
+        labels: ['Pyaments','Sales'],
+        datasets: [{
+          data: ["#{@data['payments']}","#{@data['sales']}"],
+          backgroundColor: [
+            '#e83e8c',
+            '#20c997'
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+
+
+  });

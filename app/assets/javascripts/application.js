@@ -21,6 +21,7 @@
 //= require jquery-ui/widgets/autocomplete
 //= require autocomplete-rails
 //= require bootstrap
+//= require Chart.min
 //= require_tree .
 
 

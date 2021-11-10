@@ -4,9 +4,55 @@
 
 
 h5{
-    font-size: 15px;
-    font-family: $monserrat;
-    font-weight: 400;
-    color: gray;
-    display: contents;
+  font-size: 15px;
+  font-family: $monserrat;
+  font-weight: 400;
+  color: gray;
+  display: contents;
+}
+
+.card_home{
+  h1{
+    font-size: 25px;
+  }
+  .icon{
+    align-self: center;
+  }
+  display: flex;
+  color: white;
+  padding: 10px;
+  box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.10);
+}
+
+.card_one{
+  border-radius: 10px;
+  background-image: -webkit-linear-gradient(90deg, #3f5efb 0%, #fc466b 100%);
+}
+.card_two{
+  border-radius: 10px;
+  background-image: -webkit-linear-gradient(90deg, #11998e 0%, #38ef7d 100%);
+}
+.card_three{
+  border-radius: 10px;
+  background-image: -webkit-linear-gradient(90deg,#ee0979 0%,#ff6a00 100%);
+}
+.card_four{
+  border-radius: 10px;
+  background-image: -webkit-linear-gradient(90deg,#45b649 0%,#dce35b 100%);
+}
+
+.home-user{
+  width: 30px;
+  height: 30px;
+}
+
+.home-clients{
+  width: 15px;
+  height: 15px;
+
+}
+
+.home-shopping{
+  width: 30px;
+  height: 30px;
 }

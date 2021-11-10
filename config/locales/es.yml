@@ -32,9 +32,8 @@ es:
       submenu_2: 'Listar'
     menu_9: 
       title: "Reportes"
-      submenu_1: 'Clientes'
-      submenu_2: 'Pagos'
   common_texts:
+    home: 'Inicio'
     name: 'Nombre'
     last_name: 'Appelidos'
     email: 'Email'
@@ -62,6 +61,7 @@ es:
     date_finished: 'Fecha Final'
     date_create: 'Fecha de Creacion'
     user: 'Usuario'
+    users: 'Usuarios'
     date_access: 'Fecha de acceso'
     username: 'Nombre de Usuario'
     password: 'Contraseña'
@@ -80,8 +80,17 @@ es:
     expired_memberships: 'Membresias Expiradas'
     suspend_memberships: 'Membresias Suspendidas'
     external_sales: 'Ventas Externas'
+    all_payments: 'Ingresos totales'
     total_items: 'Total'
+    clients: 'Clientes'
     client: 'Cliente'
+    payments: 'Pagos'
+    payment: 'Pago'
+    sales: 'Ventas'
+    sale: 'Venta'
+    accesses: 'Accesos'
+    access: 'Acceso'
+    last_payments: 'Ultimos Pagos'
   sales:
     list: 'Listar Ventas'
     show: 'Ver Venta'
@@ -112,6 +121,7 @@ es:
     expired_memberships: 'Membresias Expiradas'
     suspend_memberships: 'Membresias Suspendidas'
     external_sales: 'Ventas Externas'
+    all_payments: 'Ingresos totales'
   type_products:
     new_subtitle: 'Crear Nuevo Tipo de Producto'
     edit_subtitle: 'Editar Tipo de Producto'
