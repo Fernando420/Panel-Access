@@ -1,0 +1,14 @@
+%table.table.table-responsive.text-center
+  %thead
+    %th=t('common_texts.client')
+    %th=t('common_texts.price')
+    %th=t('common_texts.date_create')
+  %tbody
+    - if @data['last_payments'].any?
+      = render partial: 'last_payment', collection: @data['last_payments'], as: :payment
+    - else
+      %tr
+        %td.text-center=t('payments.not_found')
+
+%div.col-12{align: 'right'}
+  = link_to(t('common_texts.see_more'),payments_url(), {})

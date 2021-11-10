@@ -1,0 +1,11 @@
+%table.table.responsive.text-center
+  %thead
+    %th=t('common_texts.name')
+    %th=t('common_texts.member')
+    %th=t('common_texts.date_finished')
+  %tbody
+    - if @data['next_payments'].any?
+      = render partial: 'next_payment', collection: @data['next_payments'], as: :client
+    - else
+      %tr
+        %td.text-center=t('payments.not_found')

@@ -2,14 +2,13 @@
   %thead
     %th.col-3=t('common_texts.picture')
     %th=t('common_texts.name')
-    %th=t('common_texts.last_name')
     %th=t('common_texts.member')
     %th=t('common_texts.email')
     %th=t('buttons.edit')
     %th=t('buttons.show')
   %tbody
     - if @clients.any?
-      = render partial: 'clients/client', collection: @clients 
+      = render partial: 'client', collection: @clients 
     - else
       %tr
         %td.text-center=t('client.not_found')

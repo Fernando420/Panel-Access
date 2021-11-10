@@ -1,0 +1,4 @@
+%tr
+  %td= payment['client_name']
+  %td= payment['amount']
+  %td= DateTime.parse(payment['created_at']).strftime("%Y-%m-%d")

@@ -1,7 +1,6 @@
 %tr
   %td= image_tag "#{client['picture'].present? ? client['picture'] : 'clients/missing.png'}", class: 'img-circle', id: ''
-  %td= client['name']
-  %td= client['last_name']
+  %td= client['display_name']
   %td= client['member_id']
   %td= client['email']
   %td

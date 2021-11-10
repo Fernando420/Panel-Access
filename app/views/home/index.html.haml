@@ -56,25 +56,28 @@
           = t('common_texts.sales')
         %canvas#paymentsDoughnut
 
-    %div.col-12.pt-3
+    %div.col-6.pt-3
       %div.card
-        
         %h4{align: 'center'}= t('common_texts.last_payments')
         %div.col
-          = render partial: 'payments/payments'
+          = render partial: 'last_payments'
+
+    %div.col-6.pt-3
+      %div.card
+        %h4{align: 'center'}= t('common_texts.next_payments')
+        %div.col
+          = render partial: 'next_payments'
         
       
 :javascript
 
   $(document).ready(function(){
-    const ctx = document.getElementById('accessBar').getContext('2d');
+    let ctx = document.getElementById('accessBar').getContext('2d');
     let labels = "#{@data['gAccess']['labels']}"
     labels = labels.replace(/&quot;/g, '"')
     let data = "#{@data['gAccess']['data']}"
     data = data.replace(/&quot;/g, '"')
-    console.log(labels)
-    console.log(data)
-    const accessBar = new Chart(ctx, {
+    let accessBar = new Chart(ctx, {
       type: 'bar',
       data: {
         labels: JSON.parse(labels),
@@ -118,8 +121,8 @@
       }
     });
 
-    const ctx_doughnut = document.getElementById('paymentsDoughnut').getContext('2d');
-    const paymentsDoughnut = new Chart(ctx_doughnut, {
+    let ctx_doughnut = document.getElementById('paymentsDoughnut').getContext('2d');
+    let paymentsDoughnut = new Chart(ctx_doughnut, {
       type: 'doughnut',
       data: {
         labels: ['Pyaments','Sales'],

@@ -53,6 +53,8 @@ class ReportsController < ApplicationController
         [t('status.suspend_memberships'), "suspend_memberships"],
         [t('status.external_sales'),"external_sales"],
         [t('status.all_payments'),"all_payments"],
+        [t('status.sale_products'),"sale_products"],
+        [t('status.stock_products'),"stock_products"]
       ]
     end
 
