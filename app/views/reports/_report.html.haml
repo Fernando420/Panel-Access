@@ -3,8 +3,8 @@
   %td= t("status.#{report['type_report']}")
   %td= t("status.#{report['status']}")
   %td= report['total_items']
-  %td= report['start_date']
-  %td= report['end_date']
+  %td= DateTime.parse(report['start_date']).strftime("%Y-%m-%d %H:%M:%S")
+  %td= DateTime.parse(report['end_date']).strftime("%Y-%m-%d %H:%M:%S")
   %td
     - if report['status'] == 'finished'
       %a{href: "#{report['url']}", target: '_blank'}

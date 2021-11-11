@@ -20,6 +20,7 @@ class ReportsController < ApplicationController
     else
       flash[:warning] = 'Select Report'
     end
+    @title = t('reports.title')
     reports
     type_report
     render action: :index
@@ -31,8 +32,8 @@ class ReportsController < ApplicationController
       {
         user_id: @current_user['user']['id'],
         type_report: params[:report],
-        start_date: params[:start_date],
-        end_date: params[:end_date],
+        start_date: DateTime.parse("#{params[:start_date]} 00:00:00"),
+        end_date: DateTime.parse("#{params[:end_date]} 23:59:59"),
         items: params[:items],
         total_items: params[:items].count
       }
