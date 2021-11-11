@@ -9,7 +9,7 @@
             = image_tag 'home/users.svg', class: 'home-user'
   
           %div.col-9
-            %h1= @data['clients']
+            %h1= @data['total_clients']
             %h1= t('common_texts.clients')
 
     %div.col-3
@@ -19,7 +19,7 @@
             = image_tag 'home/user.png', class: 'home-user'
   
           %div.col-9
-            %h1= @data['users']
+            %h1= @data['total_users']
             %h1= t('common_texts.users')
 
 
@@ -30,7 +30,7 @@
             %h1 $
   
           %div.col-9
-            %h1= @data['payments']
+            %h1= @data['total_payments']
             %h1= t('common_texts.payments')
 
 
@@ -41,7 +41,7 @@
             = image_tag 'home/shopping.png', class: 'home-shopping'
   
           %div.col-9
-            %h1= @data['sales']
+            %h1= @data['total_sales']
             %h1= t('common_texts.sales')
     
     %div.col-6
@@ -125,9 +125,9 @@
     let paymentsDoughnut = new Chart(ctx_doughnut, {
       type: 'doughnut',
       data: {
-        labels: ['Pyaments','Sales'],
+        labels: ["#{t('common_texts.payments')}","#{t('common_texts.sales')}"],
         datasets: [{
-          data: ["#{@data['payments']}","#{@data['sales']}"],
+          data: ["#{@data['total_payments']}","#{@data['total_sales']}"],
           backgroundColor: [
             '#e83e8c',
             '#20c997'
