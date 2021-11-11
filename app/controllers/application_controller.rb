@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   end
 
   def valid_session
-    @current_user = Redis.current.get("login")
+    @current_user = Redis.current.get("login-#{cookies[:token]}")
     @current_user = JSON.parse(@current_user)  if @current_user
     valid_token
     return redirect_to login_sessions_path() if !@current_user
@@ -34,7 +34,7 @@ class ApplicationController < ActionController::Base
       if !@current_user.nil?
         response = ApiAccess::info_gral(@current_user['token'])
         if response['errors']
-          Redis.current.del("login")
+          Redis.current.del("login-#{@token_session}")
         end
       end
       return flag

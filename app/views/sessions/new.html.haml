@@ -1,0 +1,29 @@
+= render partial: 'privacy'
+      
+%div.content
+  %div.subtitle{align: 'center'}
+    %img{src: "https://uulala-public.s3-us-west-2.amazonaws.com/App/avatar/test-l.png", width: '150', height: '150', alt: ""}
+  
+  %div.title
+    %h1= t('login.title')
+
+  = form_for :sessions, :url => { :action => "create"}, :html => {:class => "form"} do |f|
+    %div.form-group
+      %strong#error-username.error-msg
+        = f.text_field :username, class: 'form-input', required: true,id:"username"
+        %label.form-label{for: "username"}= t('login.input.username')
+        %p#text-username.hide= t('errors.username')
+
+    %div.form-group
+      %strong#error-password.error-msg
+        = f.password_field :password, class: 'form-input', required: true,id:"password"
+        %label.form-label{for: "password"}= t('register.inputs.password')
+        %p#text-password.hide= t('errors.password')
+
+    %div.row
+      %div.forgot-password
+        %a{href: "#{forgot_password_sessions_url}"}= t('login.forgot-password')
+      %div.button
+        %button.btn.btn-login= t('buttons.login')
+
+

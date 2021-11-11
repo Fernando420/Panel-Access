@@ -7,7 +7,11 @@ Rails.application.routes.draw do
     collection do
       get '/login' => 'sessions#new'
       post '/login' => 'sessions#create'
+      get :edit_password
       delete :logout
+      get :forgot_password
+      post :update_password
+      post :email_forgot_pwd
     end
   end
 

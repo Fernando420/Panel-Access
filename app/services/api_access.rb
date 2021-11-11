@@ -7,6 +7,16 @@ class ApiAccess
     JSON.parse(response.body)
   end
 
+  def self.forgot_password(args)
+    response = HTTParty.post("#{base_url}/api/v1/forgot/password",body: args.to_json ,:headers => headers(''), :debug_output => $stdout)
+    JSON.parse(response.body)
+  end
+
+  def self.edit_password(args)
+    response = HTTParty.put("#{base_url}/api/v1/forgot/password",body: args.to_json ,:headers => headers(''), :debug_output => $stdout)
+    JSON.parse(response.body)
+  end
+
   def self.get_clients(token)
     response = HTTParty.get("#{base_url}/api/v1/clients" ,:headers => headers(token), :debug_output => $stdout)
     JSON.parse(response.body)

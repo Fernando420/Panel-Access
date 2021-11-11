@@ -175,7 +175,7 @@ en:
   login:
     privacy: 'Privacy policy and legal terms'
     faq: 'FAQ`s'
-    title: 'System Administrations'
+    title: 'Gym Management System'
     forgot-password: 'Forgot Password?'
   buttons: 
     save: 'Save'

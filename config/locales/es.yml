@@ -175,7 +175,7 @@ es:
   login:
     privacy: 'Política de privacidad y términos legales'
     faq: 'FAQ`s'
-    title: 'Systema de Administracion'
+    title: 'Sistema de Gestión de Gimnasio'
     forgot-password: 'Olvide contraseña?'
   buttons: 
     save: 'Guardar'
