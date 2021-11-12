@@ -2,10 +2,10 @@
   %td= type_product['name']
   %td= type_product['description']
   %td
-    %a.link{href: "/type_products/#{type_product['id']}/edit"}
+    %a.link-table{href: "/type_products/#{type_product['id']}/edit"}
       =t('buttons.edit')
   %td
-    %a.link{href: "/type_products/#{type_product['id']}"}
+    %a.link-table{href: "/type_products/#{type_product['id']}"}
       =t('buttons.show')
-  %td= link_to t('buttons.delete'),"/type_products/#{type_product['id']}", method: "delete", data: { confirm: "Are you sure?", disable_with: "Processing..." }
+  %td= link_to t('buttons.delete'),"/type_products/#{type_product['id']}", method: "delete",class: 'link-table', data: { confirm: "Are you sure?", disable_with: "Processing..." }
     

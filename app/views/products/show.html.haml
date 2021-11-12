@@ -1,40 +1,42 @@
-%div.show-user
+%div.container
   %div.row
-    %div.col-4.p-4
-      %h1
-        = t('type.products.inputs.name')
-        = @product['name']
-     
-    %div.col-4.p-4
-      %h1
-        = t('type.products.inputs.description')
-        = @product['description']
-    
-    %div.col-4.p-4
-      %h1
-        = t('type.products.inputs.price')
-        = @product['price']
-    
-    %div.col-4.p-4
-      %h1
-        = t('type.products.inputs.sell')
-        = getSelled?(@product['sold'])
-    
-    %div.col-4.p-4
-      - if @product['sold']
-        %h1
-          = t('type.products.inputs.sold_date')
-          = DateTime.parse(@product['sold_date']).strftime('%Y-%m-%d %H:%M')
-    
-    %div.col-4.p-4
-      %h1
-        = t('type.products.inputs.status')
-        = @product['status'].titleize
-    
-    %div.col-6.p-4
-      %h1
-        = t('type.products.inputs.type_product')
-        = @product['type_product']['name']
-    
-    %div.links.col-10.pt-4
-      %a.btn.btn-link{href: "/products"}= t('sales.inputs.back')
+    %div.card
+      %div.row
+        %div.col-4.p-2
+          %h5= t('type.products.inputs.name')
+          %h5 :
+          %h5= @product['name']
+         
+        %div.col-4.p-2
+          %h5= t('type.products.inputs.description')
+          %h5 :
+          %h5= @product['description']
+        
+        %div.col-4.p-2
+          %h5= t('type.products.inputs.price')
+          %h5 :
+          %h5= @product['price']
+        
+        %div.col-4.p-2
+          %h5= t('type.products.inputs.sell')
+          %h5 :
+          %h5= getSelled?(@product['sold'])
+        
+        %div.col-4.p-2
+          - if @product['sold']
+            %h5= t('type.products.inputs.sold_date')
+            %h5 :
+            %h5= DateTime.parse(@product['sold_date']).strftime('%Y-%m-%d %H:%M')
+        
+        %div.col-4.p-2
+          %h5= t('type.products.inputs.status')
+          %h5 :
+          %h5= @product['status'].titleize
+        
+        %div.col-6.p-2
+          %h5= t('type.products.inputs.type_product')
+          %h5 :
+          %h5= @product['type_product']['name']
+        
+        %div.links.col-10.pt-4
+          %a.btn.btn-link{href: "/products"}= t('sales.inputs.back')

@@ -1,13 +1,16 @@
-%div.show-user
+%div.container
   %div.row
-    %div.col
-      %h1
-        = t('type.products.labels.name')
-        = @type_product['name'] 
-    %div.col
-      %h1
-        = t('type.products.labels.description')
-        = @type_product['description']
-
-    %div.links.col-12.pt-4
-      %a.btn.btn-link{href: "/type_products"}= t('sales.inputs.back')
+    %div.card
+      %div.row
+        %div.col
+          %h5= t('type.products.labels.name')
+          %h5 :
+          %h5= @type_product['name'] 
+        %div.col
+          %h5= t('type.products.labels.description')
+          %h5 :
+          %h5= @type_product['description']
+    
+        %div.links.col-12.pt-4
+          %a.btn.btn-link{href: "/type_products"}= t('sales.inputs.back')
+    

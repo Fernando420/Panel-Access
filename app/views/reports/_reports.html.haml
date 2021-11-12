@@ -10,6 +10,3 @@
   %tbody
     - if @reports.any?
       = render partial: 'reports/report', collection: @reports
-    - else
-      %tr
-        %td.text-center=t('reports.not_found')

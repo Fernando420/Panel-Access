@@ -45,6 +45,8 @@ class ProductsController < ApplicationController
 
   def create
     params[:product][:user_id] = @current_user['user']['id']
+    params[:product][:status] = params[:status]
+    params[:product][:type_product_id] = params[:type_product_id]
     response = ApiAccess::create_product({data: params[:product], token: @current_user['token']})
     if response['status']
       flash[:alert] = t('products.save.success')

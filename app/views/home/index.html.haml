@@ -9,8 +9,8 @@
             = image_tag 'home/users.svg', class: 'home-user'
   
           %div.col-9
-            %h1= @data['total_clients']
-            %h1= t('common_texts.clients')
+            %h1.font-white= @data['total_clients']
+            %h1.font-white= t('common_texts.clients')
 
     %div.col-3
       %div.card_two
@@ -19,30 +19,30 @@
             = image_tag 'home/user.png', class: 'home-user'
   
           %div.col-9
-            %h1= @data['total_users']
-            %h1= t('common_texts.users')
+            %h1.font-white= @data['total_users']
+            %h1.font-white= t('common_texts.users')
 
 
     %div.col-3
       %div.card_three
         %div.card_home
           %div.col-3.icon
-            %h1 $
+            = image_tag 'sidebar/payments.png', class: 'home-payments'
   
           %div.col-9
-            %h1= @data['total_payments']
-            %h1= t('common_texts.payments')
+            %h1.font-white= @data['total_payments']
+            %h1.font-white= t('common_texts.payments')
 
 
     %div.col-3
       %div.card_four
         %div.card_home
           %div.col-3.icon
-            = image_tag 'home/shopping.png', class: 'home-shopping'
+            = image_tag 'sidebar/sales.png', class: 'home-shopping'
   
           %div.col-9
-            %h1= @data['total_sales']
-            %h1= t('common_texts.sales')
+            %h1.font-white= @data['total_sales']
+            %h1.font-white= t('common_texts.sales')
     
     %div.col-6
       %div.card

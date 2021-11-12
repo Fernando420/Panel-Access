@@ -1,0 +1,33 @@
+
+
+
+%html
+  %head
+    %title PanelAccess
+    = csrf_meta_tags
+    = csp_meta_tag
+
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' 
+    %link{href: "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css", rel: "stylesheet"}
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  
+- if @current_user 
+  %body
+    %div.main-container.mx-auto
+      %div.main-grid
+        %nav.container-nav
+          = render partial: 'layouts/sidebar'
+        %div{style: 'background: linear-gradient(to bottom,#5E6E00,#839800,#A0BA00,#BCDB00);margin-top: 15px'}
+          = render partial: 'layouts/topbar'
+          %div#notifications.mt-4
+            = render partial: 'notifications/flash'
+          = yield
+    = render partial: '/modals/error'
+    = render partial: '/modals/success'
+- else
+  %body.body_login
+    %div.container
+      %div.authentication
+        %div#notifications.mt-4
+          = render partial: 'notifications/flash'
+        = yield

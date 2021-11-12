@@ -8,7 +8,4 @@
     %th= t('buttons.show')
   %tbody
     - if @users.any?
-      = render partial: 'users/user', collection: @users 
-    - else
-      %tr
-        %td.text-center Not found users
+      = render partial: 'users/user', collection: @users

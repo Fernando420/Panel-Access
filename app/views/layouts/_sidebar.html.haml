@@ -1,0 +1,145 @@
+%nav#sidebar
+  %div.sidebar-header{align: "center"}
+    %div{style: 'background: linear-gradient(to bottom,#BCDB00,#A0BA00,#839800,#5E6E00);'}
+      %div.logo
+        %img{src: "#{@current_user['user']['gym']['logo']}"}
+          %h5= @current_user['user']['username']
+          %h2 
+            ID:
+            = @current_user['user']['id']
+          %h2 
+            GYM:
+            = @current_user['user']['gym']['name']
+
+    %div.col-12.logomenu.nopadding
+      %div.container
+        %ul.list-unstyled.components{style: "margin-top:20px"}
+
+          %li.only{style: "margin-top:10px;"}
+            %a#Home.link-home{href: "/"}
+              = image_tag 'sidebar/home.svg', class: 'sidebar-button-img' 
+              %strong= t('sidebar.menu_1.title')
+
+          %li{style: "margin-top:10px;"}
+            %a.dropdown-toggle.sidebar-button.link-home{href: "#Clients", 'data-toggle': "collapse", 'aria-expanded': "false"}
+              = image_tag 'sidebar/users.svg', class: 'sidebar-button-img' 
+              %strong= t('sidebar.menu_2.title')
+                        
+            %ul#Clients.collapse.list-unstyled
+              %li
+                %a#register.sidebar-button.link-home{href: "/clients/new"}
+                  = image_tag 'sidebar/dot-gray.png', class: 'sidebar-button-bullet'
+                  %strong= t('sidebar.menu_2.submenu_1')
+                              
+              %li
+                %a#list.sidebar-button.link-home{href: "/clients"}
+                  = image_tag 'sidebar/dot-gray.png', class: 'sidebar-button-bullet'
+                  %strong= t('sidebar.menu_2.submenu_2')
+
+
+          %li{style: "margin-top:10px;"}
+            %a.dropdown-toggle.sidebar-button.link-home{href: "#Payments", 'data-toggle': "collapse", 'aria-expanded': "false"}
+              = image_tag 'sidebar/payments.png', class: 'sidebar-button-img'
+              %strong= t('sidebar.menu_3.title')
+            
+            %ul#Payments.collapse.list-unstyled
+              %li
+                %a#register.sidebar-button.link-home{href: "/payments/new"}
+                  = image_tag 'sidebar/dot-gray.png', class: 'sidebar-button-bullet' 
+                  %strong= t('sidebar.menu_3.submenu_1')
+                    
+                - if @current_user['user']['role_id'].to_i == 1
+                  %li
+                    %a#list.sidebar-button.link-home{href: "/payments"}
+                      = image_tag 'sidebar/dot-gray.png', class: 'sidebar-button-bullet'
+                      %strong= t('sidebar.menu_3.submenu_2')
+                  
+
+          %li.only{style: "margin-top:10px;"}
+            %a#Access.link-home{href: "/clients/access"}
+              = image_tag 'sidebar/access.png', class: 'sidebar-button-img'
+              %strong= t('sidebar.menu_5.title')
+            
+          - if @current_user['user']['role_id'].to_i == 1
+
+            %li{style: "margin-top:10px;"}
+              %a.dropdown-toggle.sidebar-button.link-home{href: "#Users", 'data-toggle': "collapse", 'aria-expanded': "false"}
+                = image_tag 'home/user.png', class: 'sidebar-button-img'
+                %strong= t('sidebar.menu_4.title')
+                
+              %ul#Users.collapse.list-unstyled
+                %li
+                  %a#register.sidebar-button.link-home{href: "/users/new"}
+                    = image_tag 'sidebar/dot-gray.png', class: 'sidebar-button-bullet' 
+                    %strong= t('sidebar.menu_4.submenu_1')
+                        
+                %li
+                  %a#list.sidebar-button.link-home{href: "/users"}
+                    = image_tag 'sidebar/dot-gray.png', class: 'sidebar-button-bullet'
+                    %strong= t('sidebar.menu_4.submenu_2')
+                        
+
+        
+
+          - if @current_user['user']['role']['value'].to_i == 1 || @current_user['user']['role']['value'].to_i == 3
+
+            %li{style: "margin-top:10px;"}
+              %a.dropdown-toggle.sidebar-button.link-home{href: "#TypeProduct", 'data-toggle': "collapse", 'aria-expanded': "false"}
+                = image_tag 'sidebar/type_product.png', class: 'sidebar-button-img'
+                %strong= t('sidebar.menu_6.title')
+                    
+              %ul#TypeProduct.collapse.list-unstyled
+                %li
+                  %a#register.sidebar-button.link-home{href: "/type_products/new"}
+                    = image_tag 'sidebar/dot-gray.png', class: 'sidebar-button-bullet'
+                    %strong= t('sidebar.menu_6.submenu_1')
+                    
+                  %li
+                    %a#list.sidebar-button.link-home{href: "/type_products"}
+                      = image_tag 'sidebar/dot-gray.png', class: 'sidebar-button-bullet'
+                      %strong= t('sidebar.menu_6.submenu_2')
+
+            %li{style: "margin-top:10px;"}
+              %a.dropdown-toggle.sidebar-button.link-home{href: "#Product", 'data-toggle': "collapse", 'aria-expanded': "false"}
+                = image_tag 'sidebar/product.png', class: 'sidebar-button-img'
+                %strong= t('sidebar.menu_7.title')
+                  
+              %ul#Product.collapse.list-unstyled
+                %li
+                  %a#register.sidebar-button.link-home{href: "/products/new"}
+                    = image_tag 'sidebar/dot-gray.png', class: 'sidebar-button-bullet'
+                    %strong= t('sidebar.menu_7.submenu_1')      
+                %li
+                  %a#list.sidebar-button.link-home{href: "/products"}
+                    = image_tag 'sidebar/dot-gray.png', class: 'sidebar-button-bullet'
+                    %strong= t('sidebar.menu_7.submenu_2')
+
+            %li.only{style: "margin-top:10px;"}
+              %a#Reports.link-home{href: "/reports"}
+                = image_tag 'sidebar/reports.png', class: 'sidebar-button-img'
+                %strong= t('sidebar.menu_9.title') 
+
+            
+
+          %li{style: "margin-top:10px;"}
+            %a.dropdown-toggle.sidebar-button.link-home{href: "#Sales", 'data-toggle': "collapse", 'aria-expanded': "false"}
+              = image_tag 'sidebar/sales.png', class: 'sidebar-button-img' 
+              %strong= t('sidebar.menu_8.title')
+            
+            %ul#Sales.collapse.list-unstyled
+              %li
+                %a#register.sidebar-button.link-home{href: "/sales/new"}
+                  = image_tag 'sidebar/dot-gray.png', class: 'sidebar-button-bullet'
+                  %strong= t('sidebar.menu_8.submenu_1')
+                %li
+                  %a#list.sidebar-button.link-home{href: "/sales"}
+                    = image_tag 'sidebar/dot-gray.png', class: 'sidebar-button-bullet'
+                    %strong= t('sidebar.menu_8.submenu_2')
+                    
+
+          %li.only{style: "margin-top:400px;"}
+  
+          %li{style: "margin-top:10px"}
+            = link_to logout_sessions_path, method: :delete, class: 'sidebar-button font-white', id: 'logout-button' do
+              = image_tag 'sidebar/logout.png', class: 'sidebar-button-img'
+              = t('sidebar.logout')

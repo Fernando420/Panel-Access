@@ -8,7 +8,4 @@
     %th=t('buttons.show')
   %tbody
     - if @clients.any?
-      = render partial: 'client', collection: @clients 
-    - else
-      %tr
-        %td.text-center=t('client.not_found')
+      = render partial: 'client', collection: @clients

@@ -20,6 +20,18 @@ $monserrat: 'Montserrat', sans-serif;
   @extend .btn-login;
 }
 
+h1{
+  color: #5E6E00;
+}
+
+h4{
+  color: #839800;
+}
+
+.font-white{
+  color: white;
+}
+
 form {
   input[type="submit"] {
     @extend %btn-extender;
@@ -66,83 +78,83 @@ form {
 }
 
 footer{
-    text-align: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .row{
-    display: flex;
-    padding-bottom: 15px;
-    padding-top: 15px;
+  display: flex;
+  padding-bottom: 15px;
+  padding-top: 15px;
 }
 
 .btn{
-    width: 150px;
-    height: 25px;
+  width: 150px;
+  height: 25px;
 }
 
 .btn-submit{
-    margin: 15px;
-    width: 150px;
-    height: 40px;
+  margin: 15px;
+  width: 150px;
+  height: 40px;
 }
 
 .btn-login{
-    background-color: black;
-    color: white;
-    font-size: 10px;
-    font-family: $monserrat;
-    font-weight: bolder;
+  background-color: #A0BA00;
+  color: white;
+  font-size: 10px;
+  font-family: $monserrat;
+  font-weight: bolder;
+}
+
+.link-table{
+  color: #A0BA00;
+  font-weight: bold;
 }
 
 .btn-white{
-    background-color: white;
-    color: black;
-    font-size: 10px;
-    font-family: $monserrat;
-    font-weight: bolder;
+  background-color: white;
+  color: black;
+  font-size: 10px;
+  font-family: $monserrat;
+  font-weight: bolder;
 }
 
 .btn-link{
-    font-size: 12px;
-    font-family: $monserrat;
-    font-weight: 200;
-    background-color: white;
-    border: 1px solid black;
-    color: black;
-    width: 150px;
-    display: block;
-    height: 36px;
-    text-align: center;
+  background-color: #A0BA00;
+  color: white;
+  font-size: 10px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bolder;
 }
 
 .btn-home{
-    width: 100px !important;
-    background-color: black;
-    color: white;
-    font-size: 12px;
-    font-family: $monserrat;
-    font-weight: bolder;
+  width: 100px !important;
+  background-color: black;
+  color: white;
+  font-size: 12px;
+  font-family: $monserrat;
+  font-weight: bolder;
 }
 
 .form-group {
-    position:relative;
-    margin-bottom: 0 !important;
+  position:relative;
+  margin-bottom: 0 !important;
 }
 
 .main-container{
-    @extend %grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 90vh;
+  @extend %grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 90vh;
 }
   
 .main-grid{
-    @extend %grid;
-    grid-template-columns: 244px 940px;
-    grid-template-rows: 101.5px 101.5px 112px 1fr;
-    grid-row-gap: $column-separator*0;
-    justify-self: center;
+  @extend %grid;
+  grid-template-columns: 244px 940px;
+  grid-template-rows: 101.5px 101.5px 112px 1fr;
+  grid-row-gap: $column-separator*0;
+  justify-self: center;
 } 
 
 .container-nav{

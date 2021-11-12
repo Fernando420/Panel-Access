@@ -1,50 +1,51 @@
-%div.show-user
-  %h1 User Profile
+%div.container
   %div.row
+    %div.card
+      %h1 User Profile
+      %div.row
    
-    %div.col-2.picture-center
-      = image_tag "#{(@client['picture'] ||= 'clients/missing.png')}", class: 'logo-circle'
-
-    %div.col-10.row
-
-      %div.col-5
-        %div
-          %h1.show_info
-            =t('common_texts.name')
-            = @client['name']
+        %div.col-2.picture-center
+          = image_tag "#{(@client['picture'] ||= 'clients/missing.png')}", class: 'logo-circle'
   
-        %div
-          %h1.show_info
-            =t('common_texts.email')
-            = @client['email']
+        %div.col-10.row
+          %div.col-5
+            %div
+              %h1.show_info
+                =t('common_texts.name')
+                = @client['name']
       
-        %div
-          %h1.show_info 
-            =t('common_texts.phone')
-            = @client['phone']
-  
-      %div.col-4
-        %div
-          %h1.show_info 
-            =t('common_texts.birthday')
-            = @client['birthday']
-        %div
-          %h1.show_info 
-            =t('common_texts.age')
-            = @client['age']
-        %div
-          %h1.show_info 
-            =t("common_texts.status")
-            =t("status.#{@client['status']}")
-  
-      %div.col-12
-        %h1.show_info
-          =t('common_texts.Address')
-          = @client['address']
+            %div
+              %h1.show_info
+                =t('common_texts.email')
+                = @client['email']
+          
+            %div
+              %h1.show_info 
+                =t('common_texts.phone')
+                = @client['phone']
     
-    %div.col-12
-      = render partial: 'clients/membership', collection: @client['memberships'] 
-        
-    %div.col-12{align: 'right'}
-      %div.links.col-6
-        %a.btn.btn-link{href: "/clients"}= t('buttons.back')
+          %div.col-4
+            %div
+              %h1.show_info 
+                =t('common_texts.birthday')
+                = @client['birthday']
+            %div
+              %h1.show_info 
+                =t('common_texts.age')
+                = @client['age']
+            %div
+              %h1.show_info 
+                =t("common_texts.status")
+                =t("status.#{@client['status']}")
+    
+          %div.col-12
+            %h1.show_info
+              =t('common_texts.Address')
+              = @client['address']
+      
+      %div.col-12
+        = render partial: 'clients/membership', collection: @client['memberships'] 
+          
+      %div.col-12{align: 'right'}
+        %div.links.col-6
+          %a.btn.btn-link{href: "/clients"}= t('buttons.back')

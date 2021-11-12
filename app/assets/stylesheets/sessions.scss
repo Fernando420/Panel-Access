@@ -12,10 +12,14 @@
 
 $monserrat: 'Montserrat', sans-serif;
 
+.body_login{
+  background: linear-gradient(to bottom,#5E6E00,#839800,#A0BA00,#BCDB00);
+}
+
 .authentication{
-    width: 670px;
-    padding-top: 80PX;
-    margin: 0 auto;
+  width: 670px;
+  padding-top: 80PX;
+  margin: 0 auto;
 }
 
 .header{
@@ -25,7 +29,7 @@ $monserrat: 'Montserrat', sans-serif;
     .header-left{
         width: 50%;
         a{
-            color: #353535;
+            color: white;
             padding: 10px;
         }
     }
@@ -44,6 +48,7 @@ $monserrat: 'Montserrat', sans-serif;
 .content{
     border: 1px solid black;
     padding: 35px;
+    background-color: white;
     .title{
         display: flex;
         div{
@@ -103,7 +108,7 @@ $monserrat: 'Montserrat', sans-serif;
         font-size: 16px;
         font-family: $monserrat;
         font-weight: 100;
-        color: #979797;
+        color: #5E6E00;
         margin: 0;
     }
     .form-group{
@@ -111,7 +116,7 @@ $monserrat: 'Montserrat', sans-serif;
         margin-bottom: 10px;
         label{
             position: absolute;
-            color: #979797;
+            color: #5E6E00;
             font-family: $monserrat;
             font-weight: 200;
             transition: transform 150ms ease-out, font-size 150ms ease-out;
@@ -120,7 +125,7 @@ $monserrat: 'Montserrat', sans-serif;
             margin-top: -38px;
         }
         input{
-            border: 1px solid #979797;
+            border: 1px solid #5E6E00;
             height: 50px;
             width: 100%;
             display: block;
@@ -130,7 +135,7 @@ $monserrat: 'Montserrat', sans-serif;
     .form-group-select{
         label{
             position: absolute;
-            color: #979797;
+            color: #5E6E00;
             font-family: $monserrat;
             font-weight: 200;
             transition: transform 150ms ease-out, font-size 150ms ease-out;
@@ -138,7 +143,7 @@ $monserrat: 'Montserrat', sans-serif;
             margin-top: -38px;
         }
         input{
-            border: 1px solid #979797;
+            border: 1px solid #5E6E00;
             height: 50px;
             width: 100%;
             display: block;
@@ -146,7 +151,7 @@ $monserrat: 'Montserrat', sans-serif;
         .form-select{
             width: 100%;
             display: block;
-            color: #979797;
+            color: #5E6E00;
             font-family:  $monserrat;
             font-weight: 200;
             font-size: 15px;

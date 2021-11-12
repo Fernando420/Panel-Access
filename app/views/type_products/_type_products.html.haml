@@ -7,7 +7,4 @@
     %th=t('buttons.delete')
   %tbody
     - if @type_products.any?
-      = render partial: 'type_products/type_product', collection: @type_products 
-    - else
-      %tr
-        %td.text-center=t('type_products.not_found')
+      = render partial: 'type_products/type_product', collection: @type_products

@@ -4,44 +4,44 @@ $light-gray: #F0F1F7;
 $dark-blue: #37458B;
 
 body {
-    background: #fafafa;
+  background: #fafafa;
 }
 
 p {
-    font-size: 1.1em;
-    font-weight: 300;
-    line-height: 1.7em;
-    color: #999;
+  font-size: 1.1em;
+  font-weight: 300;
+  line-height: 1.7em;
+  color: #999;
 }
 
 a,
 a:hover,
 a:focus {
-    text-decoration: none;
-    transition: all 0.3s;
+  text-decoration: none;
+  transition: all 0.3s;
 }
 
 .navbar {
-    padding-top: 0;
-    padding-left: 0;
-    padding-right: 0;
-    padding-bottom: 0;
-    background: transparent !important;
-    border: none;
-    border-radius: 0;
+  padding-top: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+  background: transparent !important;
+  border: none;
+  border-radius: 0;
 }
 
 .navbar-btn {
-    box-shadow: none;
-    outline: none !important;
-    border: none;
+  box-shadow: none;
+  outline: none !important;
+  border: none;
 }
 
 .line {
-    width: 100%;
-    height: 1px;
-    border-bottom: 1px dashed #ddd;
-    margin: 40px 0;
+  width: 100%;
+  height: 1px;
+  border-bottom: 1px dashed #ddd;
+  margin: 40px 0;
 }
 
 /* ---------------------------------------------------
@@ -49,37 +49,37 @@ a:focus {
 ----------------------------------------------------- */
 
 .wrapper {
-    display: flex;
-    width: 100%;
+  display: flex;
+  width: 100%;
 }
 
 #sidebar {
-    padding-top: 15px;
-    width: 244px;
-    top: 0;
-    left: 0;
-    height: 98vh;
-    z-index: 999;
-    background: #F4F6F9;
-    color: #fff;
-    transition: all 0.3s;
+  padding-top: 15px;
+  width: 244px;
+  top: 0;
+  left: 0;
+  height: 98vh;
+  z-index: 999;
+  background: #F4F6F9;
+  color: #fff;
+  transition: all 0.3s;
 }
 
 #sidebar.active {
-    margin-left: -250px;
+  margin-left: -250px;
 }
 
 #sidebar .sidebar-header {
-    background: #F4F6F9;
+  background: white;
 }
 
 #sidebar ul p {
-    color: #fff;
-    padding: 10px;
+  color: #fff;
+  padding: 10px;
 }
 
 #sidebar ul{
-    list-style-type: none;
+  list-style-type: none;
 }
 
 #sidebar ul li{
@@ -93,23 +93,12 @@ a:focus {
         position: relative;
         transition: all 0.7s;
 
-        &:before{
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            background-color: $aqua;
-            transition: all 0.5s;
-            transition-delay: 0.2s;
-            height: 100%;
-            width: 0;
-        }
+        
 
         &:hover{
             -webkit-box-shadow: -3px 3px 8px 0px rgba(0,0,0,0.2);
             -moz-box-shadow: -3px 3px 8px 0px rgba(0,0,0,0.2);
             box-shadow: -3px 3px 8px 0px rgba(0,0,0,0.2);
-            background-color: $white;
 
             &:before{
                 width: 5px;
@@ -128,6 +117,7 @@ a:focus {
 
     .link-home{
         font-size: 12px;
+        color: white;
     }
 
     .sidebar-button-bullet{
@@ -153,7 +143,8 @@ a:focus {
 }
 
 #sidebar ul li a:hover {
-    color: #7386D5;
+  color: white;
+  font-weight: 400;
 }
 
 #sidebar > ul > li{
@@ -168,11 +159,6 @@ a:focus {
     &:hover > a{
         margin-bottom: 0;
     }
-}
-
-#sidebar ul li.active>a,
-a[aria-expanded="true"] {
-    background: $light-gray;
 }
 
 #sidebar ul li:hover.active>a{
@@ -259,29 +245,37 @@ a.article:hover {
 ----------------------------------------------------- */
 
 .logo{
-    padding-top: 15px;
-    text-align: center;
-    width: 180px;
-    background-color: white;
-    
-    h1{
-        font-size: 16px;
-        font-family: $monserrat;
-        font-weight: 300;
-        color: black;
-    }
-    h2{
-        font-size: 7px;
-        font-family: $monserrat;
-        font-weight: 300;
-        color: #5A5E86;
-    }
-    img{
-        width:  70%;
-        height: 70%;
-    }
+  padding: 5px;
+  border-radius: 0% 0% 0% 60px;
+  text-align: -webkit-match-parent;
+  background-color: white;
+  h1{
+    font-size: 16px;
+    font-family: $monserrat;
+    font-weight: 300;
+    color: black;
+  }
+  h2{
+    font-size: 7px;
+    font-family: $monserrat;
+    font-weight: 300;
+    color: #5A5E86;
+  }
+  img{
+    border: 1px solid black;
+    width:  50%;
+    display: grid;
+    border-radius: 50%;
+  }
+}
+
+.logomenu{
+  border-radius: 0% 60px 0% 0%;
+  background: linear-gradient(to bottom,#5E6E00,#839800,#A0BA00,#BCDB00);
+  padding-top: 10px;
 }
 
 .active-sidebar{
-    background: linear-gradient(90deg, $aqua 2%, white 0%)
+  background: transparent;
+  border: 1px solid white
 }

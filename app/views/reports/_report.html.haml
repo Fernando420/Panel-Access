@@ -7,6 +7,6 @@
   %td= DateTime.parse(report['end_date']).strftime("%Y-%m-%d %H:%M:%S")
   %td
     - if report['status'] == 'finished'
-      %a{href: "#{report['url']}", target: '_blank'}
+      %a.link-table{href: "#{report['url']}", target: '_blank'}
         =t('common_texts.download')
     

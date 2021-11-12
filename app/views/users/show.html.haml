@@ -1,50 +1,36 @@
-%div.show-user
+%div.container
   %div.row
-
-    %div.col-6.row
-      %div.col{align: 'right'}
-        %h1=t('common_texts.username')
-
-      %div.col{align: 'left'}
-        %h5= @user['username']
- 
-
-    %div.col-6.row
-      %div.col{align: 'right'}
-        %h1=t('common_texts.email')
-
-      %div.col{align: 'left'}
-        %h5= @user['email']
-
-    %div.col-6.row
-      %div.col{align: 'right'}
-        %h1=t('common_texts.phone')
-
-      %div.col{align: 'left'}
-        %h5= @user['phone']
-
-    %div.col-6.row
-      %div.col{align: 'right'}
-        %h1=t('common_texts.role')
-
-      %div.col{align: 'left'}
-        %h5= @user['role']['name']
-
-    %div.col-6.row
-      %div.col{align: 'right'}
-        %h1=t('common_texts.last_sign_in_count')
-
-      %div.col{align: 'left'}
-        %h5= @user['sign_in_count'].to_i
-
-    %div.col-6.row
-      %div.col{align: 'right'}
-        %h1=t('common_texts.last_sign_in')
-
-      %div.col{align: 'left'}
-        %h5= DateTime.parse(@user['last_sign_in_at']).strftime('%Y-%m-%d %H:%M')
-
-
-
-    %div.links.col-6.pt-4
-      %a.btn.btn-link{href: "/users"}= t('buttons.back')
+    %div.card
+      %div.row
+        %div.col-4.p-2
+          %h5=t('common_texts.username')
+          %h5 :
+          %h5= @user['username']
+    
+        %div.col-4.p-2
+          %h5=t('common_texts.email')
+          %h5 :
+          %h5= @user['email']
+    
+        %div.col-4.p-2
+          %h5=t('common_texts.phone')
+          %h5 :
+          %h5= @user['phone']
+    
+        %div.col-4.p-2
+          %h5=t('common_texts.role')
+          %h5 :
+          %h5= @user['role']['name']
+    
+        %div.col-4.p-2
+          %h5=t('common_texts.last_sign_in_count')
+          %h5 :
+          %h5= @user['sign_in_count'].to_i
+    
+        %div.col-4.p-2
+          %h5=t('common_texts.last_sign_in')
+          %h5 :
+          %h5= DateTime.parse(@user['last_sign_in_at']).strftime('%Y-%m-%d %H:%M')
+    
+        %div.links.col-6.pt-4
+          %a.btn.btn-link{href: "/users"}= t('buttons.back')

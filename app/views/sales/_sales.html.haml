@@ -8,6 +8,3 @@
   %tbody
     - if @sales.any?
       = render partial: 'sales/sale', collection: @sales 
-    - else
-      %tr
-        %td.text-=t('sales.not_found')

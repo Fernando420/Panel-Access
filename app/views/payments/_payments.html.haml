@@ -1,4 +1,4 @@
-%table.table.table-responsive.text-center
+%table.table.table-responsive.text-center{id: 'table_desing'}
   %thead
     %th=t('common_texts.client')
     %th=t('common_texts.user')
@@ -9,7 +9,4 @@
     %th=t('common_texts.date_create')
   %tbody
     - if @payments.any?
-      = render partial: 'payments/payment', collection: @payments 
-    - else
-      %tr
-        %td.text-center=t('payments.not_found')
+      = render partial: 'payments/payment', collection: @payments

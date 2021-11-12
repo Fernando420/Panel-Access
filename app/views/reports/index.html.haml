@@ -1,7 +1,7 @@
 %div.row
   %div.card
     %div.col.pb-4
-      %h1>
+      %h1
         = t('reports.subtitle')
 
     %div.col
@@ -27,7 +27,7 @@
           #client
     
         %div.col-12
-          = f.submit t('buttons.generate')
+          = f.submit t('buttons.generate'), class: 'btn btn-login'
       
     %div.col
       = render partial: 'reports'
