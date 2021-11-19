@@ -1,5 +1,5 @@
 # Change these
-server '52.43.118.176', port: 22, roles: [:web, :app, :db], primary: true
+server '3.83.40.117', port: 22, roles: [:web, :app, :db], primary: true
 
 set :repo_url,        'git@github.com:Fernando420/Panel-Access.git'
 set :application,     'dashboard-gym'
