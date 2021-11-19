@@ -35,7 +35,11 @@ Rails.application.routes.draw do
       get 'barcode/:id' => 'products#get_by_barcode'
     end
   end
-  resources :sales
+  resources :sales do
+    collection do
+      get 'download/ticket/:id' => 'sales#download_ticket'
+    end
+  end
   resources :reports do
     collection do
       get :add_client

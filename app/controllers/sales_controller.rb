@@ -20,6 +20,20 @@ class SalesController < ApplicationController
     @title = t('sales.new')
   end
 
+  def download_ticket
+    response = ApiAccess::get_sale({id: params[:id], token: @current_user['token']})
+    sale = response['data']
+    respond_to do |format|
+      format.pdf do
+        pdf = CreatePdf::Ticket.new(sale,@current_user['user'])
+        send_data pdf.render,
+          filename: "ticket.pdf",
+          type: 'application/pdf',
+          disposition: 'inline'
+      end
+    end
+  end
+
   def create
     json = {
       user_id: @current_user['user']['id'],

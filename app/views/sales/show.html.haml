@@ -1,54 +1,59 @@
-%div.container
+%div.container.pt-5
   %div.row
-    %div.card
+    %div.col-3
+    %div.col-6.ticket
       %div.row
-    
-        %div.col-6.pt-3
-          %span
-            = t('sales.seller_email')
-            = @sale['user']['email']
-      
-        %div.col-6.pt-3
-          %span
-            = t('sales.total_products')
-            = @sale['total_products']
-    
-        - if @sale['client'].present?
-          %div.col-6.pt-3
-            %span
-              = t('sales.buyer_email')
-              = @sale['client']['email']
-        - else
-          %div.col-6.pt-3
-            %span
-              = t('sales.type')
-              = t('common_texts.external_sales')
-      
-        %div.col-12.pt-3
-          %span= t('sales.products')
-          %ul
-            - @sale['products'].each do |product|
-              - product = JSON.parse(product)
-              %li
-                %div.ticket-list.pt-3
-                  %div.row
-                    %div.col-5
-                      %h1.name-product
-                        = t('common_texts.name')
-                        = product['name']
-                      %h5.barcode-product
-                        = t('common_texts.barcode')
-                        = product['barcode']
-                    %div.col-5       
-                      %h1.price-product
-                        = t('common_texts.price')
-                        = product['amount']                   
-    
-        %div.col-12
-          %h1
-            = t('sales.amount_total')
-            = @sale['total']
-    
-        %div.links.col-6.pt-4
-          %a.btn.btn-link{href: "/sales"}= t('buttons.back') 
-    
+        %div.col-12.pb-4{align: 'center'}
+          %img{src: "#{@current_user['user']['gym']['logo']}", width: 100, heigth: 100, style: 'border-radius: 50%'}
+          %h3= @current_user['user']['gym']['name']
+        
+        %div.col-6.pb-5{align: 'center'}
+          %div 
+            %h5.snumber Sales number
+          %div 
+            %h5.snumberval= @sale['id']
+        
+        %div.col-6.pb-5{align: 'center'}
+          %div 
+            %h5.sday Sale day
+          %div
+            %h5.sdayval= DateTime.parse(@sale['created_at']).strftime('%d-%m-%Y %H:%M')
+        
+        %div.col-6.pb-5{align: 'center'}
+          %div 
+            %h5.snumber User
+          %div 
+            %h5.snumberval= @sale['user']['email']
+        
+        %div.col-6.pb-5{align: 'center'}
+          %div 
+            %h5.sday Client
+          %div
+            - if @sale['client']
+              %h5.sdayval= @sale['client']['display_name']
+            - else
+              %h5.sdayval Sale External 
+        
+        %div.col-12{align: 'center', style: 'background-color: #e6faea; padding: 20px'}
+          %table.table-ticket
+            %thead
+              %th= t('common_texts.name')
+              %th= t('common_texts.barcode')
+              %th= t('common_texts.price')
+            %tbody
+              - @sale['products'].each do |product|
+                - product = JSON.parse(product)
+                %tr
+                  %td= product['name']
+                  %td= product['barcode']
+                  %td= number_to_currency(product['amount'])
+        
+        %div.col-10.pt-5{align: 'right'}
+          %h5 
+            Total:
+            = number_to_currency(@sale['total'])
+    %div.col-3
+      %a{href: "/sales/download/ticket/#{@sale['id']}?format=pdf", target: '_blank'}
+        = image_tag 'sales/download.png', class: 'sidebar-button-img' 
+    %div.col-3
+    %div.col-6.ticket-bottom              

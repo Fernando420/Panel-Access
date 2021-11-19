@@ -2,7 +2,7 @@
   %td= sale['user']['username']
   %td= sale['client'].nil? ? t('common_texts.external_sales') : sale['client']['email']
   %td= sale['total']
-  %td= sale['created_at']
+  %td= DateTime.parse(sale['created_at']).strftime('%d-%m-%Y %H:%M')
   %td 
     %a.link-table{href: "/sales/#{sale['id']}"}
       =t('buttons.show')

@@ -35,6 +35,7 @@ class ApplicationController < ActionController::Base
         response = ApiAccess::info_gral(@current_user['token'])
         if response['errors']
           Redis.current.del("login-#{@token_session}")
+          redirect_to login_sessions_path()
         end
       end
       return flag
